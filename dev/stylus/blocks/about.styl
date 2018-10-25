@@ -1,0 +1,213 @@
+.feats
+  mt -90px
+  pt 189px
+  mb 62px
+  @media $desktopMax
+    pt 167px
+    mb 36px
+  &__title
+    font-family $cyr
+    color $orange
+    fontify 72px 400 52px
+    mb 35px
+    @media $desktopMax
+      fontify 60px 400 52px
+    @media $LandscapeMax
+      fontify 40px 400 34px
+      mb 25px
+    @media $LandscapeMin
+      mb 45px
+    @media $PortraitMax
+      fontify 30px 400 32px
+  &__list
+    df()
+    flex-wrap wrap
+    ml -36px
+    w calc(100% + 36px)
+    max-width 1400px
+    @media $desktopMax
+      ml -30px
+      w calc(100% + 30px)
+      max-width inherit
+  &__item
+    pos relative
+    w 333px
+    ml 36px
+    mb 32px
+    pl 90px
+    @media $desktopMax
+      pl 78px
+      w 294px
+      ml 30px
+    @media $desktopMin
+      w calc(50% - 30px)
+    @media $LandscapeMax
+      pl 65px
+    @media $LandscapeMin
+      w calc(100% - 30px)
+      pl 0
+      mb 40px
+  &__imgover
+    pos absolute
+    w 90px
+    l 0
+    h 100%
+    df(flex-start, center)
+    @media $desktopMax
+      w 78px
+    @media $LandscapeMax
+      w 65px
+    @media $LandscapeMin
+      pos relative
+      w auto
+      h auto
+      justify-content flex-start
+      mb 15px
+  &__img
+    max-width 90%
+  &__text
+    color white
+    fontify 18px 400 26px
+    @media $desktopMax
+      fontify 16px 400 24px
+    @media $LandscapeMax
+      fontify 14px 400 24px
+    
+.about
+  mb 92px
+  @media $desktopMax
+    mb 75px
+  &__shift
+    pl 369px
+    @media $desktopMax
+      pl 323px
+    @media $desktopMin
+      pl 0
+  &__title
+    font-family $cyr
+    color $orange
+    fontify 72px 400 52px
+    mb 35px
+    @media $desktopMax
+      fontify 60px 400 52px
+    @media $LandscapeMax
+      fontify 40px 400 34px
+      mb 25px
+    @media $PortraitMax
+      fontify 30px 400 32px
+  &__text
+    mb 27px
+    
+.awards
+  .container
+    overflow hidden
+    background-color #34241e
+    pt 100px
+    pos relative
+    @media $desktopMax
+      pt 76px
+    @media $LandscapeMax
+      pt 60px
+    @media $LandscapeMax
+      max-width none
+    @media $LandscapeMin
+      pb 40px
+  &__title
+    font-family $cyr
+    color $orange
+    fontify 72px 400 52px
+    mb 60px
+    @media $desktopMax
+      fontify 60px 400 52px
+      mb 37px
+    @media $LandscapeMax
+      fontify 40px 400 34px
+    @media $PortraitMax
+      fontify 30px 400 32px
+  &__car
+    ml -59px
+    mr -61px
+    @media $desktopMax
+      ml -48px
+      mr -50px
+    @media $desktopMin
+      ml -35px
+      mr -37px
+    .swiper-button-prev.swiper-button-disabled,
+    .swiper-button-next.swiper-button-disabled 
+      opacity 0
+      transition 0s opacity
+    .swiper-slide
+      dfv(flex-start, space-between)
+      h auto
+      padding 74px 58px 60px
+      border-right 1px solid alpha(white, .1)
+      border-top 1px solid alpha(white, .1)
+      @media $desktopMax
+        pl 49px
+        pr 49px
+        pt 46px
+        pb 82px
+      @media $desktopMin
+        padding 32px 35px 60px
+      @media $LandscapeMax
+        w 45vw
+      @media $LandscapeMedium
+        w 70vw
+      @media $LandscapeMin
+        border-bottom 1px solid alpha(white, .1)
+      @media $PortraitMax
+        w 75vw
+      @media $PortraitMedium
+        w 82vw
+      @media $PortraitMin
+        w 90vw
+      &:hover
+        & ^[0]__img
+          transform rotate3d(0, 1, 0, 360deg)
+  &__name
+    color white
+    fontify 21px 600 28px
+    mb 18px
+    @media $desktopMax
+      fontify 19px 600 24px
+    @media $LandscapeMax
+      fontify 14px 600 24px
+  &__dsc
+    color white
+    fontify 18px 400 26px
+    mb 3px
+    @media $desktopMax
+      fontify 16px 400 24px
+    @media $LandscapeMax
+      fontify 14px 400 24px
+  &__info
+    color alpha(white, .5)
+    fontify 16px 400 24px
+    mb 30px
+    @media $desktopMax
+      fontify 14px 400 24px
+    @media $LandscapeMax
+      fontify 12px 400 22px
+  &__img
+    db()
+    mr 0
+    ml auto
+    max-width 100%
+    will-change transform
+    transition .7s transform
+  &__toall
+    pos absolute
+    r 60px
+    t 130px
+    @media $desktopMax
+      r 51px
+      t 103px
+    @media $LandscapeMax
+      t 72px
+      r 35px
+    @media $LandscapeMin
+      pos relative
+      r auto
+      t 0
+      mt 30px

@@ -1,0 +1,40 @@
+.menu
+  @media $LandscapeMax
+    pos fixed
+    display flex
+    align-items center
+    justify-content flex-start
+    w 100%
+    t 0
+    l -100%
+    opacity 0
+    padding 70px 30px
+    z-index 13
+    overflow auto
+    h 100%
+    transition .7s opacity
+  &__list
+    display flex
+    flex-direction column
+  &__item
+    & + &
+      mt 33px
+      @media $lDesktopMedium
+        mt 30px
+      @media $desktopMax
+        mt 25px
+  &__href
+    pos relative
+    l 0
+    color white
+    font-family $cyr
+    fontify 19px 700 19px
+    transition .7s color, .7s left
+    @media $desktopMax
+      fontify 18px 700 18px
+    @media $LandscapeMax
+      fontify 32px 700 34px
+    &:hover,
+    &.active
+      color $orange
+      l 10px

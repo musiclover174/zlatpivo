@@ -1,0 +1,182 @@
+.products
+  pos relative
+  z-index 2
+  .container
+    overflow hidden
+    background-color #34241e
+    pt 94px
+    pos relative
+    @media $desktopMax
+      pt 76px
+    @media $desktopMin
+      pt 60px
+    @media $LandscapeMax
+      max-width none
+    @media $LandscapeMin
+      pb 50px
+  &__title
+    font-family $cyr
+    color $orange
+    fontify 60px 400 52px
+    mb 31px
+    @media $desktopMax
+      fontify 40px 400 44px
+      mb 20px
+    @media $PortraitMax
+      fontify 30px 400 32px
+  &__tabs
+    df()
+    flex-wrap wrap
+    @media $PortraitMedium
+      dfv()
+  &__tab
+    cursor pointer
+    pos relative
+    color white
+    fontify 15px 600 24px
+    transition .7s color, .7s padding-left
+    @media $desktopMax
+      fontify 14px 600 24px
+    &:before
+      content "/"
+      pos absolute
+      l 0
+      t 0
+      fontify 15px 600 24px
+      color $orange
+      opacity 0
+      transition .7s opacity
+      @media $desktopMax
+        fontify 14px 600 24px
+    &:hover
+      color $orange
+    &.active
+      color $orange
+      pl 18px
+      &:before
+        opacity 1
+        transition-delay .7s
+    & + &
+      ml 30px
+      @media $PortraitMedium
+        ml 0
+        mt 10px
+  &__blocks
+    mt 40px
+    ml -59px
+    mr -61px
+    @media $desktopMax
+      ml -48px
+      mr -50px
+    @media $desktopMin
+      ml -35px
+      mr -37px
+  &__block:not(.active)
+    dn()
+  &__car
+    .swiper-button-prev.swiper-button-disabled,
+    .swiper-button-next.swiper-button-disabled 
+      opacity 0
+      transition 0s opacity
+      @media $LandscapeMax
+        transition .7s opacity
+    .swiper-button-prev
+      @media $LandscapeMax
+        l 15px
+    .swiper-button-next
+      @media $LandscapeMax
+        r 15px
+    .swiper-slide
+      df()
+      padding 93px 60px 56px
+      border-right 1px solid alpha(white, .1)
+      border-top 1px solid alpha(white, .1)
+      @media $desktopMax
+        pl 49px
+        pr 49px
+      @media $desktopMin
+        pl 35px
+        pr 35px
+      @media $LandscapeMax
+        w 45vw
+      @media $LandscapeMedium
+        w 70vw
+      @media $LandscapeMin
+        border-bottom 1px solid alpha(white, .1)
+      @media $PortraitMax
+        w 75vw
+      @media $PortraitMedium
+        w 82vw
+      @media $PortraitMin
+        w 90vw
+      &:hover
+        & ^[0]__img
+          transform rotate3d(0, 0, 1, 15deg)
+  &__content
+    w 200px
+    pr 20px
+    @media $desktopMax
+      w 170px
+  &__imgover
+    w calc(100% - 200px)
+    text-align center
+    mt -48px
+    @media $desktopMax
+      w calc(100% - 170px)
+      mt -70px
+    @media $PortraitMax
+      mt -20px
+  &__img
+    ib()
+    max-width 100%
+    transform-origin center
+    will-change transform
+    transition .7s transform
+  &__name
+    color white
+    fontify 21px 600 24px
+    border-bottom 2px solid $orange
+    transition .7s color, .7s border
+    @media $desktopMax
+      fontify 19px 600 24px
+    @media $desktopMin
+      fontify 17px 600 22px
+    @media $LandscapeMax
+      fontify 15px 600 22px
+    &:hover
+      border-color transparent
+      color $orange
+  &__dsc
+    color white
+    fontify 18px 400 26px
+    mt 20px
+    @media $desktopMax
+      fontify 16px 400 24px
+    @media $LandscapeMax
+      fontify 14px 400 24px
+  &__toall
+    pos absolute
+    r 60px
+    t 175px
+    @media $desktopMax
+      t 140px
+      r 51px
+    @media $desktopMin
+      t 124px
+    @media $LandscapeMax
+      t 123px
+      r 31px
+    @media $LandscapeMin
+      pos relative
+      r auto
+      t 0
+      mt 30px
+  &__dec1
+    r 118px
+    t -57px
+  &__dec2
+    r 537px
+    t 225px
+  &__dec3
+    b 12px
+    l 69px

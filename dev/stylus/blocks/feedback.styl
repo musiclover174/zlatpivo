@@ -1,0 +1,87 @@
+.feedback
+  bgc #3c2c24
+  padding 85px 0
+  @media $desktopMax
+    padding 77px 0 97px
+  @media $LandscapeMax
+    padding 60px 0 65px
+  .container
+    df()
+    @media $LandscapeMax
+      dfv()
+  &__side
+    w 456px
+    mr 36px
+    @media $desktopMax
+      w 30%
+      mr 30px
+      mt -5px
+    @media $LandscapeMax
+      w 100%
+      mr 0
+      mt 0
+      mb 40px
+  &__form
+    w calc(100% - 492px)
+    @media $desktopMax
+      w calc(70% - 30px)
+    .fakecheckbox
+      max-width 56%
+      @media $LandscapeMax
+        max-width 70%
+      @media $PortraitMax
+        max-width 100%
+    @media $LandscapeMax
+      w 100%
+  &__title
+    color $orange
+    font-family $cyr
+    fontify 72px 400 76px
+    mb 25px
+    @media $desktopMax
+      fontify 60px 400 64px
+    @media $LandscapeMax
+      fontify 40px 400 44px
+  &__sbm
+    cursor pointer
+    pos relative
+    mr 22px
+    color white
+    fontify 15px 600 24px
+    mt 8px
+    transition .7s color
+    @media $PortraitMax
+      mt 30px
+    &:hover
+      color $orange
+    &:after
+      content ""
+      pos absolute
+      r -22px
+      t 9px
+      size 13px 8px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAMAAAAV+IX9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAQlBMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///+xruWAAAAAFHRSTlMAB+dYTvRwOe2MAXeIr6Cwi/XmVzVbsr0AAAABYktHRBXl2PmjAAAACXBIWXMAAAsSAAALEgHS3X78AAAANElEQVQI12NggABGJmYGJMDCyobMZefg5GLg5oEBXhE+JB4/kIekUoALYYogkimMQsJAEgBhggHwoXgoNgAAAABJRU5ErkJggg==') no-repeat center
+    span
+      pos absolute
+      opacity 0
+      visibility hidden
+      r -22px
+      t calc(100% + 20px)
+      width 361px
+      bgc #f5c017
+      border-radius 2px
+      color $dark
+      fontify 13px 600 21px
+      padding 18px 20px
+      text-align left
+      transition .7s opacity, .7s visibility
+      &:before
+        content ""
+        pos absolute
+        t -13px
+        r 60px
+        size 13px
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANAgMAAAAPhQzvAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAADFBMVEX1wBf1wBf1wBf////omFKUAAAAAnRSTlMAf7YpoZUAAAABYktHRAMRDEzyAAAACXBIWXMAAAsSAAALEgHS3X78AAAALUlEQVQI1xXEQQEAMAgDsfJBRNVMDyqmB5VcH4kkPdSnTk5DtdTJaaiWOjkNHWXqD9qQOyxQAAAAAElFTkSuQmCC') no-repeat center
+  &__dec1
+    l 415px
+    b 5px

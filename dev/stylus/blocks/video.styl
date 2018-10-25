@@ -1,0 +1,45 @@
+.video
+  mt -60px
+  pt 169px
+  max-height 850px
+  h 100vh
+  background-repeat no-repeat
+  background-position center
+  background-size cover
+  background-attachment fixed
+  @media $desktopMax
+    pt 131px
+    max-height 730px
+  &__title
+    font-family $cyr
+    color $orange
+    fontify 72px 400 76px
+    mb 38px
+    max-width 1100px
+    @media $desktopMax
+      fontify 60px 400 64px
+      max-width 73%
+      mb 25px
+    @media $desktopMin
+      max-width none
+    @media $LandscapeMax
+      fontify 40px 400 44px
+    @media $PortraitMax
+      fontify 30px 400 32px
+  &__href
+    pos relative
+    color white
+    fontify 15px 600 24px
+    border-bottom 2px dotted $orange
+    transition .7s border
+    &:hover
+      border-color transparent
+    &:after
+      content ""
+      pos absolute
+      r -18px
+      t 6px
+      size 6px 8px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAPFBMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///+NNenzAAAAEnRSTlMA0TH6fgTLKvdz9WzGJfh3AywziBNfAAAAAWJLR0QTDLtclgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAC5JREFUCNdjYGRiAAEhZhZWECUkxMYOpoQ4OMEUFzeI4uEFCvLxCwCVsAmC1AMALcMBwHP7aocAAAAASUVORK5CYII=') no-repeat center
+      @media $PortraitMin
+        dn()

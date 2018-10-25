@@ -1,0 +1,85 @@
+.banner
+  h calc(100vh - 80px)
+  pl calc((100% - 1440px) / 2)
+  @media $lDesktopMax
+    pl 200px
+  @media $LandscapeMax
+    pl 0
+    h auto
+    pt 200px
+    pb 40px
+  @media $PortraitMedium
+    pt 170px
+  &__inner
+    max-width 950px
+    margin 0 auto
+    @media $desktopMax
+      max-width 745px
+    @media $desktopMedium
+      max-width 590px
+    @media $LandscapeMax
+      max-width 100%
+      padding 0 35px
+  &__title
+    font-family $cyr
+    color $orange
+    fontify 100px 400 104px
+    @media $lDesktopMedium
+      fontify 80px 400 84px
+    @media $desktopMedium
+      fontify 64px 400 60px
+    @media $LandscapeMax
+      fontify 44px 400 40px
+    @media $PortraitMax
+      fontify 30px 400 32px
+  &__subtitle
+    color white
+    fontify 18px 400 26px
+    mt 32px
+    @media $desktopMax
+      fontify 16px 400 24px
+    @media $desktopMax
+      fontify 14px 400 24px
+      mt 20px
+  &__car
+    .swiper-slide
+      h calc(100vh - 80px)
+      display flex
+      align-items center
+      @media $LandscapeMax
+        h auto
+        align-items flex-start
+        pb 100px
+      @media $PortraitMedium
+        pb 70px
+    .swiper-pagination
+      dn()
+      b 0
+      text-align left
+      l 35px
+      r 35px
+      @media $LandscapeMax
+        db()
+    .swiper-pagination-bullet
+      bgc white
+      size 14px
+      margin 0 9px
+      transition .7s background, .7s opacity
+      &:first-child
+        ml 0
+      &-active
+        bgc $orange
+        opacity 1
+    .swiper-buttons
+      @media $LandscapeMax
+        dn()
+    .swiper-button-prev
+      @media $desktopMax
+        l 45px
+      @media $desktopMedium
+        l 35px
+    .swiper-button-next
+      @media $desktopMax
+        r 45px
+      @media $desktopMedium
+        r 35px

@@ -1,0 +1,218 @@
+.socials
+  pos absolute
+  z-index 2
+  r 60px
+  t 60px
+  df()
+  @media $desktopMax
+    r 50px
+    t 50px
+  @media $LandscapeMax
+    t 35px
+    r 95px
+  @media $PortraitMedium
+    r 75px
+  @media $PortraitMin
+    dn()
+  &__href
+    size 26px
+    border-radius 50%
+    transition .7s background
+    & + &
+      ml 10px
+    &[data-type="vk"]
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA4VBMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///+CItTVAAAASXRSTlMAJna85vk/wgiY/hLGCsibwy+BY1WOqAYHg+9nZmK+TxCSTb/AdB1p9RzcRLrPBA38fGr7TDWkA/2TKxGdCwwogkCZEwnFd+f6XOZVNQAAAAFiS0dESh4MtcYAAAAJb0ZGcwAABuIAAAA8AJGFQIIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAB4AAABZBAD8MNtkAAAD6SURBVCjPhZJ5e8FAEId/2BAhQdDQatAqdfRQetE2bub7fyG1h6YRvP/MZN/n2czMDiCJRGNM01gsGsF/4gnak4j7hJ40yIeR1JVJpSlAOiWMadEBlslVhkLI8AqMMGXsaslSKFkgR0fIweYxXyjShVMq0+VV5VooGy6PVTiMaqhQHbgR6haMxwZwR0207tswO0IxaCLpQu85qOaBuvyXptTDoxzN0/NeMZn11dheSF3oymww/D1+fXsHiqoMW/Xx8Tka9+nr+8cT35NTLZ8Y1LHxTnclzcLU7NxTYn7grLnqchFcG9O/bMs/s5wGNtFbuevNZu2uPHWyBaWKfzoFHkODAAAAAElFTkSuQmCC') no-repeat center
+      &:hover
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA3lBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////82KaFZAAAASXRSTlMAJna85vk/wgiY/hLGCsibwy+BY1WOqAYHg+9nZmK+TxCSTb/AdB1p9RzcRLrPBA38fGr7TDWkA/2TKxGdCwwogkCZEwnFd+f6XOZVNQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAD6SURBVCjPhZJ5e8FAEId/2BAhQdDQatAqdfRQetE2bub7fyG1h6YRvP/MZN/n2czMDiCJRGNM01gsGsF/4gnak4j7hJ40yIeR1JVJpSlAOiWMadEBlslVhkLI8AqMMGXsaslSKFkgR0fIweYxXyjShVMq0+VV5VooGy6PVTiMaqhQHbgR6haMxwZwR0207tswO0IxaCLpQu85qOaBuvyXptTDoxzN0/NeMZn11dheSF3oymww/D1+fXsHiqoMW/Xx8Tka9+nr+8cT35NTLZ8Y1LHxTnclzcLU7NxTYn7grLnqchFcG9O/bMs/s5wGNtFbuevNZu2uPHWyBaWKfzoFHkODAAAAAElFTkSuQmCC')
+    &[data-type="inst"]
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAq1BMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf////kh9ZAAAAAN3RSTlMAJna85vk/wgiY/hLGCsibwy/lRwVIgUKKZr4CD2tlroS/3d8UbBAGTFOC6QlU60CZE8Uod+f6Gn3OtgAAAAFiS0dEOKAHpdYAAAAJb0ZGcwAABwYAAAA8ALonEqIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAB4AAABZBAD8MNtkAAADiSURBVCjPhZLpEoIwDIQDcigCoiIq4i2eKIdK3//NpJIWBNT908x+M+k2DQBKEFuSLEstUYBPKSrhUpUSaHc0UpLWaTPS1UlFejcnhklqMo036pEG9d4JtCak0SwWaZQF0MdyMLRpD3s0QKMPDlbjPNNkOkTDARerGYA3X3jLlY3GGiSsMrIhZLsDQEMCmSOfHj5H8i9UNNxXG7IYh+wyf+plc+MxWPgjG/YJjTN/8uV4oCC43viTfwzq23hD2iNqQtG/r4S4xsyY5Q2qa2OUly0pSBJWNvH+cJ9p+nQfd+a8AAGVX3hQV87zAAAAAElFTkSuQmCC') no-repeat center
+      &:hover
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAqFBMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VRVRbAAAAN3RSTlMAJna85vk/wgiY/hLGCsibwy/lRwVIgUKKZr4CD2tlroS/3d8UbBAGTFOC6QlU60CZE8Uod+f6Gn3OtgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADiSURBVCjPhZLpEoIwDIQDcigCoiIq4i2eKIdK3//NpJIWBNT908x+M+k2DQBKEFuSLEstUYBPKSrhUpUSaHc0UpLWaTPS1UlFejcnhklqMo036pEG9d4JtCak0SwWaZQF0MdyMLRpD3s0QKMPDlbjPNNkOkTDARerGYA3X3jLlY3GGiSsMrIhZLsDQEMCmSOfHj5H8i9UNNxXG7IYh+wyf+plc+MxWPgjG/YJjTN/8uV4oCC43viTfwzq23hD2iNqQtG/r4S4xsyY5Q2qa2OUly0pSBJWNvH+cJ9p+nQfd+a8AAGVX3hQV87zAAAAAElFTkSuQmCC')
+    &[data-type="fb"]
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAflBMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///+/v8VLAAAAKHRSTlMAJna85vk/wgiY/hLGCsibwy+qEYEzvru/RFWIzGaCQJkTCcUod+f6g3QTBQAAAAFiS0dEKcq3hSQAAAAJb0ZGcwAAByoAAAA8AMpJ1+8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAB4AAABZBAD8MNtkAAAC7SURBVCjPhZLZFoIgGIRHBfd9K8tSc+P9n7C0RFybK4bvHJgfBvhJkhVCKVFkCUupGuPSVAHohskEmYY+EctmK9nWlzgu28h1RuSxHXljAnMPmUMWn+3KBwLBhhHATYBYQAkQcRMjFRBwmc0VZD4uA5IbtwSUr+9D3oxbKqD8wx6hgMjRXeQsRnyEnouRI+SzCc4e6uh5i2GUcg+V/74S1Ya51VSO17o2jli2eiZ1sWpi06Zd33dp20w7b6c0S1gCRRHgAAAAAElFTkSuQmCC') no-repeat center
+      &:hover
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAe1BMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////QYBnOAAAAKHRSTlMAJna85vk/wgiY/hLGCsibwy+qEYEzvru/RFWIzGaCQJkTCcUod+f6g3QTBQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAC7SURBVCjPhZLZFoIgGIRHBfd9K8tSc+P9n7C0RFybK4bvHJgfBvhJkhVCKVFkCUupGuPSVAHohskEmYY+EctmK9nWlzgu28h1RuSxHXljAnMPmUMWn+3KBwLBhhHATYBYQAkQcRMjFRBwmc0VZD4uA5IbtwSUr+9D3oxbKqD8wx6hgMjRXeQsRnyEnouRI+SzCc4e6uh5i2GUcg+V/74S1Ya51VSO17o2jli2eiZ1sWpi06Zd33dp20w7b6c0S1gCRRHgAAAAAElFTkSuQmCC')
+    
+
+.header
+  pos absolute
+  z-index 2
+  l 0
+  w calc((100% - 1438px) / 2)
+  border-right 1px solid rgba(255, 255, 255, .1)
+  padding 61px 60px 30px
+  h 100vh
+  @media $lDesktopMax
+    w 200px
+    padding 40px 50px 30px
+  @media $desktopMax
+    w 195px
+  @media $LandscapeMax
+    l -195px
+  @media $LandscapeMax
+    pt 20px
+  &__logo
+    db()
+    pos relative
+    l -12px
+    mb 92px
+    @media $lDesktopMax
+      mb 68px
+      l -11px
+      w 120px
+    @media $LandscapeMax
+      l 174px
+      w 100px
+    &-img
+      max-width 100%
+  &__shadow
+    pos fixed
+    z-index 12
+    b 0
+    h 0
+    w 100%
+    l 0
+    bgc #3c2c24
+    transition .7s height
+  &__button
+    dn()
+    pos fixed
+    r 35px
+    t 35px
+    w 25px
+    h 25px
+    z-index 15
+    @media $LandscapeMax
+      db()
+    &:before
+      content ""
+      pos absolute
+      t 0
+      r 0
+      w 25px
+      h 2px
+      bgc $orange
+      transition .5s width, .5s background, .5s transform, .5s top
+    &:after
+      content ""
+      pos absolute
+      b 0
+      r 0
+      w 25px
+      h 2px
+      bgc $orange
+      transition .5s width, .5s background, .5s transform, .5s top  
+    &-meat
+      content ""
+      pos absolute
+      t 50%
+      r 0
+      w 25px
+      h 2px
+      mt -1px
+      bgc $orange
+      transition .5s width, .5s background, .5s transform, .5s top  
+    &:not(.open):hover
+      &:before
+        animation burger-hover 1s infinite ease-in-out alternate
+      &:after
+        animation burger-hover 1s infinite ease-in-out alternate forwards 400ms
+    &:not(.open):hover &-meat
+      animation burger-hover 1s infinite ease-in-out alternate forwards 200ms
+    &.open
+      &:before
+        animation burger-top 1s ease-in-out forwards
+      &:after
+        animation burger-bottom 1s ease-in-out forwards
+      & ^[-1]-meat
+        opacity 0
+    &.open.remove
+      &:before
+        animation burger-top-invert 1s ease-in-out forwards
+      &:after
+        animation burger-bottom-invert 1s ease-in-out forwards
+      & ^[-1]-meat
+        opacity 1
+        transition .4s opacity .6s
+        
+        
+@keyframes burger-hover
+  0%
+    w 100%
+  50%
+    w 50%
+  100%
+    w 100%
+      
+@keyframes burger-top
+  0%
+    t 0
+  40%
+    t 11px
+  60%
+    t 11px
+    transform rotate(0)
+  100%
+    t 11px
+    transform rotate(45deg)
+    
+@keyframes burger-bottom
+  0%
+    b 0
+  40%
+    b 12px
+  60%
+    b 12px
+    transform rotate(0)
+  100%
+    b 12px
+    transform rotate(-45deg)
+
+@keyframes burger-top-invert
+  0%
+    t 12px
+    transform rotate(45deg)
+  40%
+    t 12px
+    transform rotate(0)
+  60%
+    t 12px
+  100%
+    t 0
+    
+@keyframes burger-bottom-invert
+  0%
+    b 12px
+    transform rotate(-45deg)
+  40%
+    b 12px
+    transform rotate(0)
+  60%
+    b 12px
+  100%
+    b 0
+    
+    
+html.burgeropen
+  overflow hidden
+  body
+    overflow hidden
+  .header
+    &__shadow
+      h 100%
+    .menu
+      l 0
+      opacity 1
+      transition-delay .7s
+    
+html.touchevents
+  .header__button
+    &:not(.open):hover
+      &:before
+        animation none
+      .header__button-meat
+        animation none
+      &:after
+        animation none
+    &:not(.open):hover .burger__button-meat
+      animation none

@@ -1,0 +1,242 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body.index
+    +b.MAIN.content
+    
+      section.bgfixed(style="background-image: url('img/banner.jpg')")
+        include layout/__socials
+        include layout/__menu
+        
+        
+        +b.SECTION.banner
+          +e.car.swiper-container.js-banner
+            .swiper-wrapper
+              .swiper-slide
+                +e.inner
+                  +e.P.title Хорошее пиво - благородный напиток!
+                  +e.P.subtitle(data-swiper-parallax="-200") Наше пиво поможет не только утолить жажду, но и чувство голода. Пользуется популярностью в любое время года. Исторически, предприятие основано в 1994 году.
+              .swiper-slide
+                +e.inner
+                  +e.P.title Короткий заголовок
+                  +e.P.subtitle(data-swiper-parallax="-200") Наше пиво поможет не только утолить жажду, но и чувство голода. Пользуется популярностью в любое время года. Исторически, предприятие основано в 1994 году.
+              .swiper-slide
+                +e.inner
+                  +e.P.title Заголовок подлиннее, не исключено даже, что в 3 строки!
+                  +e.P.subtitle(data-swiper-parallax="-200") Наше пиво поможет не только утолить жажду, но и чувство голода. Пользуется популярностью в любое время года. Исторически, предприятие основано в 1994 году.
+            .swiper-pagination
+            .swiper-buttons
+              .swiper-button-prev
+              .swiper-button-next
+              
+              
+        +b.SECTION.products
+          .container.common__pad
+            +e.SPAN.dec1.decor_type1
+            +e.SPAN.dec2.decor_type2
+            +e.SPAN.dec3.decor_type3
+            +e.P.title Наша продукция
+            +e.tabs
+              +e.tab.active.js-products-tab(type="button", data-tab="b") Пиво
+              +e.tab.js-products-tab(type="button", data-tab="k") Квас
+              +e.tab.js-products-tab(type="button", data-tab="p") Полиэтиленовая тара
+            +e.blocks
+              +e.block.active.js-products-block(data-tab="b")
+                +e.car.swiper-container.js-products
+                  .swiper-wrapper
+                    .swiper-slide
+                      +e.content
+                        +e.name(href="#") Изумруд
+                        +e.P.dsc Пиво темное, фильтрованное, пастеризованное
+                      +e.ASIDE.imgover
+                        +e.img(src="img/product1.png")
+                    .swiper-slide
+                      +e.content
+                        +e.name(href="#") Янтарь
+                        +e.P.dsc Пиво светлое, фильтрованное, пастеризованное
+                      +e.ASIDE.imgover
+                        +e.img(src="img/product2.png")
+                    .swiper-slide
+                      +e.content
+                        +e.name(href="#") Жигулевское
+                        +e.P.dsc Пиво фильтрованное, пастеризованное
+                      +e.ASIDE.imgover
+                        +e.img(src="img/product3.png")
+              +e.block.js-products-block(data-tab="k")
+                +e.car.swiper-container.js-products
+                  .swiper-wrapper
+                    .swiper-slide
+                      +e.content
+                        +e.name(href="#") Квас1
+                        +e.P.dsc Пиво темное, фильтрованное, пастеризованное
+                      +e.ASIDE.imgover
+                        +e.img(src="img/product1.png")
+                    .swiper-slide
+                      +e.content
+                        +e.name(href="#") Квас2
+                        +e.P.dsc Пиво светлое, фильтрованное, пастеризованное
+                      +e.ASIDE.imgover
+                        +e.img(src="img/product2.png")
+                    .swiper-slide
+                      +e.content
+                        +e.name(href="#") Квас3
+                        +e.P.dsc Пиво фильтрованное, пастеризованное
+                      +e.ASIDE.imgover
+                        +e.img(src="img/product3.png")
+              +e.block.js-products-block(data-tab="p")
+                +e.car.swiper-container.js-products
+                  .swiper-wrapper
+                    .swiper-slide
+                      +e.content
+                        +e.name(href="#") Тара1
+                        +e.P.dsc Пиво темное, фильтрованное, пастеризованное
+                      +e.ASIDE.imgover
+                        +e.img(src="img/product1.png")
+                    .swiper-slide
+                      +e.content
+                        +e.name(href="#") Тара2
+                        +e.P.dsc Пиво светлое, фильтрованное, пастеризованное
+                      +e.ASIDE.imgover
+                        +e.img(src="img/product2.png")
+                    .swiper-slide
+                      +e.content
+                        +e.name(href="#") Тара3
+                        +e.P.dsc Пиво фильтрованное, пастеризованное
+                      +e.ASIDE.imgover
+                        +e.img(src="img/product3.png")
+            +e.toall.common__href(href="#") Вся продукция
+          
+          
+      section.bgfixed(style="background-image: url('img/banner2.jpg')")
+        +b.SECTION.feats
+          .container
+            +e.P.title Наше качество
+            +e.UL.list
+              +e.item
+                +e.ASIDE.imgover
+                  +e.icon(src="img/feat1.png")
+                +e.P.text Традиционные технологии и рецепты советского времени
+              +e.item
+                +e.ASIDE.imgover
+                  +e.icon(src="img/feat2.png")
+                +e.P.text Контроль за соблюдением технологии производств
+              +e.item
+                +e.ASIDE.imgover
+                  +e.icon(src="img/feat3.png")
+                +e.P.text Современные условия хранения и системы контроля качества
+              +e.item
+                +e.ASIDE.imgover
+                  +e.icon(src="img/feat4.png")
+                +e.P.text Современное высококачественное оборудование
+              +e.item
+                +e.ASIDE.imgover
+                  +e.icon(src="img/feat5.png")
+                +e.P.text Высокая квалификация ведущих специалистов
+        
+        +b.SECTION.about
+          .container
+            +e.shift
+              +e.P.title О компании
+              +e.text
+                p «Пивоварня Златоуста» - это два, юридически, самостоятельных предприятия объединенные в единое производство.
+                p В  состав объединения входят ООО «Пегас» и ООО «Пивоиндустрия». Исторически, предприятие основано в 1994г., как образцовое подразделение знаменитого производственного объединения «Златоустовский Машиностроительный завод» – участвовавшего в разработке и изготовлении морских баллистических ракетных комплексов и в связи с решением советского правительства, приступившего к изготовлению современного высококачественного оборудования – мини пивоварни.
+              +e.href.common__href(href="#") Читать далее
+          
+        +b.SECTION.awards
+          .container.common__pad
+            +e.P.title Наши награды
+            +e.car.swiper-container.js-awards
+              .swiper-wrapper
+                .swiper-slide
+                  +e.content
+                    +e.P.name Пивной аукцион
+                    +e.P.dsc Золотая медаль за пиво «Янтарь»
+                    +e.P.info г.Санкт-Петербург, 2004 г. 
+                  +e.img(src="img/award1.png")
+                .swiper-slide
+                  +e.content
+                    +e.P.name Пивная Ярмарка Сибири
+                    +e.P.dsc Малая золотая медаль за пиво «Булатное»
+                    +e.P.info г.Новосибирск, 2011 г.
+                  +e.img(src="img/award2.png")
+                .swiper-slide
+                  +e.content
+                    +e.P.name Пивной аукцион
+                    +e.P.dsc Золотая медаль за пиво «Изумруд темное»
+                    +e.P.info г.Санкт-Петербург, 1999 г.
+                  +e.img(src="img/award3.png")
+            +e.toall.common__href(href="#") Все награды
+      
+      +b.SECTION.video(style="background-image: url('img/video.jpg')")
+        .container
+          +e.P.title Высококачественное «живое» пиво по традиционным технологиям и рецептам советского времени.
+          +e.href(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox="") Смотреть видео о производстве
+      
+      +b.SECTION.news
+        .container
+          +e.SPAN.dec1.decor_type4
+          +e.SPAN.dec2.decor_type5
+          +e.SPAN.dec3.decor_type6
+          +e.P.title Новости
+          +e.UL.list
+            +e.item._large
+              +e.imgover(href="#")
+                +e.img.fit(src="img/news1.jpg")
+              +e.content
+                +e.P.date 28 августа 2018
+                +e.href(href="#") 
+                  span.js-shave(data-height="150") Анонс Гонки «Рипейский Солнцеворот 2013»
+                +e.P.about.js-shave(data-height="124") Приглашаем всех любителей маунтинбайка принять участие в соревнованиях, проходящих в самых красивых и техничных горах Южного Урала.
+            +e.item
+              +e.imgover(href="#")
+                +e.img.fit(src="img/news2.jpg")
+              +e.content
+                +e.P.date 15 мая 2013
+                +e.href(href="#") 
+                  span.js-shave(data-height="93") Новый сорт пива совсем скоро поступит в продажу
+            +e.item
+              +e.imgover(href="#")
+                +e.img.fit(src="img/news3.jpg")
+              +e.content
+                +e.P.date 15 мая 2013
+                +e.href(href="#") 
+                  span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
+          +e.toall.common__href(href="#") Все новости
+      
+      +b.SECTION.feedback
+        .container
+          +e.SPAN.dec1.decor_type2
+          +e.ASIDE.side
+            +e.P.title Обратная связь
+            +e.text 
+              p Мы всегда рады ответить на любые вопросы, касающиеся нашей продукции.
+              p Обратите внимание, все поля обязательны для заполнения.
+          +e.FORM.form
+            .common__row
+              .common__col
+                .common__row
+                  input(type="text", data-req).common__input
+                  label.common__placeholder Ваше имя
+                .common__row
+                  input(type="text", data-req).common__input
+                  label.common__placeholder Электронная почта
+                .common__row
+                  input(type="text", data-req).common__input.js-phone
+                  label.common__placeholder Номер телефона
+              .common__col
+                textarea(data-req).common__textarea
+                label.common__placeholder Текст сообщения
+            .common__row
+              .fakecheckbox
+                input(type="checkbox", value="", name="agreement", checked)#agreement.fakecheckbox__truecheck
+                label(for="agreement").fakecheckbox__label Принимаю 
+                  a(href="#") политику конфиденциальности
+                  |  и даю согласие на 
+                  a(href="#") обработку персональных данных
+              +e.sbm(type="submit") Отправить
+                span Некоторые обязательные поля не заполнены или заполнены с ошибкой.
+    include layout/__footer
+    include layout/__scripts

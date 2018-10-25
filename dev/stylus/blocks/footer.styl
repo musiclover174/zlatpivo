@@ -1,0 +1,36 @@
+.footer
+  .container
+    df(center, space-between)
+    h 80px
+    @media $PortraitMedium
+      dfv()
+      h auto
+      padding 25px 0
+  &__copy
+    color $dark
+    fontify 14px 400 24px
+  &__dextra
+    pos relative
+    color $dark
+    font-family Verdana, Geneva, sans-serif
+    fontify 9px 400 14px
+    text-transform uppercase
+    letter-spacing 0.18em
+    @media $PortraitMedium
+      mt 20px
+      l 84px
+    span
+      pos absolute
+      t 3px
+      r calc(100% + 10px)
+      bgc #47312f
+      color white
+      font-family Arial
+      fontify 12px 900 21px
+      text-transform uppercase
+      letter-spacing 0.1em
+      border-radius 2px
+      padding 0 6px
+      transition 0.7s background
+    &:hover span
+      bgc $orange
