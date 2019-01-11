@@ -1,85 +1,94 @@
 .banner
-  h calc(100vh - 80px)
-  pl calc((100% - 1440px) / 2)
-  @media $lDesktopMax
-    pl 200px
+  h 100vh
+  dfv(flex-start, flex-end)
+  pb 8%
+  pos relative
   @media $LandscapeMax
-    pl 0
     h auto
     pt 200px
     pb 40px
-  @media $PortraitMedium
-    pt 170px
+  @media $LandscapeMedium
+    pt 160px
+  @media $LandscapeMin
+    pt 180px
+  &__tonext
+    size 0
+    white-space nowrap
+    pos absolute
+    b 95px
+    r 100px
+    color $orange
+    fontify 13px 600 13px
+    text-transform uppercase
+    transform rotate(-90deg)
+    transform-origin 100% 0
+    @media $desktopMedium
+      r 58px
+    @media $LandscapeMax
+      dn()
+    &:before
+      content ""
+      size 8px 34px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAiCAMAAABV5mjpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX////1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///94Y1dLAAAAOnRSTlMAAAECBAYHCwoRGRoiJC0uPD1LTF1eboCBj5Kfrb3HydHS7evy9fj3+fv6/P3nTv7mW/Q3cepzh6Cd6aRfgwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAQoLLA1FDPKqAAAAkElEQVQY0z3LxxKCUBQD0BuKir1iAaygqAgCIvr+/8P0ORmzyJxFIiKAAdGB+YdJWBZhN4hmi3Acot0huj2iPyCGI2I8IaYzwnWJ+YJYrgjPI3yfCAINAOvNtzS2O2J/IMKQiCLieCLimDhfiGuiYQPJF7bcUmQZ0rvkRamyssgFj0qp6qnHtVL172W83gbwAWSECuhANm/TAAAAAElFTkSuQmCC') no-repeat center
+      pos absolute
+      l -30px
+      t -10px
+      transform rotate(90deg)
+      animation arrow 1s ease-in-out infinite
   &__inner
-    max-width 950px
+    max-width 1110px
+    padding 0 30px
     margin 0 auto
     @media $desktopMax
-      max-width 745px
+      max-width 845px
     @media $desktopMedium
-      max-width 590px
+      max-width 80%
+    @media $desktopMin
+      max-width 85%
     @media $LandscapeMax
       max-width 100%
       padding 0 35px
+    @media $LandscapeMedium
+      padding 0 20px
   &__title
     font-family $cyr
-    color $orange
-    fontify 100px 400 104px
-    @media $lDesktopMedium
-      fontify 80px 400 84px
-    @media $desktopMedium
-      fontify 64px 400 60px
+    color white
+    transform rotate(-9deg)
+    fontify 110px 400 100px
+    ml 49px
+    @media $desktopMax
+      fontify 84px 400 80px
     @media $LandscapeMax
-      fontify 44px 400 40px
-    @media $PortraitMax
+      fontify 64px 400 60px
+    @media $LandscapeMedium
+      ml 0
+    @media $LandscapeMin
       fontify 30px 400 32px
+      transform none
   &__subtitle
     color white
-    fontify 18px 400 26px
-    mt 32px
-    @media $desktopMax
-      fontify 16px 400 24px
+    fontify 16px 400 24px
+    margin 115px 0 0 auto
+    text-align right
+    max-width 760px
     @media $desktopMax
       fontify 14px 400 24px
-      mt 20px
-  &__car
-    .swiper-slide
-      h calc(100vh - 80px)
-      display flex
-      align-items center
-      @media $LandscapeMax
-        h auto
-        align-items flex-start
-        pb 100px
-      @media $PortraitMedium
-        pb 70px
-    .swiper-pagination
-      dn()
-      b 0
+      mt 85px
+      max-width 690px
+    @media $LandscapeMedium
+      max-width 80%
+    @media $LandscapeMin
+      max-width 100%
       text-align left
-      l 35px
-      r 35px
-      @media $LandscapeMax
-        db()
-    .swiper-pagination-bullet
-      bgc white
-      size 14px
-      margin 0 9px
-      transition .7s background, .7s opacity
-      &:first-child
-        ml 0
-      &-active
-        bgc $orange
-        opacity 1
-    .swiper-buttons
-      @media $LandscapeMax
-        dn()
-    .swiper-button-prev
-      @media $desktopMax
-        l 45px
-      @media $desktopMedium
-        l 35px
-    .swiper-button-next
-      @media $desktopMax
-        r 45px
-      @media $desktopMedium
-        r 35px
+      mt 35px
+
+@keyframes arrow {
+  from,
+  to { 
+    l -30px 
+  }   
+
+  50% { 
+   l -28px
+  }
+}

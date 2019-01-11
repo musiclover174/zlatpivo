@@ -1,17 +1,9 @@
 .socials
-  pos absolute
   z-index 2
-  r 60px
-  t 60px
   df()
-  @media $desktopMax
-    r 50px
-    t 50px
+  mr 56px
   @media $LandscapeMax
-    t 35px
-    r 95px
-  @media $PortraitMedium
-    r 75px
+    mr 26px
   @media $PortraitMin
     dn()
   &__href
@@ -33,36 +25,25 @@
       &:hover
         background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAe1BMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////QYBnOAAAAKHRSTlMAJna85vk/wgiY/hLGCsibwy+qEYEzvru/RFWIzGaCQJkTCcUod+f6g3QTBQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAC7SURBVCjPhZLZFoIgGIRHBfd9K8tSc+P9n7C0RFybK4bvHJgfBvhJkhVCKVFkCUupGuPSVAHohskEmYY+EctmK9nWlzgu28h1RuSxHXljAnMPmUMWn+3KBwLBhhHATYBYQAkQcRMjFRBwmc0VZD4uA5IbtwSUr+9D3oxbKqD8wx6hgMjRXeQsRnyEnouRI+SzCc4e6uh5i2GUcg+V/74S1Ya51VSO17o2jli2eiZ1sWpi06Zd33dp20w7b6c0S1gCRRHgAAAAAElFTkSuQmCC')
     
-
 .header
   pos absolute
   z-index 2
   l 0
-  w calc((100% - 1438px) / 2)
-  border-right 1px solid rgba(255, 255, 255, .1)
-  padding 61px 60px 30px
-  h 100vh
-  @media $lDesktopMax
-    w 200px
-    padding 40px 50px 30px
-  @media $desktopMax
-    w 195px
-  @media $LandscapeMax
-    l -195px
-  @media $LandscapeMax
-    pt 20px
+  t 0
+  r 0
+  padding 50px 87px 0
+  df(flex-start, space-between)
+  @media $desktopMedium
+    padding 30px 47px 0
+  @media $LandscapeMedium
+    padding 20px 20px 0
+  &__side
+    df()
   &__logo
     db()
     pos relative
-    l -12px
-    mb 92px
-    @media $lDesktopMax
-      mb 68px
-      l -11px
-      w 120px
-    @media $LandscapeMax
-      l 174px
-      w 100px
+    t -11px
+    max-width 120px
     &-img
       max-width 100%
   &__shadow
@@ -75,21 +56,17 @@
     bgc #3c2c24
     transition .7s height
   &__button
-    dn()
-    pos fixed
-    r 35px
-    t 35px
-    w 25px
+    pos relative
+    w 33px
     h 25px
+    cursor pointer
     z-index 15
-    @media $LandscapeMax
-      db()
     &:before
       content ""
       pos absolute
       t 0
       r 0
-      w 25px
+      w 100%
       h 2px
       bgc $orange
       transition .5s width, .5s background, .5s transform, .5s top
@@ -98,7 +75,7 @@
       pos absolute
       b 0
       r 0
-      w 25px
+      w 100%
       h 2px
       bgc $orange
       transition .5s width, .5s background, .5s transform, .5s top  
@@ -107,7 +84,7 @@
       pos absolute
       t 50%
       r 0
-      w 25px
+      w 100%
       h 2px
       mt -1px
       bgc $orange

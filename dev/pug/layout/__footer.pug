@@ -4,7 +4,12 @@ button(type="button").totop.js-totop
 
 +b.FOOTER.footer
   .container
-    +e.P.copy © ООО «Пегас», 2018
+    +e.ASIDE.side
+      +e.P.copy © ООО «Пегас», 2018
+      +e.NAV.socials
+        +e.socials-elem(href="https://www.instagram.com/varniyapegas_zlat/", target="_blank", data-type="inst")
+        +e.socials-elem(href="https://vk.com/varniyapegas", target="_blank", data-type="vk")
+        +e.socials-elem(href="#", target="_blank", data-type="fb")
     +e.dextra(href="https://www.dextra.ru/", target="_blank")
       span dextra
       | Разработка<br>сайта

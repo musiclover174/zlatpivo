@@ -24,20 +24,36 @@ body
     .footer
       opacity 1
     .content
-      z-index auto
+      z-index 1
       
 .container
   w 100%
   max-width 1440px
+  padding 0 87px
   margin 0 auto
   pos relative
   z-index 1
   @media $lDesktopSmall
     max-width calc(100% - 100px)
   @media $desktopMedium
-    max-width calc(100% - 70px)
-    
+    max-width 100%
+    padding 0 47px
+  @media $LandscapeMedium
+    padding 0 20px
+
+.index .content
+  bgc $blue
+
 .content
+  &__video
+    position fixed
+    z-index -1
+    t 50%
+    l 50%
+    min-height 100%
+    min-width 100%
+    transform translate(-50%, -50%)
+    opacity .7
   h1:not([class])
     color black
     fontify 72px 700 76px
@@ -97,10 +113,8 @@ body
       fontify 15px 400 23px
   p:not([class])
     color white
-    fontify 18px 300 27px
-    margin 22px 0
-    @media $desktopMax
-      fontify 16px 300 24px
+    margin 25px 0
+    fontify 16px 300 24px
     @media $LandscapeMax
       fontify 14px 300 24px
   a:not([class])
@@ -160,24 +174,26 @@ div[class\^="table-scroller"]
     
 .common
   &__pad
-    pl 59px
-    pr 59px
-    @media $desktopMax
-      pl 48px
-      pr 48px
-    @media $desktopMin
-      pl 35px
-      pr 35px
+    pl 87px
+    pr 87px
+    @media $desktopMedium
+      pl 47px
+      pr 47px
+    @media $LandscapeMedium
+      pl 20px
+      pr 20px
   &__href
     pos relative
     ib()
     mr 21px
-    color white
+    color $dark
     fontify 15px 600 24px
     border-bottom 2px solid $orange
     transition .7s border
     @media $desktopMax
       fontify 14px 600 24px
+    &_white
+      color white
     &:before
       content ""
       pos absolute
@@ -195,19 +211,17 @@ div[class\^="table-scroller"]
     border-bottom 2px solid white
     bgc transparent
     color white
+    font-size 14px
     font-family $os
-    font-size 16px
     line-height 400
     transition .5s border
-    @media $desktopMax
-      font-size 14px
     &:focus + ^[0]__placeholder,
     &.notempty + ^[0]__placeholder
       fontify 11px 400 11px
       t -12px
   &__textarea
     w 100%
-    h 192px
+    h 188px
     overflow hidden
     resize none
     padding 5px 0
@@ -215,12 +229,9 @@ div[class\^="table-scroller"]
     border-bottom 2px solid #ececec
     bgc transparent
     color white
+    font-size 14px
     font-family $os
-    fontify 16px 400 24px
     transition .5s border
-    @media $desktopMax
-      h 188px
-      font-size 14px
     @media $PortraitMax
       h 100px
     &:focus + ^[0]__placeholder,
@@ -242,7 +253,7 @@ div[class\^="table-scroller"]
     l 0 
     t 0
     color alpha(white, .5)
-    fontify 16px 400 36px
+    fontify 14px 400 36px
     text-overflow ellipsis
     white-space nowrap
     overflow hidden
@@ -269,9 +280,7 @@ div[class\^="table-scroller"]
     @media $PortraitMax
       flex-direction column
     & + &
-      mt 39px
-      @media $desktopMax
-        mt 37px
+      mt 37px
       @media $PortraitMax
         mt 30px
   &__fileover
@@ -340,12 +349,10 @@ div[class\^="table-scroller"]
   &__label
     ib()
     color white
-    fontify 16px 400 24px
+    fontify 14px 400 24px
     pos relative
     pl 29px
     pt 7px
-    @media $desktopMax
-      fontify 14px 400 24px
     &:before 
       content ""
       pos absolute
@@ -432,7 +439,7 @@ textarea.warning
   
 .decor
   pos absolute
-  opacity .09
+  opacity .2
   background-position center
   background-repeat no-repeat
   @media $LandscapeMax
@@ -455,7 +462,20 @@ textarea.warning
   &_type6
     size 237px 284px
     background-image url('../i/dec6.png')
-  
+  &_type7
+    size 188px 254px
+    background-image url('../i/dec7.png')
+  &_type8
+    opacity .04
+    size 344px 196px
+    background-image url('../i/dec8.png')
+  &_type9
+    size 245px 230px
+    background-image url('../i/dec9.png')
+  &_type10
+    size 233px 269px
+    background-image url('../i/dec10.png')
+
 .tippy-tooltip.light-theme
   bgc white
   box-shadow 0 6px 32px rgba(0, 0, 0, 0.21)

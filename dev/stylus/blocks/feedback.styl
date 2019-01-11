@@ -1,30 +1,24 @@
 .feedback
-  bgc #3c2c24
-  padding 85px 0
-  @media $desktopMax
-    padding 77px 0 97px
-  @media $LandscapeMax
-    padding 60px 0 65px
+  bgc $blue
+  padding 58px 0 92px
+  overflow hidden
+  @media $LandscapeMedium
+    pb 62px
   .container
     df()
     @media $LandscapeMax
       dfv()
   &__side
-    w 456px
-    mr 36px
-    @media $desktopMax
-      w 30%
-      mr 30px
-      mt -5px
+    w calc(100% / 3 - 15px)
+    mr 30px
     @media $LandscapeMax
       w 100%
       mr 0
       mt 0
       mb 40px
   &__form
-    w calc(100% - 492px)
-    @media $desktopMax
-      w calc(70% - 30px)
+    w calc(200% / 3 - 15px)
+    mt 21px
     .fakecheckbox
       max-width 56%
       @media $LandscapeMax
@@ -34,14 +28,19 @@
     @media $LandscapeMax
       w 100%
   &__title
-    color $orange
-    font-family $cyr
-    fontify 72px 400 76px
-    mb 25px
-    @media $desktopMax
-      fontify 60px 400 64px
+    color white
+    fontify 45px 600 55px
+    mb 26px
+    max-width 290px
     @media $LandscapeMax
       fontify 40px 400 44px
+    @media $LandscapeMedium
+      fontify 30px 400 32px
+      max-width none
+  &__text
+    max-width 350px
+    @media $LandscapeMax
+      max-width none
   &__sbm
     cursor pointer
     pos relative
@@ -49,11 +48,13 @@
     color white
     fontify 15px 600 24px
     mt 8px
-    transition .7s color
+    border-bottom 2px solid $orange
+    transition .7s color, .7s border
     @media $PortraitMax
       mt 30px
     &:hover
       color $orange
+      border-bottom transparent
     &:after
       content ""
       pos absolute
@@ -83,5 +84,12 @@
         size 13px
         background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANAgMAAAAPhQzvAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAADFBMVEX1wBf1wBf1wBf////omFKUAAAAAnRSTlMAf7YpoZUAAAABYktHRAMRDEzyAAAACXBIWXMAAAsSAAALEgHS3X78AAAALUlEQVQI1xXEQQEAMAgDsfJBRNVMDyqmB5VcH4kkPdSnTk5DtdTJaaiWOjkNHWXqD9qQOyxQAAAAAElFTkSuQmCC') no-repeat center
   &__dec1
-    l 415px
-    b 5px
+    l -2px
+    b -64px
+    transform scaleX(-1)
+  &__dec2
+    l 328px
+    t -115px
+  &__dec3
+    r 27px
+    t -16px

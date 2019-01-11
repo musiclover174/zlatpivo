@@ -1,102 +1,94 @@
 .news
   pos relative
-  background-color #34241e
-  pt 101px
-  pb 70px
-  @media $desktopMax
-    pt 76px
+  bgc $cream
+  pt 81px
+  pb 54px
   @media $LandscapeMax
     pt 60px
   .container
     pos relative
   &__title
-    font-family $cyr
-    color $orange
-    fontify 72px 400 52px
-    mb 40px
-    @media $desktopMax
-      fontify 60px 400 52px
-      mb 37px
+    color $dark
+    fontify 60px 600 52px
+    mb 32px
+    ml -2px
     @media $LandscapeMax
-      fontify 40px 400 44px
-    @media $PortraitMax
-      fontify 30px 400 32px
+      fontify 50px 600 52px
+    @media $LandscapeMedium
+      fontify 30px 600 32px
   &__list
     df()
     flex-wrap wrap
-    ml -36px
-    w calc(100% + 36px)
+    ml -30px
+    w calc(100% + 30px)
   &__item
     pos relative
-    df(center)
-    w calc(50% - 36px)
-    h 254px
-    ml 36px
-    mb 36px
+    w calc(100% / 3 - 30px)
+    ml 30px
+    mb 30px
     overflow hidden
-    @media $desktopMax
-      ml 30px
-      mb 30px
-      w calc(50% - 30px)
-      h 224px
     @media $LandscapeMax
       w calc(100% - 30px)
+    @media $LandscapeMax
+      mb 0
+      & + &
+        mt 50px
     &_large
       @media $LandscapeMaxFrom
         w 100%
-        h 530px
-        @media $desktopMax
-          h 467px
+        h 390px
+        df(center, flex-start)
+        & ^[0]__imgover
+          pos absolute
+          r 0
+          t 0
+          w 57%
         & ^[0]__href
-          fontify 42px 600 50px
-          @media $desktopMax
-            fontify 36px 600 46px
+          fontify 36px 600 46px
         & ^[0]__content
-          max-width 40%
-          @media $desktopMin
-            max-width 60%
+          w 43%
+          pr 30px
+          mt 0
   &__imgover
     db()
-    pos absolute
-    t 0
-    r 0
-    w 65%
-    h 100%
+    w 100%
+    pt 51%
     overflow hidden
+    pos relative
     bgc #1e1e1c
-    @media $PortraitMax
-      w 80%
   &__img
     pos absolute
     l 0
     t 0
-    r 0
-    b 0
+    w 100%
+    h 100%
+    object-fit cover
+    font-family 'object-fit: cover;'
     opacity .5
-    object-fit contain
-    font-family 'object-fit: contain;'
     transition .7s opacity
   &__item:hover &__img
       opacity .8
   &__content
     pos relative
     z-index 1
-    max-width 60%
-    @media $PortraitMax
-      max-width 80%
+    max-width 80%
+    mt 25px
+    @media $LandscapeMax
+      mt 15px
   &__date
-    c alpha(white, .5)
-    fontify 16px 400 24px
-    mb 6px
-    @media $desktopMax
-      fontify 14px 400 24px
+    c alpha($dark, .5)
+    fontify 14px 400 24px
+    mb 8px
+    @media $LandscapeMax
+      mb 4px
+      fontify 13px 400 22px
   &__href
-    c white
-    fontify 21px 600 31px
+    c $dark
+    fontify 19px 600 29px
     border-bottom 2px solid $orange
     transition .7s border, .7s color
-    @media $desktopMax
-      fontify 19px 600 29px
+    @media $LandscapeMax
+      fontify 17px 600 26px
     &:hover
       color $orange
       border-color transparent
@@ -104,32 +96,32 @@
       pos relative
       t 2px
   &__about
-    c white
-    fontify 18px 400 26px
+    c $dark
+    fontify 16px 400 24px
     mt 25px
-    @media $desktopMax
-      fontify 16px 400 24px
     @media $LandscapeMax
       dn()
   &__toall
     pos absolute
-    r 0
+    r 86px
     t 30px
-    @media $desktopMax
-      t 26px
+    @media $desktopMedium
+      r 47px
     @media $LandscapeMax
-      t 17px
-    @media $LandscapeMin
+      t 26px
+    @media $LandscapeMedium
       pos relative
       r auto
       t 0
-      mt 30px
+      mt 50px
   &__dec1
-    l 351px
-    t -30px
+    l 828px
+    t 420px
   &__dec2
-    l 818px
-    b 250px
+    l -60px
+    b 240px
   &__dec3
-    l 38px
-    b -25px
+    l 492px
+    t 17px
+  .decor
+    filter brightness(0%)

@@ -1,138 +1,100 @@
 .feats
-  mt -90px
-  pt 189px
-  mb 62px
-  @media $desktopMax
-    pt 167px
-    mb 36px
+  min-height 700px
+  pt 130px
+  pb 62px
+  @media $desktopMedium
+    pt 107px
+    min-height 640px
+  @media $LandscapeMedium
+    pt 77px
+  @media $LandscapeMin
+    pt 57px
   &__title
     font-family $cyr
-    color $orange
-    fontify 72px 400 52px
-    mb 35px
+    color white
+    fontify 80px 400 52px
+    transform rotate(-4deg)
+    transform-origin 0 0
+    mb 43px
+    ml -8px
     @media $desktopMax
       fontify 60px 400 52px
-    @media $LandscapeMax
-      fontify 40px 400 34px
-      mb 25px
+    @media $LandscapeMedium
+      fontify 50px 400 52px
     @media $LandscapeMin
-      mb 45px
-    @media $PortraitMax
-      fontify 30px 400 32px
+      transform none
+  &__content
+    df()
+    @media $LandscapeMax
+      flex-direction column-reverse
   &__list
+    w calc(50% + 15px)
     df()
     flex-wrap wrap
-    ml -36px
-    w calc(100% + 36px)
-    max-width 1400px
-    @media $desktopMax
-      ml -30px
+    mt 8px
+    @media $LandscapeMax
+      mt 0
       w calc(100% + 30px)
-      max-width inherit
+      ml -30px
   &__item
     pos relative
-    w 333px
-    ml 36px
+    w calc(50% - 30px)
+    ml 30px
     mb 32px
-    pl 90px
-    @media $desktopMax
-      pl 78px
-      w 294px
-      ml 30px
-    @media $desktopMin
-      w calc(50% - 30px)
-    @media $LandscapeMax
-      pl 65px
     @media $LandscapeMin
       w calc(100% - 30px)
       pl 0
       mb 40px
   &__imgover
-    pos absolute
-    w 90px
-    l 0
-    h 100%
-    df(flex-start, center)
-    @media $desktopMax
-      w 78px
-    @media $LandscapeMax
-      w 65px
-    @media $LandscapeMin
-      pos relative
-      w auto
-      h auto
-      justify-content flex-start
-      mb 15px
+    h 45px
+    dfv(flex-start, flex-end)
+    mb 15px
   &__img
     max-width 90%
+    max-height 100%
   &__text
     color white
-    fontify 18px 400 26px
-    @media $desktopMax
-      fontify 16px 400 24px
+    fontify 16px 400 24px
+    max-width 250px
     @media $LandscapeMax
       fontify 14px 400 24px
+    @media $LandscapeMin
+      max-width none
     
 .about
-  mb 92px
-  @media $desktopMax
-    mb 75px
-  &__shift
-    pl 369px
-    @media $desktopMax
-      pl 323px
-    @media $desktopMin
-      pl 0
-  &__title
-    font-family $cyr
-    color $orange
-    fontify 72px 400 52px
-    mb 35px
-    @media $desktopMax
-      fontify 60px 400 52px
-    @media $LandscapeMax
-      fontify 40px 400 34px
-      mb 25px
-    @media $PortraitMax
-      fontify 30px 400 32px
+  w calc(50% - 15px)
+  @media $LandscapeMax
+    w 100%
+    mt 30px
   &__text
-    mb 27px
+    mb 35px
     
 .awards
+  overflow hidden
+  background-color $cream
+  background-position 0 100px
+  background-repeat no-repeat
+  background-size cover
+  @media $desktopMedium
+    background-position 0 220px
+  @media $LandscapeMedium
+    background-image none !important
   .container
-    overflow hidden
-    background-color #34241e
-    pt 100px
+    pt 77px
+    pb 120px
     pos relative
-    @media $desktopMax
-      pt 76px
-    @media $LandscapeMax
-      pt 60px
-    @media $LandscapeMax
-      max-width none
-    @media $LandscapeMin
-      pb 40px
+    @media $desktopMedium
+      pb 60px
+    @media $LandscapeMedium
+      pt 57px
   &__title
-    font-family $cyr
-    color $orange
-    fontify 72px 400 52px
-    mb 60px
-    @media $desktopMax
-      fontify 60px 400 52px
-      mb 37px
-    @media $LandscapeMax
-      fontify 40px 400 34px
-    @media $PortraitMax
-      fontify 30px 400 32px
+    color $dark
+    fontify 50px 600 52px
+    mb 41px
+    ml -2px
+    @media $LandscapeMedium
+      fontify 30px 600 32px
   &__car
-    ml -59px
-    mr -61px
-    @media $desktopMax
-      ml -48px
-      mr -50px
-    @media $desktopMin
-      ml -35px
-      mr -37px
     .swiper-button-prev.swiper-button-disabled,
     .swiper-button-next.swiper-button-disabled 
       opacity 0
@@ -140,9 +102,9 @@
     .swiper-slide
       dfv(flex-start, space-between)
       h auto
-      padding 74px 58px 60px
-      border-right 1px solid alpha(white, .1)
-      border-top 1px solid alpha(white, .1)
+      padding 50px 44px 72px
+      border-top 1px solid rgba(77, 77, 77, 0.06)
+      border-right 1px solid rgba(77, 77, 77, 0.06)
       @media $desktopMax
         pl 49px
         pr 49px
@@ -154,8 +116,7 @@
         w 45vw
       @media $LandscapeMedium
         w 70vw
-      @media $LandscapeMin
-        border-bottom 1px solid alpha(white, .1)
+        border-bottom 1px solid rgba(77, 77, 77, 0.06)
       @media $PortraitMax
         w 75vw
       @media $PortraitMedium
@@ -166,27 +127,23 @@
         & ^[0]__img
           transform rotate3d(0, 1, 0, 360deg)
   &__name
-    color white
-    fontify 21px 600 28px
+    color $dark
+    fontify 19px 600 24px
     mb 18px
-    @media $desktopMax
-      fontify 19px 600 24px
     @media $LandscapeMax
       fontify 14px 600 24px
   &__dsc
-    color white
-    fontify 18px 400 26px
-    mb 3px
-    @media $desktopMax
-      fontify 16px 400 24px
+    color $dark
+    fontify 16px 400 24px
+    mb 12px
     @media $LandscapeMax
       fontify 14px 400 24px
   &__info
-    color alpha(white, .5)
-    fontify 16px 400 24px
-    mb 30px
-    @media $desktopMax
-      fontify 14px 400 24px
+    color alpha($dark, .7)
+    fontify 14px 400 24px
+    mb -8px
+    @media $desktopMedium
+      mb 12px
     @media $LandscapeMax
       fontify 12px 400 22px
   &__img
@@ -198,16 +155,21 @@
     transition .7s transform
   &__toall
     pos absolute
-    r 60px
-    t 130px
-    @media $desktopMax
-      r 51px
+    r 88px
+    t 102px
+    @media $desktopMedium
+      r 47px
       t 103px
-    @media $LandscapeMax
-      t 72px
-      r 35px
-    @media $LandscapeMin
+    @media $LandscapeMedium
       pos relative
       r auto
       t 0
       mt 30px
+  &__dec1
+    r 744px
+    t -82px
+    transform scale(.8)
+    @media $desktopMedium
+      r 30%
+  .decor
+    filter brightness(0%)

@@ -367,6 +367,7 @@
         html = document.querySelector('html'),
         headerEl = document.querySelector('.header'),
         toTop = document.querySelector('.js-totop'),
+        toNext = document.querySelector('.js-tonext'),
         elemsToCheck = ['.news__elem-imgover', '.js-scroll-imgover', '.about__steps-elem']
 
       burgerEl.addEventListener('click', (e) => {
@@ -410,6 +411,12 @@
       if (toTop) {
         toTop.addEventListener('click', () => {
           window.animation.scrollTo(0, 1000)
+        })
+      }
+
+      if (toNext) {
+        toNext.addEventListener('click', () => {
+          window.animation.scrollTo(document.querySelector('.banner').nextElementSibling.offsetTop, 600);
         })
       }
       

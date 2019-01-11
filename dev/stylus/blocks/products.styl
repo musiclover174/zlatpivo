@@ -1,29 +1,29 @@
 .products
   pos relative
   z-index 2
+  background-position 0 120px
+  background-repeat no-repeat
+  overflow hidden
+  background-color $cream
+  background-size cover
+  @media $desktopMedium
+    background-position 0 230px
+  @media $LandscapeMedium
+    background-image none !important
   .container
-    overflow hidden
-    background-color #34241e
-    pt 94px
+    pt 76px
     pos relative
-    @media $desktopMax
-      pt 76px
-    @media $desktopMin
-      pt 60px
-    @media $LandscapeMax
-      max-width none
-    @media $LandscapeMin
+    @media $desktopMedium
       pb 50px
+    @media $LandscapeMedium
+      pt 50px
   &__title
-    font-family $cyr
-    color $orange
-    fontify 60px 400 52px
+    color $dark
+    fontify 50px 600 52px
     mb 31px
-    @media $desktopMax
-      fontify 40px 400 44px
-      mb 20px
-    @media $PortraitMax
-      fontify 30px 400 32px
+    ml -2px
+    @media $LandscapeMedium
+      fontify 30px 600 32px
   &__tabs
     df()
     flex-wrap wrap
@@ -32,47 +32,42 @@
   &__tab
     cursor pointer
     pos relative
-    color white
-    fontify 15px 600 24px
-    transition .7s color, .7s padding-left
+    color $dark
+    fontify 15px 600 21px
+    border-bottom 2px dotted $orange
+    transition .7s border, .7s padding-left
     @media $desktopMax
-      fontify 14px 600 24px
+      fontify 14px 600 21px
     &:before
       content "/"
       pos absolute
       l 0
       t 0
-      fontify 15px 600 24px
-      color $orange
+      fontify 15px 600 21px
+      color $dark
       opacity 0
-      transition .7s opacity
       @media $desktopMax
-        fontify 14px 600 24px
+        fontify 14px 600 21px
     &:hover
-      color $orange
+      border-color transparent
     &.active
-      color $orange
+      border-bottom transparent
       pl 18px
       &:before
         opacity 1
         transition-delay .7s
     & + &
-      ml 30px
+      ml 28px
       @media $PortraitMedium
         ml 0
         mt 10px
   &__blocks
     mt 40px
-    ml -59px
-    mr -61px
-    @media $desktopMax
-      ml -48px
-      mr -50px
-    @media $desktopMin
-      ml -35px
-      mr -37px
+    overflow hidden
   &__block:not(.active)
     dn()
+  &__block
+    w calc(100% + 1px)
   &__car
     .swiper-button-prev.swiper-button-disabled,
     .swiper-button-next.swiper-button-disabled 
@@ -88,9 +83,9 @@
         r 15px
     .swiper-slide
       df()
-      padding 93px 60px 56px
-      border-right 1px solid alpha(white, .1)
-      border-top 1px solid alpha(white, .1)
+      padding 93px 40px 56px
+      border-top 1px solid rgba(77, 77, 77, 0.06)
+      border-right 1px solid rgba(77, 77, 77, 0.06)
       @media $desktopMax
         pl 49px
         pr 49px
@@ -101,8 +96,7 @@
         w 45vw
       @media $LandscapeMedium
         w 70vw
-      @media $LandscapeMin
-        border-bottom 1px solid alpha(white, .1)
+        border-bottom 1px solid rgba(77, 77, 77, 0.06)
       @media $PortraitMax
         w 75vw
       @media $PortraitMedium
@@ -111,7 +105,7 @@
         w 90vw
       &:hover
         & ^[0]__img
-          transform rotate3d(0, 0, 1, 15deg)
+          transform rotate3d(0, 0, 0, 15deg)
   &__content
     w 200px
     pr 20px
@@ -120,7 +114,7 @@
   &__imgover
     w calc(100% - 200px)
     text-align center
-    mt -48px
+    mt -68px
     @media $desktopMax
       w calc(100% - 170px)
       mt -70px
@@ -129,16 +123,15 @@
   &__img
     ib()
     max-width 100%
+    transform rotate3d(0, 0, 1, 15deg)
     transform-origin center
     will-change transform
     transition .7s transform
   &__name
-    color white
-    fontify 21px 600 24px
+    color $dark
+    fontify 19px 600 24px
     border-bottom 2px solid $orange
     transition .7s color, .7s border
-    @media $desktopMax
-      fontify 19px 600 24px
     @media $desktopMin
       fontify 17px 600 22px
     @media $LandscapeMax
@@ -147,36 +140,29 @@
       border-color transparent
       color $orange
   &__dsc
-    color white
-    fontify 18px 400 26px
+    color $dark
+    fontify 16px 400 24px
     mt 20px
-    @media $desktopMax
-      fontify 16px 400 24px
     @media $LandscapeMax
       fontify 14px 400 24px
   &__toall
     pos absolute
-    r 60px
-    t 175px
-    @media $desktopMax
-      t 140px
-      r 51px
-    @media $desktopMin
-      t 124px
-    @media $LandscapeMax
-      t 123px
-      r 31px
-    @media $LandscapeMin
+    r 88px
+    t 157px
+    @media $desktopMedium
+      r 47px
+    @media $LandscapeMedium
       pos relative
       r auto
       t 0
       mt 30px
   &__dec1
-    r 118px
-    t -57px
+    r 198px
+    t -77px
   &__dec2
-    r 537px
-    t 225px
-  &__dec3
-    b 12px
-    l 69px
+    r 581px
+    t 330px
+    @media $desktopMedium
+      dn()
+  .decor
+    filter brightness(0%)

@@ -1,17 +1,61 @@
 .footer
+  bgc $blue
+  pos relative
+  z-index 1
+  border-top 1px solid alpha(white, .1)
   .container
     df(center, space-between)
-    h 80px
+    h 87px
     @media $PortraitMedium
       dfv()
       h auto
-      padding 25px 0
+      padding 25px 20px
+  &__side
+    df(flex-start, center)
+  &__socials
+    ml 42px
+    df(center, flex-start)
+    @media $LandscapeMax
+      ml 20px
+    @media $PortraitMax
+      dn()
+    &-elem
+      color #c0bfca
+      fontify 14px 400 16px
+      &[data-type="inst"]
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAP1BMVEX27+X27+X27+X27+X27+X27+WJhKRJRX327+VGQnxJRX3TzNBwa5VKRn7Ry89LR3/Rys9JRX727+VDP3r///8DIBtNAAAAE3RSTlMEZqazp2Xb+1/9/L7n+7/6v/tg9r9/dwAAAAFiS0dEFJLfyTUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAQoOLBwpdxCzAAAAYUlEQVQY03WP3Q6AIAhGP8W0Ev/y/d81pxvqWucKDqAAKE2CUcAxU7LOnljqdFWnQWvHbWkIzyGw72EXMdVGiiK4dlhEGML9i89IHo9mERS5FI7z25Vt9Ybejms8gDLb+S9hOAZO7y0q7AAAAABJRU5ErkJggg==') no-repeat left center
+        &:after
+          content "Instagram"
+          pl 24px
+          @media $LandscapeMax
+            content ""
+            pl 16px
+      &[data-type="vk"]
+        &:after
+          content "Vkontakte"
+          pl 24px
+          @media $LandscapeMax
+            content ""
+            pl 16px
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAQoOLSgR2NVHAAAAsUlEQVQY023OoWpCcQBG8d/977aJjIHiIziwDFlamdiHwSYs7Q0sCwq3LBhcWtjAVzDsBfYCFuuFy5rBokFsV++CCsJ24vlO+KKiI8a3lTvPgq13Ge5VBfvYowoaEpmSMm5kyl7ANhiBpmtrM7BB14FBkPoBT9iBOTrgSxbwAdoe1EBLX4TUhKiARNNfhuYEMFb8E/TEp2Dj9WxIj2frPl1eJAe5sFRHLvdm6lZJ7kr8Cz5VKRgl3+15AAAAAElFTkSuQmCC') no-repeat left center
+      &[data-type="fb"]
+        &:after
+          content "Facebook"
+          pl 24px
+          @media $LandscapeMax
+            content ""
+            pl 16px
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAQoOLgeRJLvdAAABH0lEQVQoz3XOvU8UURQF8N97O4vjhsBuxITKRgore6qNCf8Dha0hdMTOjs6CWo2lLf0mJNgYQgLEwsaOhsIYIgmBJfvBzjDPgmHBwtPcm3POPeeGBC91tRUSoiiJBg4cEhKr1pSGqDzVNFa50JLb9jmkFz76bSiqLPhp1x/PrOnLLHmXWVEaiug4sQkuPBIVrnSjTi2XnjsGb31xphKM5JlCQPDEB1/Bd+dWTFSCMkpu0bLnF9jXk4u3dD0kp7a8ARs+uVT+a+DGvDmwoK26o6Mw3UbGYGIwZR8k/AdRNn3zvuzuPmlEA3ltaSjqiqyWZ5TRN4/rlGuzFi1quUYSdByFxLrX+saShgylG8GMth3vQ4JXluWK2lCoNBV+6PEXWuFcYun7vakAAAAASUVORK5CYII=') no-repeat left center
+      & + &
+        ml 20px
+        @media $LandscapeMax
+          ml 12px
   &__copy
-    color $dark
-    fontify 14px 400 24px
+    color white
+    fontify 14px 400 16px
   &__dextra
     pos relative
-    color $dark
+    color white
     font-family Verdana, Geneva, sans-serif
     fontify 9px 400 14px
     text-transform uppercase
@@ -23,8 +67,8 @@
       pos absolute
       t 3px
       r calc(100% + 10px)
-      bgc #47312f
-      color white
+      bgc $orange
+      color $dark
       font-family Arial
       fontify 12px 900 21px
       text-transform uppercase
@@ -33,4 +77,4 @@
       padding 0 6px
       transition 0.7s background
     &:hover span
-      bgc $orange
+      bgc $blue
