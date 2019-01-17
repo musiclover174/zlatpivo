@@ -1,8 +1,0 @@
-File from: [dev/i/horse.png]
-
-File to: [prod/static/i/horse.png]
-
-Compression algorithm: [pngquant]
-
-Description: Error: Command failed: D:\work\nick\Златпиво\node_modules\pngquant-bin\vendor\pngquant.exe --quality=30-60 -o prod/static/i/horse.png dev/i/horse.png
-  error: 'prod\static\i\horse.png' exists; not overwriting

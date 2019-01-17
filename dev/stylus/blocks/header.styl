@@ -9,7 +9,7 @@
   &__href
     size 26px
     border-radius 50%
-    transition .7s background
+    transition .7s background, .7s opacity
     & + &
       ml 10px
     &[data-type="vk"]
@@ -193,3 +193,14 @@ html.touchevents
         animation none
     &:not(.open):hover .burger__button-meat
       animation none
+
+body:not(.index) 
+  .header__button,
+  .socials,
+  .header__logo-img
+    filter brightness(0%)
+    transition .7s filter
+  .header__button.open
+    filter none
+  .socials__href:hover
+    opacity .4

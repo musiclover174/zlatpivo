@@ -1,10 +1,10 @@
 .news
   pos relative
-  bgc $cream
-  pt 81px
-  pb 54px
-  @media $LandscapeMax
-    pt 60px
+  &_main
+    pt 81px
+    pb 54px
+    @media $LandscapeMax
+      pt 60px
   .container
     pos relative
   &__title
@@ -55,24 +55,34 @@
     pt 51%
     overflow hidden
     pos relative
-    bgc #1e1e1c
+    bgc #f3e7d5
+    &_empty:before
+      content ""
+      pos absolute
+      l 0
+      t 0
+      r 0
+      b 0
+      background url('../i/news-def.png') no-repeat center
+      opacity .09
   &__img
     pos absolute
     l 0
     t 0
-    w 100%
-    h 100%
+    size 100%
     object-fit cover
     font-family 'object-fit: cover;'
-    opacity .5
-    transition .7s opacity
+    transition .7s transform
+    will-change transform
+    -webkit-backface-visibility hidden
+    transform scale(1.017) translateZ(0)
   &__item:hover &__img
-      opacity .8
+    transform scale(1) translateZ(0)
   &__content
     pos relative
     z-index 1
     max-width 80%
-    mt 25px
+    mt 20px
     @media $LandscapeMax
       mt 15px
   &__date
@@ -125,3 +135,19 @@
     t 17px
   .decor
     filter brightness(0%)
+  &__more
+    &-over
+      text-align center
+      mt 20px
+      @media $LandscapeMax
+        mt 60px
+    &-href
+      c $dark
+      fontify 15px 600 18px
+      border-bottom 1px dotted $orange
+      transition .7s border
+      &:hover
+        border-color transparent
+
+body.index .news
+  bgc $cream

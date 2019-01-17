@@ -34,17 +34,33 @@ body
   pos relative
   z-index 1
   @media $lDesktopSmall
-    max-width calc(100% - 100px)
+    max-width 100%
   @media $desktopMedium
     max-width 100%
     padding 0 47px
   @media $LandscapeMedium
     padding 0 20px
 
+body.index
+  .container
+    @media $lDesktopSmall
+      max-width calc(100% - 100px)
+
 .index .content
+  pt 0
+  pb 0
   bgc $blue
 
+body:not(.index) .content
+  background-position bottom -630px center
+  background-repeat no-repeat
+
 .content
+  pt 217px
+  pb 96px
+  bgc $cream
+  @media $LandscapeMedium
+    pt 180px
   &__video
     position fixed
     z-index -1
@@ -144,6 +160,21 @@ body
     fontify 15px 400 21px
     border 1px solid #f0f3e1
 
+  &__dec1
+    filter brightness(0%)
+    l calc(50% - 32px)
+    t -192px
+  &__dec2
+    filter brightness(0%)
+    l -54px
+    t 31%
+    transform scale(.8) rotate(-38deg)
+  &__dec3
+    filter brightness(0%)
+    r 35%
+    t 58%
+    transform scaleX(-1)
+
 input::-webkit-input-placeholder
   color alpha(white, .5)
 input::-moz-placeholder
@@ -173,6 +204,13 @@ div[class\^="table-scroller"]
     color #7ca8cb
     
 .common
+  &__title
+    fontify 50px 600 52px
+    mb 52px
+    ml -3px
+    @media $LandscapeMedium
+      fontify 30px 600 32px
+      ml -2px
   &__pad
     pl 87px
     pr 87px
@@ -405,25 +443,18 @@ div[class\^="table-scroller"]
     opacity 1
       
 .breadcrumbs
-  mb 55px
-  color $grey
-  pos relative
-  mt -25px
-  pl 13px
+  color #4f4f4f
+  mb 18px
   &__href
-    color $grey
+    color #4f4f4f
     fontify 14px 400 18px
-    border-bottom 1px solid $grey
+    border-bottom 1px solid #4f4f4f
     transition .5s border
     &:hover
       border-color transparent
-    @media $lDesktopMedium
-      fontify 12px 400 18px
   &__delim
-    padding 0 11px
+    padding 0 5px
     fontify 14px 400 18px
-    @media $lDesktopMedium
-      fontify 12px 400 18px
 
 .bgfixed
   background-position center
