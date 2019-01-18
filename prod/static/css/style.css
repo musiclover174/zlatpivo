@@ -448,7 +448,7 @@ body:not(.index) .content {
   -webkit-filter: brightness(0%);
   filter: brightness(0%);
   left: calc(50% - 32px);
-  top: -192px;
+  top: -4%;
 }
 .content__dec2 {
   -webkit-filter: brightness(0%);
