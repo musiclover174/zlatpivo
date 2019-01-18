@@ -7,71 +7,72 @@ html
   body
     include layout/__header
 
-    +b.MAIN.content(style="background-image: url('img/products-bg.jpg')")
-      .container
+    +b.MAIN.content
+      +e.bg(style="background-image: url('img/products-bg.jpg')")
+        .container
 
-        +e.SPAN.dec1.decor_type4
-        +e.SPAN.dec2.decor_type6
-        +e.SPAN.dec3.decor_type5
+          +e.SPAN.dec1.decor_type4
+          +e.SPAN.dec2.decor_type6
+          +e.SPAN.dec3.decor_type5
 
-        +b('section').breadcrumbs
-          +e.href(href="#") Главная
-          +e('span').delim /
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim /
 
-        h1.common__title Новости
+          h1.common__title Новости
 
-        +b.SECTION.news
-          +e.UL.list
-            +e.item._large
-              +e.imgover(href="#")
-                +e.img.fit(src="img/news1.jpg")
-              +e.content
-                +e.P.date 28 августа 2018
-                +e.href(href="#") 
-                  span.js-shave(data-height="150") Анонс Гонки «Рипейский Солнцеворот 2013»
-                +e.P.about.js-shave(data-height="124") Приглашаем всех любителей маунтинбайка принять участие в соревнованиях, проходящих в самых красивых и техничных горах Южного Урала.
-            +e.item
-              +e.imgover(href="#")
-                +e.img.fit(src="img/news2.jpg")
-              +e.content
-                +e.P.date 15 мая 2013
-                +e.href(href="#") 
-                  span.js-shave(data-height="93") Новый сорт пива совсем скоро поступит в продажу
-            +e.item
-              +e.imgover(href="#")
-                +e.img.fit(src="img/news3.jpg")
-              +e.content
-                +e.P.date 15 мая 2013
-                +e.href(href="#") 
-                  span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
-            +e.item
-              +e.imgover(href="#")
-                +e.img.fit(src="img/news4.jpg")
-              +e.content
-                +e.P.date 15 мая 2013
-                +e.href(href="#") 
-                  span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
-            +e.item
-              +e.imgover._empty(href="#")
-              +e.content
-                +e.P.date 15 мая 2013
-                +e.href(href="#") 
-                  span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
-            +e.item
-              +e.imgover(href="#")
-                +e.img.fit(src="img/news1.jpg")
-              +e.content
-                +e.P.date 15 мая 2013
-                +e.href(href="#") 
-                  span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
-            +e.item
-              +e.imgover._empty(href="#")
-              +e.content
-                +e.P.date 15 мая 2013
-                +e.href(href="#") 
-                  span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
-          +e('section').more-over
-            +e.more-href.js-news-more(href="#") Показать еще
-      
+          +b.SECTION.news
+            +e.UL.list
+              +e.item._large
+                +e.imgover(href="#")
+                  +e.img.fit(src="img/news1.jpg")
+                +e.content
+                  +e.P.date 28 августа 2018
+                  +e.href(href="#") 
+                    span.js-shave(data-height="150") Анонс Гонки «Рипейский Солнцеворот 2013»
+                  +e.P.about.js-shave(data-height="124") Приглашаем всех любителей маунтинбайка принять участие в соревнованиях, проходящих в самых красивых и техничных горах Южного Урала.
+              +e.item
+                +e.imgover(href="#")
+                  +e.img.fit(src="img/news2.jpg")
+                +e.content
+                  +e.P.date 15 мая 2013
+                  +e.href(href="#") 
+                    span.js-shave(data-height="93") Новый сорт пива совсем скоро поступит в продажу
+              +e.item
+                +e.imgover(href="#")
+                  +e.img.fit(src="img/news3.jpg")
+                +e.content
+                  +e.P.date 15 мая 2013
+                  +e.href(href="#") 
+                    span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
+              +e.item
+                +e.imgover(href="#")
+                  +e.img.fit(src="img/news4.jpg")
+                +e.content
+                  +e.P.date 15 мая 2013
+                  +e.href(href="#") 
+                    span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
+              +e.item
+                +e.imgover._empty(href="#")
+                +e.content
+                  +e.P.date 15 мая 2013
+                  +e.href(href="#") 
+                    span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
+              +e.item
+                +e.imgover(href="#")
+                  +e.img.fit(src="img/news1.jpg")
+                +e.content
+                  +e.P.date 15 мая 2013
+                  +e.href(href="#") 
+                    span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
+              +e.item
+                +e.imgover._empty(href="#")
+                +e.content
+                  +e.P.date 15 мая 2013
+                  +e.href(href="#") 
+                    span.js-shave(data-height="93") Мы обновили 50% нашего оборудования
+            +e('section').more-over
+              +e.more-href.js-news-more(href="#") Показать еще
+        
     include layout/__footer
     include layout/__scripts

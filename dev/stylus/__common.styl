@@ -48,24 +48,27 @@ body.index
 
 .index .content
   pt 0
-  pb 0
   bgc $blue
 
-body:not(.index) .content
-  background-position bottom -630px center
-  background-repeat no-repeat
-  min-height calc(100vh - 131px)
-  @media $LandscapeMin
-    min-height calc(100vh - 148px)
-  @media $PortraitMedium
-    min-height calc(100vh - 175px)
-
 .content
-  pt 217px
-  pb 96px
   bgc $cream
-  @media $LandscapeMedium
-    pt 180px
+  &__bg
+    pb 96px
+    pt 217px
+    background-position bottom -630px center
+    background-repeat no-repeat
+    &_partners
+      pb 270px
+      @media $LandscapeMax
+        pb 120px
+    &:not(&_partners)
+      min-height calc(100vh - 131px)
+      @media $LandscapeMedium
+        pt 180px
+      @media $LandscapeMin
+        min-height calc(100vh - 148px)
+      @media $PortraitMedium
+        min-height calc(100vh - 175px)
   &__video
     position fixed
     z-index -1
@@ -187,6 +190,10 @@ body:not(.index) .content
     z-index -3
     filter brightness(0%)
     r -70px
+    t 35%
+  &__dec6
+    filter brightness(0%)
+    r 87px
     t 35%
 
 input::-webkit-input-placeholder
@@ -566,3 +573,6 @@ textarea.warning
   &_type11
     size 200px 282px
     background-image url('../i/dec11.png')
+  &_type12
+    size 364px 258px
+    background-image url('../i/dec12.png')

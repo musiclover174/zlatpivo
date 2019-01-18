@@ -1,0 +1,61 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+
+    +b.MAIN.content
+      +e.bg._partners(style="background-image: url('img/products-bg.jpg')")
+
+        +e.SPAN.dec6.decor_type12
+
+        .container
+
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim /
+
+          section.text
+            h1 Партнёрам
+            p «Пивоварня Златоуста» - это два, юридически, самостоятельных предприятия объединенные в единое производство.
+            p В состав объединения входят ООО «Пегас» и ООО «Пивоиндустрия». Исторически, предприятие основано в 1994г., как образцовое подразделение знаменитого производственного объединения «Златоустовский Машиностроительный завод» – участвовавшего в разработке и изготовлении морских баллистических ракетных комплексов и в связи с решением советского правительства, приступившего к изготовлению современного высококачественного оборудования – мини пивоварни.
+
+      +b.SECTION.feedback
+        .container
+          +e.SPAN.dec1.decor_type2
+          +e.SPAN.dec2.decor_type7
+          +e.SPAN.dec3.decor_type8
+          +e.ASIDE.side
+            +e.P.title Обратная связь
+            +e.text 
+              p Мы всегда рады ответить на любые вопросы, касающиеся нашей продукции.
+              p Обратите внимание, все поля обязательны для заполнения.
+          +e.FORM.form
+            .common__row
+              .common__col
+                .common__row
+                  input(type="text", data-req).common__input
+                  label.common__placeholder Ваше имя
+                .common__row
+                  input(type="text", data-req).common__input
+                  label.common__placeholder Электронная почта
+                .common__row
+                  input(type="text", data-req).common__input.js-phone
+                  label.common__placeholder Номер телефона
+              .common__col
+                textarea(data-req).common__textarea
+                label.common__placeholder Текст сообщения
+            .common__row
+              .fakecheckbox
+                input(type="checkbox", value="", name="agreement", checked)#agreement.fakecheckbox__truecheck
+                label(for="agreement").fakecheckbox__label Принимаю 
+                  a(href="#") политику конфиденциальности
+                  |  и даю согласие на 
+                  a(href="#") обработку персональных данных
+              +e.sbm(type="submit") Отправить
+                span Некоторые обязательные поля не заполнены или заполнены с ошибкой.
+    include layout/__footer
+    include layout/__scripts

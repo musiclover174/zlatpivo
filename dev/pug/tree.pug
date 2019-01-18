@@ -7,24 +7,27 @@ html
   body
     include layout/__header
 
-    +b.MAIN.content(style="background-image: url('img/products-bg.jpg')")
-      .container
+    +b.MAIN.content
+      +e.bg(style="background-image: url('img/products-bg.jpg')")
+        .container
 
-        +b('section').breadcrumbs
-          +e.href(href="#") Главная
-          +e('span').delim /
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim /
 
-        section.text
-          h1 Разводящая
-          ul
-            li
-              a(href="index") Главная
-            li
-              a(href="text") Типовая текстовая
-            li
-              a(href="news") Список новостей
-            li
-              a(href="news-inner") Внутренняя новости
+          section.text
+            h1 Разводящая
+            ul
+              li
+                a(href="index") Главная
+              li
+                a(href="text") Типовая текстовая
+              li
+                a(href="news") Список новостей
+              li
+                a(href="news-inner") Внутренняя новости
+              li
+                a(href="partners") Партнёрам
       
     include layout/__footer
     include layout/__scripts
