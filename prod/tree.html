@@ -13,19 +13,27 @@
     <link rel="stylesheet" href="static/css/style.css">
   </head>
   <body>
-    <section class="content">
-      <section class="container">
-        <h1>Очень большой заголовок</h1>
-        <section class="breadcrumbs"><a class="breadcrumbs__href" href="#">Главная</a><span class="breadcrumbs__delim">/ </span></section>
-        <div class="text">
+    <header class="header"><a class="header__logo" href="#"><img class="header__logo-img" src="img/logo.png" alt="" role="presentation"/></a>
+      <aside class="header__side">
+        <nav class="socials"><a class="socials__href" href="https://vk.com/varniyapegas" target="_blank" data-type="vk"></a><a class="socials__href" href="https://www.instagram.com/varniyapegas_zlat/" target="_blank" data-type="inst"></a><a class="socials__href" href="#" target="_blank" data-type="fb"></a>
+        </nav>
+        <button class="header__button js-burger" type="button" aria-label="открыть мобильное меню"><span class="header__button-meat"></span>
+        </button><span class="header__shadow"></span>
+      </aside>
+    </header>
+    <main class="content" style="background-image: url('img/products-bg.jpg')" role="main">
+      <div class="container">
+        <section class="breadcrumbs"><a class="breadcrumbs__href" href="#">Главная</a><span class="breadcrumbs__delim">/</span>
+        </section>
+        <section class="text">
           <ul>
             <li><a href="index">Главная</a></li>
             <li><a href="news">Список новостей</a></li>
             <li><a href="text">Типовая текстовая</a></li>
           </ul>
-        </div>
-      </section>
-    </section>
+        </section>
+      </div>
+    </main>
     <button class="totop js-totop" type="button"></button>
                 <footer class="footer">
                   <div class="container">

@@ -54,6 +54,11 @@ body.index
 body:not(.index) .content
   background-position bottom -630px center
   background-repeat no-repeat
+  min-height calc(100vh - 131px)
+  @media $LandscapeMin
+    min-height calc(100vh - 148px)
+  @media $PortraitMedium
+    min-height calc(100vh - 175px)
 
 .content
   pt 217px
@@ -71,33 +76,31 @@ body:not(.index) .content
     transform translate(-50%, -50%)
     opacity .7
   h1:not([class])
-    color black
-    fontify 72px 700 76px
-    margin 63px 0 35px
+    fontify 50px 700 55px
+    margin 63px 0 26px
+    @media $LandscapeMedium
+      fontify 30px 600 32px
   h2:not([class])
-    color black
-    fontify 48px 700 54px
-    margin 63px 0 28px
-  h3:not([class])
-    color white
-    fontify 36px 700 42px
-    margin 65px 0 38px
+    fontify 36px 600 46px
+    margin 43px 0 26px
+    @media $LandscapeMedium
+      fontify 26px 600 28px
+  h3:not([class]),
   h4:not([class])
-    color white
-    fontify 24px 700 34px
-    margin 43px 0 16px
+    fontify 19px 600 24px
+    margin 60px 0 31px
   img:not([class])
-    margin 5px 0
+    margin 15px 0
     max-width 100%
   ul:not([class])
     list-style  none
-    margin  23px 0
+    margin 18px 0
   ul:not([class]) li
-    pl 30px
+    pl 21px
     pos relative
-    fontify 20px 400 27px
+    fontify 15px 400 25px
   ul:not([class]) li + li
-    mt 25px
+    mt 14px
   ul:not([class]) li:before
     content ""
     pos absolute
@@ -107,14 +110,14 @@ body:not(.index) .content
     bgc white
   ol:not([class])
     list-style none
-    margin 23px 0
+    margin 18px 0
     counter-reset myCounter
   ol:not([class]) li
-    pl 30px
+    pl 26px
     pos relative
-    fontify 18px 400 24px
+    fontify 15px 400 25px
   ol:not([class]) li + li
-    mt 24px
+    mt 13px
   ol:not([class]) li:before
     counter-increment myCounter
     content counter(myCounter)"."	
@@ -123,18 +126,15 @@ body:not(.index) .content
     t 0
     w 30px
     pr 9px
-    color $green
-    fontify 18px 400 24px
-    @media $lDesktopMedium
-      fontify 15px 400 23px
+    color $dark
+    fontify 15px 400 25px
   p:not([class])
-    color white
-    margin 25px 0
+    margin 18px 0
     fontify 16px 300 24px
     @media $LandscapeMax
       fontify 14px 300 24px
   a:not([class])
-    color white
+    color inherit
     border-bottom 2px solid $orange
     transition .5s border
     &:hover
@@ -146,19 +146,20 @@ body:not(.index) .content
     margin-bottom 0 !important
 
   table
-    margin 30px 0
-    border 2px solid $green
+    ml -2px
   table th
     text-align left
-    padding 16px 24px
-    color black
+    padding 16px 19px
+    color $dark
     fontify 15px 400 21px
-    border 1px solid #f0f3e1
+    border 2px solid #fff9f0
+    bgc $orange
   table td
-    padding 18px 24px
+    padding 18px 19px
     color white
     fontify 15px 400 21px
-    border 1px solid #f0f3e1
+    border 2px solid #fff9f0
+    bgc $blue
 
   &__dec1
     filter brightness(0%)
@@ -185,6 +186,7 @@ input:-ms-input-placeholder
 div[class\^="table-scroller"]
   overflow auto
   pos relative
+  margin 31px 0
   @media $desktopMax
     w 100%
 
@@ -423,6 +425,13 @@ div[class\^="table-scroller"]
     &.warning + ^[0]__label:before 
       border-color #ed1c24
     
+.text
+  c $dark
+  max-width 80%
+  mt -8px
+  @media $LandscapeMax
+    max-width none
+
 .totop
   pos fixed
   z-index 5

@@ -282,6 +282,17 @@ body.pace-done .content {
 body:not(.index) .content {
   background-position: bottom -630px center;
   background-repeat: no-repeat;
+  min-height: calc(100vh - 131px);
+}
+@media (max-width: 550px) {
+  body:not(.index) .content {
+    min-height: calc(100vh - 148px);
+  }
+}
+@media (max-width: 400px) {
+  body:not(.index) .content {
+    min-height: calc(100vh - 175px);
+  }
 }
 .content {
   padding-top: 217px;
@@ -305,50 +316,55 @@ body:not(.index) .content {
   opacity: 0.7;
 }
 .content h1:not([class]) {
-  color: #000;
-  font-size: 72px;
+  font-size: 50px;
   font-weight: 700;
-  line-height: 76px;
-  margin: 63px 0 35px;
+  line-height: 55px;
+  margin: 63px 0 26px;
+}
+@media (max-width: 700px) {
+  .content h1:not([class]) {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 32px;
+  }
 }
 .content h2:not([class]) {
-  color: #000;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 54px;
-  margin: 63px 0 28px;
-}
-.content h3:not([class]) {
-  color: #fff;
   font-size: 36px;
-  font-weight: 700;
-  line-height: 42px;
-  margin: 65px 0 38px;
+  font-weight: 600;
+  line-height: 46px;
+  margin: 43px 0 26px;
 }
+@media (max-width: 700px) {
+  .content h2:not([class]) {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+}
+.content h3:not([class]),
 .content h4:not([class]) {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 34px;
-  margin: 43px 0 16px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 60px 0 31px;
 }
 .content img:not([class]) {
-  margin: 5px 0;
+  margin: 15px 0;
   max-width: 100%;
 }
 .content ul:not([class]) {
   list-style: none;
-  margin: 23px 0;
+  margin: 18px 0;
 }
 .content ul:not([class]) li {
-  padding-left: 30px;
+  padding-left: 21px;
   position: relative;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 27px;
+  line-height: 25px;
 }
 .content ul:not([class]) li + li {
-  margin-top: 25px;
+  margin-top: 14px;
 }
 .content ul:not([class]) li:before {
   content: "";
@@ -361,18 +377,18 @@ body:not(.index) .content {
 }
 .content ol:not([class]) {
   list-style: none;
-  margin: 23px 0;
+  margin: 18px 0;
   counter-reset: myCounter;
 }
 .content ol:not([class]) li {
-  padding-left: 30px;
+  padding-left: 26px;
   position: relative;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 25px;
 }
 .content ol:not([class]) li + li {
-  margin-top: 24px;
+  margin-top: 13px;
 }
 .content ol:not([class]) li:before {
   counter-increment: myCounter;
@@ -382,21 +398,13 @@ body:not(.index) .content {
   top: 0;
   width: 30px;
   padding-right: 9px;
-  color: $green;
-  font-size: 18px;
+  color: #3c3c3c;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 24px;
-}
-@media (max-width: 1640px) {
-  .content ol:not([class]) li:before {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 23px;
-  }
+  line-height: 25px;
 }
 .content p:not([class]) {
-  color: #fff;
-  margin: 25px 0;
+  margin: 18px 0;
   font-size: 16px;
   font-weight: 300;
   line-height: 24px;
@@ -409,7 +417,7 @@ body:not(.index) .content {
   }
 }
 .content a:not([class]) {
-  color: #fff;
+  color: inherit;
   border-bottom: 2px solid #f5c017;
   -webkit-transition: 0.5s border;
   transition: 0.5s border;
@@ -424,25 +432,26 @@ body:not(.index) .content {
   margin-bottom: 0 !important;
 }
 .content table {
-  margin: 30px 0;
-  border: 2px solid $green;
+  margin-left: -2px;
 }
 .content table th {
   text-align: left;
-  padding: 16px 24px;
-  color: #000;
+  padding: 16px 19px;
+  color: #3c3c3c;
   font-size: 15px;
   font-weight: 400;
   line-height: 21px;
-  border: 1px solid #f0f3e1;
+  border: 2px solid #fff9f0;
+  background-color: #f5c017;
 }
 .content table td {
-  padding: 18px 24px;
+  padding: 18px 19px;
   color: #fff;
   font-size: 15px;
   font-weight: 400;
   line-height: 21px;
-  border: 1px solid #f0f3e1;
+  border: 2px solid #fff9f0;
+  background-color: #2b284c;
 }
 .content__dec1 {
   -webkit-filter: brightness(0%);
@@ -478,6 +487,7 @@ input:-ms-input-placeholder {
 div[class^="table-scroller"] {
   overflow: auto;
   position: relative;
+  margin: 31px 0;
 }
 @media (max-width: 1400px) {
   div[class^="table-scroller"] {
@@ -837,6 +847,16 @@ div[class^="table-scroller"] {
 }
 .fakecheckbox__truecheck.warning + .fakecheckbox__label:before {
   border-color: #ed1c24;
+}
+.text {
+  color: #3c3c3c;
+  max-width: 80%;
+  margin-top: -8px;
+}
+@media (max-width: 1000px) {
+  .text {
+    max-width: none;
+  }
 }
 .totop {
   position: fixed;
