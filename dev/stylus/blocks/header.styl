@@ -194,7 +194,7 @@ html.touchevents
     &:not(.open):hover .burger__button-meat
       animation none
 
-body:not(.index) 
+body:not(.index)
   .header__button,
   .socials,
   .header__logo-img
@@ -204,3 +204,15 @@ body:not(.index)
     filter none
   .socials__href:hover
     opacity .4
+
+body.news
+  @media $LandscapeMinFrom
+    .header__button,
+    .socials,
+    .header__logo-img
+      filter brightness(0%) invert(1)
+      transition .7s filter
+    .header__button.open
+      filter none
+    .socials__href:hover
+      opacity .4

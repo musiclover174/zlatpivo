@@ -105,9 +105,9 @@ body:not(.index) .content
     content ""
     pos absolute
     l 0
-    t 13px
-    size 14px 1px
-    bgc white
+    t 12px
+    size 10px 1px
+    bgc $orange
   ol:not([class])
     list-style none
     margin 18px 0
@@ -175,6 +175,19 @@ body:not(.index) .content
     r 35%
     t 58%
     transform scaleX(-1)
+  &__dec4
+    z-index -3
+    filter brightness(0%)
+    l -100px
+    t 45%
+    transform rotate(-130deg)
+    @media $desktopMedium
+      l -130px
+  &__dec5
+    z-index -3
+    filter brightness(0%)
+    r -70px
+    t 35%
 
 input::-webkit-input-placeholder
   color alpha(white, .5)
@@ -382,6 +395,27 @@ div[class\^="table-scroller"]
       ml 32px
       size 9px
       background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJBAMAAAASvxsjAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEX///////////////////////////////////////////////////////9q+00tAAAADXRSTlMA0Do74eI5bGtqOM7MEv0urwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAA3SURBVAjXYxBiYGAWYFBRYDBNYGByYg5jYGBQLU0Akhw3GUDsKQoMDExRTE4MDKYLQMp2AbkHAKcGB4WerKhTAAAAAElFTkSuQmCC") no-repeat center
+  &__back
+    ib()
+    pos relative
+    mt 28px
+    ml 20px
+    mb 28px
+    color $dark
+    fontify 16px 400 20px
+    border-bottom 2px solid $orange
+    transition .7s border
+    @media $LandscapeMax
+      mt 50px
+    &:hover
+      border-color transparent
+    &:before
+      content ""
+      pos absolute
+      l -33px
+      t 6px
+      size 13px 8px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAMAAAAV+IX9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAP1BMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///8AU9tkAAAAE3RSTlMAV+cHcPVOAYvtOaCwiHV3OvTqgGJyUgAAAAFiS0dEFJLfyTUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARINIh+5Fq2uAAAANElEQVQI12NgYGBgZGJmgAMWVjY4m52Dkwshwy3MwwsDfCg8fpBKAQYkwCLIhsxlFILZAABokQHsQ7L58gAAAABJRU5ErkJggg==') no-repeat center
       
 .fakecheckbox
   ib()
@@ -431,6 +465,16 @@ div[class\^="table-scroller"]
   mt -8px
   @media $LandscapeMax
     max-width none
+  &_news
+    pos relative
+    b 0
+    opacity 1
+    transition .7s opacity, .7s bottom
+
+@media $LandscapeMinFrom
+  body.news .text_news
+    b -20px
+    opacity 0
 
 .totop
   pos fixed
@@ -455,15 +499,19 @@ div[class\^="table-scroller"]
   color #4f4f4f
   mb 18px
   &__href
-    color #4f4f4f
+    color inherit
     fontify 14px 400 18px
-    border-bottom 1px solid #4f4f4f
+    border-bottom 1px solid currentColor
     transition .5s border
     &:hover
       border-color transparent
   &__delim
     padding 0 5px
     fontify 14px 400 18px
+
+@media $LandscapeMinFrom
+  body.news .breadcrumbs
+    color white
 
 .bgfixed
   background-position center
@@ -515,15 +563,6 @@ textarea.warning
   &_type10
     size 233px 269px
     background-image url('../i/dec10.png')
-
-.tippy-tooltip.light-theme
-  bgc white
-  box-shadow 0 6px 32px rgba(0, 0, 0, 0.21)
-  fontif 14px 400 18px
-  color white
-  padding 15px 19px
-  .tippy-backdrop
-    bgc white
-    color white
-  .tippy-arrow
-    border-top-color white
+  &_type11
+    size 200px 282px
+    background-image url('../i/dec11.png')

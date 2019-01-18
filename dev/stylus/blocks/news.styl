@@ -124,6 +124,80 @@
       r auto
       t 0
       mt 50px
+  &__elem
+    &-title
+      color $dark
+      fontify 50px 600 60px
+      max-width 80%
+      mb 19px
+      ml -3px
+      transition .7s color
+      @media $LandscapeMedium
+        fontify 30px 600 32px
+        ml -2px
+    &-subtitle
+      color $dark
+      fontify 19px 600 30px
+      max-width 85%
+      mb 40px
+      transition .7s color
+    &-date
+      color alpha($dark, .5)
+      fontify 14px 400 24px
+      mt 25px
+    &-color
+      pos fixed
+      z-index -2
+      bgc $blue
+      l 0
+      r 0
+      t 0
+      h 0
+      opacity 0
+      transition .7s opacity, .7s height
+    &-big
+      pos fixed
+      z-index -1
+      opacity .5
+      t 0
+      r 0
+      l 0
+      h 0
+      background-size cover
+      background-repeat no-repeat
+      background-position center
+      opacity 0
+      transition .7s opacity, .7s height
+    &-tonext
+      size 0
+      opacity 0
+      visibility hidden
+      white-space nowrap
+      pos absolute
+      t calc(100vh - 95px)
+      r 100px
+      color white
+      fontify 13px 600 13px
+      text-transform uppercase
+      transform rotate(-90deg)
+      transform-origin 100% 0
+      transition .7s visibilty, .7s opacity
+      @media $desktopMedium
+        r 58px
+      @media $LandscapeMedium
+        dn()
+      &:before
+        content ""
+        size 8px 34px
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAiCAMAAABV5mjpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX////1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///94Y1dLAAAAOnRSTlMAAAECBAYHCwoRGRoiJC0uPD1LTF1eboCBj5Kfrb3HydHS7evy9fj3+fv6/P3nTv7mW/Q3cepzh6Cd6aRfgwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAQoLLA1FDPKqAAAAkElEQVQY0z3LxxKCUBQD0BuKir1iAaygqAgCIvr+/8P0ORmzyJxFIiKAAdGB+YdJWBZhN4hmi3Acot0huj2iPyCGI2I8IaYzwnWJ+YJYrgjPI3yfCAINAOvNtzS2O2J/IMKQiCLieCLimDhfiGuiYQPJF7bcUmQZ0rvkRamyssgFj0qp6qnHtVL172W83gbwAWSECuhANm/TAAAAAElFTkSuQmCC') no-repeat center
+        pos absolute
+        l -30px
+        t -10px
+        filter brightness(0%) invert(1)
+        transform rotate(90deg)
+        animation arrow 1s ease-in-out infinite
+  &_other
+    mt 74px
   &__dec1
     l 828px
     t 420px
@@ -151,3 +225,18 @@
 
 body.index .news
   bgc $cream
+
+@media $LandscapeMinFrom
+  body.news 
+    .news__elem-tonext
+      visibility visible
+      opacity 1
+    .news__elem-color
+      opacity 1
+      h 100%
+    .news__elem-big
+      opacity .5
+      h 100%
+    .news__elem-title,
+    .news__elem-subtitle
+      color white

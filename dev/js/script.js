@@ -340,6 +340,18 @@
       }
     },
     
+    news: () => {
+      const newsOverEl = document.querySelector('.js-news');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+          newsOverEl.classList.remove('news');
+        } else {
+          newsOverEl.classList.add('news');
+        }
+      });
+    },
+
     awards: () => {
       const awardsCar = new Swiper('.js-awards', {
         speed: 700,
@@ -387,6 +399,7 @@
       if (document.querySelector('.js-banner')) this.banner()
       if (document.querySelectorAll('.js-products').length) this.products()
       if (document.querySelector('.js-awards')) this.awards()
+      if (document.querySelector('.js-news')) this.news()
          
       objectFitImages('img.fit')
       
