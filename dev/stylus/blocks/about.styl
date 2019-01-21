@@ -62,13 +62,121 @@
       max-width none
     
 .about
-  w calc(50% - 15px)
-  @media $LandscapeMax
-    w 100%
+  &_side
+    c white
+    w calc(50% - 15px)
+    @media $LandscapeMax
+      w 100%
+      mt 30px
+    ^[0]__text
+      mb 35px
+  &:not(&_side)
     mt 30px
+  &__car
+    overflow hidden
+  &__carover
+    pos relative
+    .swiper-button-prev,
+    .swiper-button-next
+      @media $LandscapeMaxFrom
+        mt 0
+        t 223px
+  .swiper-slide
+    overflow hidden
+    font-size 0
+  &__img
+    @media $LandscapeMaxFrom
+      pos relative
+      min-width 100%
+      l 50%
+      transform translateX(-50%)
+    @media $LandscapeMax
+      max-width 100%
+  &__content
+    pos relative
+    bgc $blue
+    color white
+    padding 25px 30px
+    ml 108px
+    mt -65px
+    @media $LandscapeMax
+      ml 0
+      mt 0
+    &-title
+      fontify 14px 600 20px
+      mb 20px
+    &-text
+      p:not([class])
+        fontify 14px 400 20px
+
+.employees
+  mt 55px
+  mb -170px
+  @media $LandscapeMax
+    mb -30px
+  &__title
+    color $dark
+    fontify 34px 600 36px
+    ml -2px
+  &__car
+    overflow hidden
+  &__carover
+    mt 34px
+    position relative
+    .swiper-slide
+      background-color #f3e7d5
+      h 100%
+      df(stretch, flex-start)
+      @media $desktopMin
+        height auto
+      @media $LandscapeMin
+        db()
+  &__content
+    pos relative
+    z-index 1
+    w calc(100% - 270px)
+    padding 73px 0 75px 49px
+    @media $LandscapeMin
+      w 100%
+      padding 30px 33px
+  &__imgover
+    pos relative
+    z-index 1
+    w 270px
+    padding 23px 30px 0
+    dfv(center, flex-end)
+    @media $LandscapeMin
+      dn()
+    &:before
+      content ""
+      pos absolute
+      z-index -1
+      w 50%
+      r 0
+      t 0
+      b 0
+      background url('data:image/png;base64,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') repeat top left -140px $blue
+  &__img
+    max-width 100%
+    max-height 100%
+  &__name
+    color $dark
+    fontify 30px 600 34px
+  &__position
+    color $orange
+    fontify 18px 600 20px
+    mt 19px
   &__text
-    mb 35px
-    
+    mt 31px
+    color $dark
+  &__dec1
+    pos absolute
+    z-index 0
+    filter brightness(0%)
+    l 29%
+    b -107px
+    transform scale(.8) rotate(-125deg)
+
 .awards
   overflow hidden
   background-color $cream

@@ -57,6 +57,8 @@ body.index
     pt 217px
     background-position bottom -630px center
     background-repeat no-repeat
+    @media $LandscapeMedium
+      pt 180px
     &_partners
       pb 270px
       @media $LandscapeMax
@@ -195,6 +197,24 @@ body.index
     filter brightness(0%)
     r 87px
     t 35%
+  &__dec7
+    filter brightness(0%)
+    r 30%
+    t -300px
+    transform scale(.8) rotate(20deg)
+  &__dec8
+    filter brightness(0%)
+    r 53px
+    t 9%
+  &__dec9
+    filter brightness(0%)
+    l 8px
+    t 58%
+  &__dec10
+    filter brightness(0%)
+    r 57px
+    t 57%
+    transform rotate(100deg)
 
 input::-webkit-input-placeholder
   color alpha(white, .5)

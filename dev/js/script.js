@@ -262,25 +262,6 @@
       })
     },
     
-    banner: () => {
-      const bannerSwiper = new Swiper('.js-banner', {
-        loop: true,
-        speed: 1200,
-        spaceBetween: 30,
-        parallax: true,
-        navigation: {
-          nextEl: '.js-banner .swiper-button-next',
-          prevEl: '.js-banner .swiper-button-prev',
-        },
-        pagination: {
-          el: '.js-banner .swiper-pagination'
-        },
-        autoplay: {
-          delay: 5000
-        }
-      })
-    },
-    
     products: () => {
       let tabs = document.querySelectorAll('.js-products-tab')
       
@@ -352,16 +333,44 @@
       });
     },
 
+    about: () => {
+      const aboutCar = new Swiper('.js-about-car', {
+        speed: 700,
+        loop: true,
+        spaceBetween: 20,
+        slidesPerView: 1,
+        autoHeight: true,
+        parallax: true,
+        navigation: {
+          nextEl: '.js-about-car ~ .swiper-buttons .swiper-button-next',
+          prevEl: '.js-about-car ~ .swiper-buttons .swiper-button-prev',
+        },
+      })
+
+      const awardsCar = new Swiper('.js-emp-car', {
+        speed: 700,
+        loop: true,
+        spaceBetween: 30,
+        slidesPerView: 2,
+        navigation: {
+          nextEl: '.js-emp-car ~ .swiper-buttons .swiper-button-next',
+          prevEl: '.js-emp-car ~ .swiper-buttons .swiper-button-prev',
+        },
+        breakpoints: {
+          1130: {
+            slidesPerView: 1,
+            autoHeight: true,
+          }
+        }
+      })
+    },
+
     awards: () => {
       const awardsCar = new Swiper('.js-awards', {
         speed: 700,
         spaceBetween: 0,
         slidesPerView: 3,
         allowTouchMove: false,
-        navigation: {
-          nextEl: '.js-awards .swiper-button-next',
-          prevEl: '.js-awards .swiper-button-prev',
-        },
         breakpoints: {
           1000: {
             loop: true,
@@ -396,10 +405,10 @@
       })
 
       if (document.querySelector('.js-async-scroll')) this.asyncScroll()
-      if (document.querySelector('.js-banner')) this.banner()
       if (document.querySelectorAll('.js-products').length) this.products()
       if (document.querySelector('.js-awards')) this.awards()
       if (document.querySelector('.js-news')) this.news()
+      if (document.querySelector('.js-about-car')) this.about()
          
       objectFitImages('img.fit')
       
