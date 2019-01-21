@@ -14,3 +14,56 @@ button(type="button").totop.js-totop
       span dextra
       | Разработка<br>сайта
   +e('p').warning ЧРЕЗМЕРНОЕ ПОТРЕБЛЕНИЕ АЛКОГОЛЯ ВРЕДИТ ВАШЕМУ ЗДОРОВЬЮ
+
+.hidden-block
+  .popup.popup_feedback#feed
+    +b.SECTION.feedback
+      .container
+        +e.SPAN.dec1.decor_type2
+        +e.SPAN.dec2.decor_type7
+        +e.SPAN.dec3.decor_type8
+        +e.ASIDE.side
+          +e.P.title Оставить отзыв
+          +e.text 
+            p Мы всегда рады ответить на любые вопросы, касающиеся нашей продукции.
+            p Обратите внимание, все поля обязательны для заполнения.
+        +e.FORM.form
+          .common__row.common__row_z
+            .common__col
+              .common__row
+                input(type="text", data-req="req").common__input
+                label.common__placeholder Ваше имя
+              .common__row
+                input(type="text", data-req="req").common__input
+                label.common__placeholder Электронная почта
+              .common__row
+                select.reviews__filter-select.js-select
+                  option(value="-1", disabled, selected) Выберите пункт
+                  option(value="1") Златоуст, Карла Маркса 5, Кабачок «У Шефа»
+                  option(value="2") Киров, Каширская 114В, «Beer’n’Fish»
+                  option(value="3") Златоуст, Карла Маркса 5, Кабачок «У Шефа»
+                  option(value="4") Киров, Каширская 114В, «Beer’n’Fish»
+                  option(value="5") Златоуст, Карла Маркса 5, Кабачок «У Шефа»
+                  option(value="6") Киров, Каширская 114В, «Beer’n’Fish»
+            .common__col
+              .reviews-rait
+                p.reviews__label Оцените товар или услугу
+                .reviews__raiting-over
+                  input(type="text", name="rate", value="5").reviews__raiting-inp.js-raiting-inp
+                  button(type="button", data-val="1").reviews__raiting-item.js-raiting.choosed
+                  button(type="button", data-val="2").reviews__raiting-item.js-raiting.choosed
+                  button(type="button", data-val="3").reviews__raiting-item.js-raiting.choosed
+                  button(type="button", data-val="4").reviews__raiting-item.js-raiting.choosed
+                  button(type="button", data-val="5").reviews__raiting-item.js-raiting.choosed
+              .common__row
+                textarea(data-req="req").common__textarea
+                label.common__placeholder Текст сообщения
+          .common__row
+            .fakecheckbox
+              input(type="checkbox", value="", name="agreement", checked)#agreement.fakecheckbox__truecheck
+              label(for="agreement").fakecheckbox__label Принимаю 
+                a(href="#") политику конфиденциальности
+                |  и даю согласие на 
+                a(href="#") обработку персональных данных
+            +e.sbm(type="submit") Отправить
+              span Некоторые обязательные поля не заполнены или заполнены с ошибкой.

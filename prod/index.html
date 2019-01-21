@@ -273,20 +273,20 @@
             <div class="common__row">
               <div class="common__col">
                 <div class="common__row">
-                  <input class="common__input" type="text" data-req>
+                  <input class="common__input" type="text" data-req="req">
                   <label class="common__placeholder">Ваше имя</label>
                 </div>
                 <div class="common__row">
-                  <input class="common__input" type="text" data-req>
+                  <input class="common__input" type="text" data-req="req">
                   <label class="common__placeholder">Электронная почта</label>
                 </div>
                 <div class="common__row">
-                  <input class="common__input js-phone" type="text" data-req>
+                  <input class="common__input js-phone" type="text" data-req="req">
                   <label class="common__placeholder">Номер телефона</label>
                 </div>
               </div>
               <div class="common__col">
-                <textarea class="common__textarea" data-req></textarea>
+                <textarea class="common__textarea" data-req="req"></textarea>
                 <label class="common__placeholder">Текст сообщения</label>
               </div>
             </div>
@@ -315,6 +315,72 @@
                                   <p class="footer__warning">ЧРЕЗМЕРНОЕ ПОТРЕБЛЕНИЕ АЛКОГОЛЯ ВРЕДИТ ВАШЕМУ ЗДОРОВЬЮ
                                   </p>
                 </footer>
+    <div class="hidden-block">
+      <div class="popup popup_feedback" id="feed">
+                    <section class="feedback">
+                      <div class="container"><span class="feedback__dec1 decor decor_type2"></span><span class="feedback__dec2 decor decor_type7"></span><span class="feedback__dec3 decor decor_type8"></span>
+                                        <aside class="feedback__side">
+                                                          <p class="feedback__title">Оставить отзыв
+                                                          </p>
+                                                          <div class="feedback__text"> 
+                                                            <p>Мы всегда рады ответить на любые вопросы, касающиеся нашей продукции.</p>
+                                                            <p>Обратите внимание, все поля обязательны для заполнения.</p>
+                                                          </div>
+                                        </aside>
+                                        <form class="feedback__form">
+                                          <div class="common__row common__row_z">
+                                            <div class="common__col">
+                                              <div class="common__row">
+                                                <input class="common__input" type="text" data-req="req">
+                                                <label class="common__placeholder">Ваше имя</label>
+                                              </div>
+                                              <div class="common__row">
+                                                <input class="common__input" type="text" data-req="req">
+                                                <label class="common__placeholder">Электронная почта</label>
+                                              </div>
+                                              <div class="common__row">
+                                                <select class="reviews__filter-select js-select">
+                                                  <option value="-1" disabled selected>Выберите пункт</option>
+                                                  <option value="1">Златоуст, Карла Маркса 5, Кабачок «У Шефа»</option>
+                                                  <option value="2">Киров, Каширская 114В, «Beer’n’Fish»</option>
+                                                  <option value="3">Златоуст, Карла Маркса 5, Кабачок «У Шефа»</option>
+                                                  <option value="4">Киров, Каширская 114В, «Beer’n’Fish»</option>
+                                                  <option value="5">Златоуст, Карла Маркса 5, Кабачок «У Шефа»</option>
+                                                  <option value="6">Киров, Каширская 114В, «Beer’n’Fish»</option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                            <div class="common__col">
+                                              <div class="reviews-rait">
+                                                <p class="reviews__label">Оцените товар или услугу</p>
+                                                <div class="reviews__raiting-over">
+                                                  <input class="reviews__raiting-inp js-raiting-inp" type="text" name="rate" value="5">
+                                                  <button class="reviews__raiting-item js-raiting choosed" type="button" data-val="1"></button>
+                                                  <button class="reviews__raiting-item js-raiting choosed" type="button" data-val="2"></button>
+                                                  <button class="reviews__raiting-item js-raiting choosed" type="button" data-val="3"></button>
+                                                  <button class="reviews__raiting-item js-raiting choosed" type="button" data-val="4"></button>
+                                                  <button class="reviews__raiting-item js-raiting choosed" type="button" data-val="5"></button>
+                                                </div>
+                                              </div>
+                                              <div class="common__row">
+                                                <textarea class="common__textarea" data-req="req"></textarea>
+                                                <label class="common__placeholder">Текст сообщения</label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="common__row">
+                                            <div class="fakecheckbox">
+                                              <input class="fakecheckbox__truecheck" type="checkbox" value="" name="agreement" checked id="agreement">
+                                              <label class="fakecheckbox__label" for="agreement">Принимаю <a href="#">политику конфиденциальности</a> и даю согласие на <a href="#">обработку персональных данных</a></label>
+                                            </div>
+                                                            <button class="feedback__sbm" type="submit">Отправить<span>Некоторые обязательные поля не заполнены или заполнены с ошибкой.</span>
+                                                            </button>
+                                          </div>
+                                        </form>
+                      </div>
+                    </section>
+      </div>
+    </div>
     <script type="text/javascript" src="static/js/polyfill.js"></script>
     <script type="text/javascript" src="static/js/vendor.js"></script>
     <script type="text/javascript" src="static/js/script.js"></script>

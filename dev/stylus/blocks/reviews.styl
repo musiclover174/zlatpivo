@@ -1,0 +1,213 @@
+.reviews
+  dfv()
+  mt -20px
+  @media $LandscapeMedium
+    mt 0
+  &__filter
+    ib()
+    mt 23px
+    ml 33px
+    white-space nowrap
+    @media $LandscapeMax
+      ml 23px
+    @media $LandscapeMedium
+      ml 0
+      mb 30px
+      mt -10px
+    &-spacer
+      ib()
+      fontify 15px 600 24px
+      mr 5px
+      mt -4px
+    .btn
+      ml 55px
+      mt -10px
+      @media $LandscapeMax
+        ml 25px
+      @media $PortraitMax
+        ml 0
+        mt 20px
+        db()
+        max-width 170px
+    .SumoSelect
+      width auto
+    .SumoSelect>.optWrapper
+      w 314px
+    .SumoSelect>.CaptionCont
+      fontify 15px 600 18px
+      min-height 18px
+      border-bottom 2px dotted $orange
+    .SumoSelect>.CaptionCont>span
+      pr 0
+    .SumoSelect>.CaptionCont>label
+      dn()
+  &__item
+    pos relative
+    z-index 1
+    & + &
+      mt 47px
+      @media $LandscapeMax
+        mt 30px
+  &__question
+    df()
+    c white
+    bgc $blue
+    padding 25px 30px 45px
+    @media $LandscapeMax
+      flex-direction column
+      pb 25px
+    &-from
+      w 185px
+      pr 30px
+      @media $LandscapeMax
+        w 100%
+        pr 0
+    &-name
+      fontify 13px 600 18px
+    &-date
+      mt 10px
+      color alpha(white, .5)
+      fontify 13px 400 18px
+    &-place
+      w 185px
+      text-align right
+      fontify 13px 500 25px
+      mt -3px
+      @media $LandscapeMax
+        w 100%
+        mt 20px
+    &-content
+      w calc(100% - 370px)
+      pr 30px
+      @media $LandscapeMax
+        w 100%
+        pr 0
+        mt 20px
+    &-titleover
+      ml -30px
+      w calc(100% + 30px)
+    &-title
+      ib()
+      fontify 13px 600 18px
+      ml 30px
+      mb 10px
+    &-rate
+      pos relative
+      display inline-block
+      vertical-align top
+      mt 2px
+      ml 30px
+      mb 10px
+      size 72px 12px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAAMCAQAAABrLTO2AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARUKAxOkp9paAAACoElEQVQ4y3WTTWiUVxSGn4yByGQSMyrSmIhVY9UsjFappsaoK/+KS5WEuhIqglUhoAgtKtgo4lpEQYogihgCgotQUQQNKOKi2hL/pqGiCDUz+EcaNY+LfE7uF+d77+a+PJxzz733HKS45ttlXeDja6O/W5ZIf3V/IsPTbk5ktXa5cNSHaJ+6JSEs5UUNA2Nroo/NOTmBNjlst+MSaJv6S6mCqryr9iQENjmgHk1IuknVtgTaqRYSLlPmZfVPa8KCUlZbZ4cf1UF/tNZM8DnlZp3uKVX7bXWK6SBhhZOc61VVrzvPyVYENO0UW8ypetrpZi0PSslYa7vv1GH3WGe1KSnzKI2kydJAJQB5cuQZpJdD1HGYiVQxiW8oB+A5/1Lgfy5whu/pYDwT+IqZjOgJLygwyDFu0MZmKqihnqkAfOQB//GaPHt5yl6WU0GWGWQBeMsj8rylD3f73i/1yi1ipcctpQeuEmfaU5JesUFs9e+S9KQZsd1CCfbBDsTV9o0Bt/yu+LQ/OTCGdhdnMe0Rh2JsyGNmivNz0eEYLbi9mHeRvWPyPnT956b+1n8CcMeGMS37JqDnRhswGvhQB2Ks2rMBe2N7jM7wdkD7Rx4hBUAfLxnVcx4T6h5DgXtCIUbvx9xfMfeKR4F7z70YzfEscHn6gKigRcwCiA5uYk4scDk1UUKAZqpjdAUAMgzAyhjLsDSIrKE1RmczPzh1FotHC1rIBAboZA3HeUc9jbHAZsroZycbuAQsYVrA0rQAd2mnjTtASzSrI6pnKXCZDewgB1F5n9XI1wxygjX8xksyLIiuZspOu10W/exae9wV/HTG8560UcRKt3rT9QGd4zUPRU1e60GvOS+g6+x1W9Tkcz3heasC+rN/+EO0b7bLw6bkE1jwT/VNsnYhAAAAAElFTkSuQmCC') no-repeat left top
+      &:before
+        content ""
+        pos absolute
+        l 0
+        t 0
+        h 12px
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAAMCAMAAAD2+gsPAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB71BMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///8MDVpLAAAAo3RSTlMALq4bVqEBfoCfWBkxel4CrRLd3xQv/rADWn0Nz7rui1eH8LbTEA50/fhdDAQRH5zhPhYKBxMov8IpPFv2d7XQ9M28tHuj1fvmybmyOsXGO+X81qQceI1x8guX2kEivSTXm0fZyjZnifpqM8fbSzLgqIGmIcsrhlOC77EP+eNokm0l80Nv7Zb1Um5IzlnMbN6lT/eYhexzSXCpKmQnwEqZTDmIgWNsswAAAAFiS0dEpFm+erkAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARUKBQfoJ6mhAAAB9ElEQVQoz03S+VdSQRQH8NsjNaPEQCAyEMHQRE3EAMMeW5tSmi0mRpmtlpVtmm22aqnt2WJl2/cfbd6dd2Tmh/fO59w7M3fuDJEx1mgWUsbasnKVFetUUeV6VVZtg6KNqFJkq4Ya3GR31Ch0utybFXqwpYTarfAqQacPdUqqH/AorEdA2aY8iIZt5v4hS2MTtjdbw3yelta2HUB7pCPK0c6dsTiQ6KrpZEY7djmAyrbWFl4lbE12w7XbErIR1enxVBqAL5PN7SHLXj2xb7/ggZ7efDMd1IKH7EKw9wW1fvLke3sOCw0cSehHj9FxPZvxCaZT8dwgnTCmyTFURYXhVeFkkU55Szw9QpEzJY6GKRlY1UAj0dlzJs5fMMq96DPpNi4yemlMamwwbFxRtUsycNnIvTJu5l69ZvD6BCMzYvY2zbxhtrBCpt6UCt1ipZOSt+8w27kEKmRYOfPtTMqSpsxruSsX8pucZt1zmrzPTD1gRMRRHwKPYjI2I6oX54mHJB8DriZgWCrs5SCeSD518NRnz1kvMDtVnHuJVzJYhon5hTy6J+V9L2Lxtf8NGgrM2BD0hbfv8F7mfsDHT8Wlz/jC76je3S9+X73f5J7Lo9/FcX/0cf/o58qSaLp1eqWL+Wt8RjQ99nu5ljmf/SO+f7V/NvoPnCHO+JM9id8AAAAASUVORK5CYII=') no-repeat left top
+      &_star1:before
+        w 21%
+      &_star2:before
+        w 40%
+      &_star3:before
+        w 61%
+      &_star4:before
+        w 81%
+      &_star5:before
+        w 100%
+    &-text
+      fontify 13px 400 18px
+      mt 5px
+    &-shaver
+      ib()
+      color white
+      mt 15px
+      fontify 13px 600 18px
+      border-bottom 2px dotted $orange
+      transition .7s border
+      &:hover
+        border-color transparent
+  &__answer
+    df()
+    pos relative
+    bgc #f3e7d5
+    padding 25px 30px
+    ml 108px
+    mt -25px
+    @media $LandscapeMax
+      ml 0
+      mt 0
+    @media $LandscapeMedium
+      flex-direction column
+    &-from
+      w 185px
+      pr 30px
+      @media $LandscapeMedium
+        w 100%
+        pr 0
+    &-title
+      fontify 13px 600 18px
+    &-date
+      mt 10px
+      color alpha($dark, .5)
+      fontify 13px 400 18px
+    &-text
+      w calc(100% - 185px)
+      fontify 13px 400 18px
+      @media $LandscapeMedium
+        w 100%
+        mt 20px
+  &__more
+    &-over
+      text-align center
+      mt 60px
+    &-href
+      c $dark
+      fontify 15px 600 18px
+      border-bottom 2px dotted $orange
+      transition .7s border
+      &:hover
+        border-color transparent
+  &__label
+    color alpha(white, .5)
+    fontify 14px 400 24px
+  &-rait
+    mb 37px
+    pt 7px
+  &__raiting
+    &-over
+      pos relative
+      font-size 0
+      mt 10px
+    &-inp
+      pos absolute
+      size 0
+      border 0
+      l -200vw
+      t -200vh
+    &-item
+      cursor pointer
+      size 14px 12px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAQAAAD4iURRAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARUNMQNRL4jKAAAAEGNhTnYAAAATAAAAEQAAAAUAAAADsKllQAAAAMBJREFUGNNljz9KA3EQRt9uusQ/pJSkTBG2ELRII6Sx0EAaD6BnSMArSAoPkFuE1LmAEBDrLYKChZVuSCErQV6KNdkf8Ztmhm++GR6yq1MnNoKZmFJ9brgk1G7v0Bd1ZqVMIsYe2fDeXzX31hMPjEQiH0moUqdFDYCMVzJynnjAoWv/a+VdcfbKdM+a29n+xHPfAuvZVoiS8hkAfLAIUbouVf1R9d12mDzjmC9GXDPmmyZJmYwdOfXiD73nzEHRbwDMf6xVZeK61wAAAABJRU5ErkJggg==') no-repeat center
+      &.choosed
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAMAAABlXnzoAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsVBMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf////+/N2yAAAAOXRSTlMALq4bel4Nz7oDAg50/fhdGQwBi7W/0PTuzby0e3H78kfZyjYy4CQLPvD54yhv7YZBlvVSh7A7SXCD8ZhKAAAAAWJLR0Q6TgnE+gAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MBFQ0xEaKW+YIAAAAQY2FOdgAAABMAAAARAAAABQAAAAOwqWVAAAAAdklEQVQI12NgAAFGJmYGJMBiyYrEY2O35OCEsrm4mXl4Lfn4BQSFgDxhEVExcUtLSwlJKWkZBgZZOUsYkAcZoKAI5SkpgzWrqIJ5kmoQs9QlwVxpIQhXQ9PSUsvSUlsHwtW11NM3MDSyNIbYa2JqBqTMOSyAJAA4UQ8sMHFeUwAAAABJRU5ErkJggg==') no-repeat center
+      & + &
+        ml 2px
+
+.popup_feedback
+  color white
+  p:not([class])
+    margin 18px 0
+    fontify 16px 300 24px
+    @media $LandscapeMax
+      fontify 14px 300 24px
+  a:not([class])
+    color inherit
+    border-bottom 2px solid $orange
+    transition .5s border
+    &:hover
+      border-color transparent
+  .common__textarea
+    h 100px

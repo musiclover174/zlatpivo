@@ -170,22 +170,26 @@ body.index
     filter brightness(0%)
     l calc(50% - 32px)
     t -4%
+    z-index -1
   &__dec2
     filter brightness(0%)
     l -54px
     t 31%
     transform scale(.8) rotate(-38deg)
+    z-index -1
   &__dec3
     filter brightness(0%)
     r 35%
     t 58%
     transform scaleX(-1)
+    z-index -1
   &__dec4
     z-index -3
     filter brightness(0%)
     l -100px
     t 45%
     transform rotate(-130deg)
+    z-index -1
     @media $desktopMedium
       l -130px
   &__dec5
@@ -193,28 +197,51 @@ body.index
     filter brightness(0%)
     r -70px
     t 35%
+    z-index -1
   &__dec6
     filter brightness(0%)
     r 87px
     t 35%
+    z-index -1
   &__dec7
     filter brightness(0%)
     r 30%
     t -300px
     transform scale(.8) rotate(20deg)
+    z-index -1
   &__dec8
     filter brightness(0%)
     r 53px
     t 9%
+    z-index -1
   &__dec9
     filter brightness(0%)
     l 8px
     t 58%
+    z-index -1
   &__dec10
     filter brightness(0%)
     r 57px
     t 57%
     transform rotate(100deg)
+    z-index -1
+  &__dec11
+    filter brightness(0%)
+    r 33%
+    t -70px
+    z-index -1
+  &__dec12
+    filter brightness(0%)
+    r -33px
+    t 30%
+    transform rotate(-130deg)
+    z-index -1
+  &__dec13
+    filter brightness(0%)
+    l -96px
+    t 49%
+    transform rotate(100deg)
+    z-index -1
 
 input::-webkit-input-placeholder
   color alpha(white, .5)
@@ -232,24 +259,29 @@ div[class\^="table-scroller"]
 
 .btn
   ib()
-  bgc $blue
+  bgc $orange
   border 0
-  border-radius 5px
-  color white
+  border-radius 18px
+  font-family $os
+  color $dark
   outline none
   cursor pointer
-  fontify 14px 400 36px
-  padding 0 15px
+  fontify 13px 600 36px
+  padding 0 30px
   transition .7s background, .7s color
   &:hover
-    bgc #e8ebf5
-    color #7ca8cb
+    bgc $blue
+    color white
     
 .common
   &__title
     fontify 50px 600 52px
     mb 52px
     ml -3px
+    &_wfilter
+      ib()
+      @media $LandscapeMedium
+        db()
     @media $LandscapeMedium
       fontify 30px 600 32px
       ml -2px
@@ -299,6 +331,8 @@ div[class\^="table-scroller"]
     &.notempty + ^[0]__placeholder
       fontify 11px 400 11px
       t -12px
+    &.warning + ^[0]__placeholder
+      color alpha(#e93232, .5)
   &__textarea
     w 100%
     h 188px
@@ -318,6 +352,8 @@ div[class\^="table-scroller"]
     &.notempty + ^[0]__placeholder
       fontify 11px 400 11px
       t -12px
+    &.warning + ^[0]__placeholder
+      color alpha(#e93232, .5)
   &__select
     h 36px
     bgc #fff
@@ -326,7 +362,7 @@ div[class\^="table-scroller"]
     cursor pointer
     transition .5s border
     &.warning
-      border-color #ed1c24
+      border-color #e93232
   &__placeholder
     pos absolute
     z-index -1
@@ -357,71 +393,14 @@ div[class\^="table-scroller"]
     pos relative
     z-index 1
     w 100%
+    &_z
+      z-index 2
     @media $PortraitMax
       flex-direction column
     & + &
       mt 37px
       @media $PortraitMax
         mt 30px
-  &__fileover
-    w 100%
-    pos relative
-    pt 14px
-    pb 14px
-    border-bottom 1px solid white
-    transition .5s border
-    &.warning
-      border-color #ed1c24
-    & + &
-      mt 20px
-  &__file
-    pos absolute
-    w 0
-    h 0
-    l 0
-    t 0
-    opacity 0
-    &name
-      ib()
-      pos relative
-      l 26px
-      cursor pointer
-      color white
-      fontify 14px 700 14px
-      letter-spacing .1em
-      text-transform uppercase
-      border-bottom 1px solid alpha(white, .25)
-      transition .5s border
-      @media $lDesktopSmall
-        font-size 12px
-      &.choosed,
-      &:hover
-        border-color transparent
-      &:after
-        content "*"
-        pos absolute
-        r -11px
-        fontify 23px 400 14px
-        t -3px
-      &:before
-        content ""
-        pos absolute
-        l -24px
-        t 3px
-        size 16px 8px
-        background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAMAAADHqI+lAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAe1BMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////QYBnOAAAAKHRSTlMAFJLi/uaFBRrhukMXERM+1IeisgE0t8xM8EeJRFvnRmnsaKQ1uVUVNSas3QAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABYSURBVAjXRc1ZEkAwEATQJvZ9jxC74P4nRATvr6eqewBNJ8ahmJYNx/X8IHxEcZIiywuUFZWAmoE1AGm5BHQ92PAf+DjNWK7KqipUbLhGxTcKadfJ+/WOJ3rfCXxQ+WZgAAAAAElFTkSuQmCC") no-repeat center
-      &.choosed + ^[-1]delete
-        visibility visible
-        cursor pointer
-      &.choosed:after
-        content ""
-    &delete
-      ib()
-      visibility hidden
-      mt 3px
-      ml 32px
-      size 9px
-      background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJBAMAAAASvxsjAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEX///////////////////////////////////////////////////////9q+00tAAAADXRSTlMA0Do74eI5bGtqOM7MEv0urwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAA3SURBVAjXYxBiYGAWYFBRYDBNYGByYg5jYGBQLU0Akhw3GUDsKQoMDExRTE4MDKYLQMp2AbkHAKcGB4WerKhTAAAAAElFTkSuQmCC") no-repeat center
   &__back
     ib()
     pos relative
@@ -484,7 +463,7 @@ div[class\^="table-scroller"]
     &:checked + ^[0]__label:after
       opacity 1
     &.warning + ^[0]__label:before 
-      border-color #ed1c24
+      border-color #e93232
     
 .text
   c $dark
@@ -547,7 +526,7 @@ div[class\^="table-scroller"]
       
 input.warning,
 textarea.warning
-  border-color $orange
+  border-color #e93232
 
 .hidden-block
   display none

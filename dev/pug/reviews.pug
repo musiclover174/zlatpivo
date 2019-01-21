@@ -1,0 +1,90 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+
+    +b.MAIN.content
+      +e.bg(style="background-image: url('img/products-bg.jpg')")
+        .container
+
+          +e.SPAN.dec11.decor_type3
+          +e.SPAN.dec12.decor_type7
+          +e.SPAN.dec13.decor_type11
+
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim /
+
+          section.common__titleover
+            h1.common__title.common__title_wfilter Отзывы
+            .reviews__filter
+              span.reviews__filter-spacer /
+              select.reviews__filter-select.js-select(multiple)
+                option(value="1") Златоуст, Карла Маркса 5, Кабачок «У Шефа»
+                option(value="2") Киров, Каширская 114В, «Beer’n’Fish»
+                option(value="3") Златоуст, Карла Маркса 5, Кабачок «У Шефа»
+                option(value="4") Киров, Каширская 114В, «Beer’n’Fish»
+                option(value="5") Златоуст, Карла Маркса 5, Кабачок «У Шефа»
+                option(value="6") Киров, Каширская 114В, «Beer’n’Fish»
+              button(type="button", data-fancybox, data-src="#feed").btn Написать отзыв
+
+          +b('ul').reviews.js-reviews
+            +e.item
+              +e.question
+                +e('aside').question-from
+                  +e('p').question-name Вадим Горин
+                  +e('p').question-date 13 мая 2017
+                +e.question-content
+                  +e.question-titleover
+                    +e('p').question-title Отдых без кружки пенного - это не отдых!!
+                    +e('span').question-rate._star1
+                  +e('p').question-text.js-question-text ООО «Пегас» и ООО «Пивоиндустрия». Исторически, предприятие основано в 1994г., как образцовое подразделение знаменитого производственного объединения «Златоустовский Машиностроительный завод» – участвовавшего в разработке и изготовлении морских баллистических ракетных комплексов и в связи с решением советского правительства, приступившего к изготовлению современного высококачественного оборудования – мини пивоварни.
+                  +e.question-shaver(href="#").js-question-shaver Показать полностью
+                +e('aside').question-place Златоуст, Карла Маркса,<br>«Кабачок У Шефа»
+              +e.answer
+                +e('aside').answer-from
+                  +e('p').answer-title Ответ на отзыв
+                  +e('p').answer-date 13 мая 2017
+                +e('p').answer-text В  состав объединения входят ООО «Пегас» и ООО «Пивоиндустрия». Исторически, предприятие основано в 1994г., как образцовое подразделение знаменитого производственного объединения.
+            +e.item
+              +e.question
+                +e('aside').question-from
+                  +e('p').question-name Вадим Горин
+                  +e('p').question-date 13 мая 2017
+                +e.question-content
+                  +e.question-titleover
+                    +e('p').question-title Отдых без кружки пенного - это не отдых!!
+                    +e('span').question-rate._star2
+                  +e('p').question-text.js-question-text ООО «Пегас» и ООО «Пивоиндустрия». Исторически, предприятие основано в 1994г., как образцовое подразделение знаменитого производственного объединения «Златоустовский Машиностроительный завод» – участвовавшего в разработке и изготовлении морских баллистических ракетных комплексов и в связи с решением советского правительства, приступившего к изготовлению современного высококачественного оборудования – мини пивоварни.
+                  +e.question-shaver(href="#").js-question-shaver Показать полностью
+                +e('aside').question-place Златоуст, Карла Маркса,<br>«Кабачок У Шефа»
+              +e.answer
+                +e('aside').answer-from
+                  +e('p').answer-title Ответ на отзыв
+                  +e('p').answer-date 13 мая 2017
+                +e('p').answer-text В  состав объединения входят ООО «Пегас» и ООО «Пивоиндустрия». Исторически, предприятие основано в 1994г., как образцовое подразделение знаменитого производственного объединения.
+            +e.item
+              +e.question
+                +e('aside').question-from
+                  +e('p').question-name Вадим Горин
+                  +e('p').question-date 13 мая 2017
+                +e.question-content
+                  +e.question-titleover
+                    +e('p').question-title Отдых без кружки пенного - это не отдых!!
+                    +e('span').question-rate._star4
+                  +e('p').question-text ООО «Пегас» и ООО «Пивоиндустрия». Исторически, предприятие основано в 1994г., как образцовое подразделение знаменитого производственного объединения «Златоустовский Машиностроительный завод».
+                +e('aside').question-place Киров, Каширская,<br>«Beer’n’Fish»
+              +e.answer
+                +e('aside').answer-from
+                  +e('p').answer-title Ответ на отзыв
+                  +e('p').answer-date 13 мая 2017
+                +e('p').answer-text В  состав объединения входят ООО «Пегас» и ООО «Пивоиндустрия». Исторически, предприятие основано в 1994г., как образцовое подразделение знаменитого производственного объединения.
+          section.reviews__more-over
+            a(href="#").reviews__more-href.js-rev-more Показать еще
+        
+    include layout/__footer
+    include layout/__scripts

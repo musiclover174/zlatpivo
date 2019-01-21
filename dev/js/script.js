@@ -82,11 +82,18 @@
       const _th = this,
         inputs = document.querySelectorAll('.common__input, .common__textarea'),
         forms = document.querySelectorAll('form'),
-        selectors = document.querySelectorAll('.js-select'),
-        choicesArr = [],
         digitsInput = document.querySelectorAll('.js-digits')
 
       $('.js-phone').mask('+7(999) 999-9999')
+
+      if ($('.js-select')) {
+        $('.js-select').SumoSelect({
+          placeholder: 'Все отзывы',
+          captionFormatAllSelected: 'Все отзывы',
+          captionFormat: 'Выбрано пунктов: {0}',
+          csvDispCount: 1,
+        });
+      }
 
       function emptyCheck(event) {
         event.target.value.trim() === '' ?
@@ -99,47 +106,11 @@
         item.addEventListener('blur', emptyCheck)
       }
 
-      if (document.querySelectorAll('.js-common-file').length) {
-        let commonFile = document.querySelectorAll('.js-common-fileinput'),
-          commonFileDelete = document.querySelectorAll('.js-common-filedelete')
-
-        for (let fileInp of commonFile) {
-          fileInp.addEventListener('change', (e) => {
-            let el = fileInp.nextElementSibling,
-              path = fileInp.value.split('\\'),
-              pathName = path[path.length - 1].split('');
-
-            pathName.length >= 30 ?
-              pathName = pathName.slice(0, 28).join('') + '...' :
-              pathName = pathName.join('')
-
-            el.textContent = pathName;
-            el.classList.add('choosed');
-          })
-        }
-
-        for (let fileDelete of commonFileDelete) {
-          fileDelete.addEventListener('click', (e) => {
-            let el = fileDelete.previousElementSibling,
-              fileInput = fileDelete.previousElementSibling.previousElementSibling;
-            el.textContent = el.getAttribute('data-default');
-            fileInput.value = '';
-            el.classList.remove('choosed');
-          })
-        }
-      }
-
       for (let form of forms) {
-        form.addEventListener('submit', e => !_th.checkForm(form) && e.preventDefault() && e.stopPropagation())
-      }
-
-      for (let selector of selectors) {
-        let choice = new Choices(selector, {
-          searchEnabled: false,
-          itemSelectText: '',
-          position: 'bottom'
-        });
-        choicesArr.push(choice);
+        form.addEventListener('submit', (e) => {
+          console.log('submit');
+          return !_th.checkForm(form) && e.preventDefault()
+        })
       }
 
       for (let digitInput of digitsInput) {
@@ -381,6 +352,53 @@
         }
       })
     },
+
+    reviewsShave: () => {
+      for (let text of document.querySelectorAll('.js-question-text:not([data-text])')) {
+        text.setAttribute('data-text', text.textContent);
+        shave(text, 54);
+      }
+    },
+
+    reviewsShaver: (target) => {
+      const textEl = target.previousElementSibling;
+      const hasShave = textEl.querySelector('.js-shave');
+      if (hasShave !== null) {
+        textEl.textContent = textEl.getAttribute('data-text');
+        target.textContent = 'Скрыть';
+        return;
+      }
+      shave(textEl, 54);
+      target.textContent = 'Показать полностью';
+      return;
+    },
+
+    reviewsEventsBindings: function() {
+      const that = this;
+
+      document.addEventListener('click', function (e) {
+        for (let target = e.target; target && target !== this; target = target.parentNode) {
+          if (target.matches('.js-question-shaver')) {
+            that.reviewsShaver(target);
+            e.preventDefault();
+            break;
+          }
+        }
+      }, false);
+
+      const raiteEl = document.querySelectorAll('.js-raiting');
+      const raiteInpEl = document.querySelector('.js-raiting-inp');
+      if (raiteEl) {
+        raiteEl.forEach(function(item) {
+          item.addEventListener('click', function() {
+            raiteInpEl.value = item.getAttribute('data-val');
+            $(this).nextAll('.js-raiting').removeClass('choosed');
+            $(this).prevAll('.js-raiting').addClass('choosed');
+            $(this).addClass('choosed');
+          });
+        });
+      }
+    },
     
     init: function () {
 
@@ -409,6 +427,10 @@
       if (document.querySelector('.js-awards')) this.awards()
       if (document.querySelector('.js-news')) this.news()
       if (document.querySelector('.js-about-car')) this.about()
+      if (document.querySelector('.js-reviews')) {
+        this.reviewsShave(); 
+        this.reviewsEventsBindings();
+      }
          
       objectFitImages('img.fit')
       
@@ -442,11 +464,15 @@
         })
       }
       
-      this.resizeWatcher()
+      $('[data-fancybox]').fancybox({
+        i18n: {
+          en: {
+            CLOSE: "Закрыть"
+          }
+        }
+      });
 
-      for (let sh of document.querySelectorAll('.js-shave')) {
-        shave(sh, sh.getAttribute('data-height'))
-      }
+      this.resizeWatcher()
       
       let eventResize
       try {
