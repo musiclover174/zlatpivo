@@ -1,0 +1,26 @@
+.markers
+  display inline-flex
+  margin-top 10px
+
+  @media $desktopMedium
+    width 100%
+    margin-top 20px
+
+  &__item
+    color #fff
+    font-size 16px
+    font-weight 600
+    line-height 20px
+    height 24px
+    background-color #1e1e1c
+    margin-right 10px
+    padding 2px 8px
+    transition color .4s, background .4s
+
+    &:last-child
+      margin-right 0
+
+    &_yellow
+      font-size 19px
+      background-color #f5c017
+      color #171717

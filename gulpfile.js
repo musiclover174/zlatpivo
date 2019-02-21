@@ -1,44 +1,46 @@
 var gulp = require('gulp'),
   gutil = require('gulp-util'),
-	stylus = require('gulp-stylus'),
-	pug = require('gulp-pug'),
-	concat = require('gulp-concat'),
-	rename = require('gulp-rename'),
-	uglify = require('gulp-uglify'),
+  stylus = require('gulp-stylus'),
+  pug = require('gulp-pug'),
+  concat = require('gulp-concat'),
+  rename = require('gulp-rename'),
+  uglify = require('gulp-uglify'),
   babel = require('gulp-babel'),
   cleanCSS = require('gulp-clean-css'),
-	autoprefixer = require('gulp-autoprefixer'),
-	imagemin = require('compress-images'),
+  autoprefixer = require('gulp-autoprefixer'),
+  imagemin = require('compress-images'),
   browserSync = require('browser-sync'),
   pump = require('pump'),
   reload = browserSync.reload;
 
 var src = {
-	'dev': {
-		'stylus': 'dev/stylus/',
-		'jsdir': 'dev/js/*',
-		'js': 'dev/js/script.js',
-		'progjs': 'dev/js/prog/*',
-		'jslibs': 'dev/js/ext/*.js',
-		'pug': 'dev/pug/*.pug',
-		'imgs': 'dev/img/*',
-		'icons': 'dev/i/*'
-	},
-	'prod': {
-		'css': 'prod/static/css',
-		'js': 'prod/static/js/',
-		'jslibs': 'prod/static/js/ext/',
-		'html': 'prod/',
-		'imgs': 'prod/img/',
-		'icons': 'prod/static/i/'
-	}
+  'dev': {
+    'stylus': 'dev/stylus/',
+    'jsdir': 'dev/js/*',
+    'js': 'dev/js/script.js',
+    'progjs': 'dev/js/prog/*',
+    'jslibs': 'dev/js/ext/*.js',
+    'pug': 'dev/pug/*.pug',
+    'imgs': 'dev/img/*',
+    'icons': 'dev/i/*'
+  },
+  'prod': {
+    'css': 'prod/static/css',
+    'js': 'prod/static/js/',
+    'jslibs': 'prod/static/js/ext/',
+    'html': 'prod/',
+    'imgs': 'prod/img/',
+    'icons': 'prod/static/i/'
+  }
 };
 
 // server started 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
   browserSync({
     server: {
-      baseDir: "./prod/"
+      //baseDir: "./prod/"
+      baseDir: "./",
+      directory: true
     }
   });
 });
@@ -46,48 +48,54 @@ gulp.task('browser-sync', function() {
 // js libs task
 gulp.task('js-libs', function (cb) {
   pump([
-    gulp.src(src.dev.jslibs),
-    concat('vendor.js'),
-    uglify(),
-    gulp.dest(src.prod.js)
-  ],
+      gulp.src(src.dev.jslibs),
+      concat('vendor.js'),
+      uglify(),
+      gulp.dest(src.prod.js)
+    ],
     cb);
 });
 
 // main js task
 gulp.task('js', function (event) {
-	return gulp.src(
-    [
-      'node_modules/babel-polyfill/dist/polyfill.js',
-      src.dev.js
-    ])
-		.pipe(babel({
+  return gulp.src(
+      [
+        'node_modules/babel-polyfill/dist/polyfill.js',
+        src.dev.js
+      ])
+    .pipe(babel({
       presets: ['es2015'],
       minified: true
     }))
-		.pipe(gulp.dest(src.prod.js))
-    .pipe(reload({stream:true}));
+    .pipe(gulp.dest(src.prod.js))
+    .pipe(reload({
+      stream: true
+    }));
 });
 
 // prog js task
 gulp.task('prog-js', function (event) {
-	return gulp.src(src.dev.progjs)
-		.pipe(babel({
+  return gulp.src(src.dev.progjs)
+    .pipe(babel({
       presets: ['env'],
       minified: false
     }))
-		.pipe(gulp.dest(src.prod.js))
-    .pipe(reload({stream:true}));
+    .pipe(gulp.dest(src.prod.js))
+    .pipe(reload({
+      stream: true
+    }));
 });
 
 // pug task
 gulp.task('pug', function (cb) {
-	return gulp.src(src.dev.pug)
-		.pipe(pug({
-			pretty: true
-		}))
-		.pipe(gulp.dest(src.prod.html))
-    .pipe(reload({stream:true}));
+  return gulp.src(src.dev.pug)
+    .pipe(pug({
+      pretty: true
+    }))
+    .pipe(gulp.dest(src.prod.html))
+    .pipe(reload({
+      stream: true
+    }));
   /*pump([
     gulp.src(src.dev.pug),
     pug({pretty: true}),
@@ -99,28 +107,32 @@ gulp.task('pug', function (cb) {
 
 // stylus task and minify
 gulp.task('stylus', function () {
-	return gulp.src(src.dev.stylus + 'style.styl')
-		.pipe(stylus())
-		.pipe(gulp.dest(src.prod.css));
+  return gulp.src(src.dev.stylus + 'style.styl')
+    .pipe(stylus())
+    .pipe(gulp.dest(src.prod.css));
 });
 
 gulp.task('css-make', ['stylus'], function () {
-	return gulp.src(src.prod.css + '/style.css')
-		.pipe(autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: false
-		}))
-		.pipe(gulp.dest(src.prod.css))
-    .pipe(reload({stream:true}));
+  return gulp.src(src.prod.css + '/style.css')
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(gulp.dest(src.prod.css))
+    .pipe(reload({
+      stream: true
+    }));
 });
 
 gulp.task('css-min', ['css-make'], function () {
-	return gulp.src(src.prod.css + '/style.css')
-    .pipe(cleanCSS({debug: true}, (details) => {
+  return gulp.src(src.prod.css + '/style.css')
+    .pipe(cleanCSS({
+      debug: true
+    }, (details) => {
       console.log(`${details.name}: ${details.stats.originalSize}`);
       console.log(`${details.name}: ${details.stats.minifiedSize}`);
     }))
-		.pipe(gulp.dest(src.prod.css));
+    .pipe(gulp.dest(src.prod.css));
 });
 
 // image minify task
@@ -136,7 +148,7 @@ gulp.task('image-min', function () {
     }
   }, {
     png: {
-      engine: 'pngquant', 
+      engine: 'pngquant',
       command: ['--quality=30-60']
     }
   }, {
@@ -164,7 +176,7 @@ gulp.task('icons-min', function () {
     }
   }, {
     png: {
-      engine: 'pngquant', 
+      engine: 'pngquant',
       command: ['--quality=30-60']
     }
   }, {
@@ -182,7 +194,9 @@ gulp.task('icons-min', function () {
 
 // Reload all Browsers
 gulp.task('bs-reload', function () {
-  browserSync.reload({stream:true});
+  browserSync.reload({
+    stream: true
+  });
 });
 
 // watch-такс с релоадом
@@ -197,11 +211,11 @@ gulp.task('default', ['browser-sync', 'watch'], function () {
 
 // Watch-таск для работы
 gulp.task('watch', function () {
-	gulp.watch(src.dev.pug, ['pug']);
-	gulp.watch(src.dev.imgs, ['image-min']);
-	gulp.watch(src.dev.icons, ['icons-min']);
-	gulp.watch(src.dev.stylus + '**/*.styl', ['stylus', 'css-make']);
-	gulp.watch(src.dev.jsdir + '*/*.js', ['js', 'js-libs', 'prog-js']);
+  gulp.watch(src.dev.pug, ['pug']);
+  gulp.watch(src.dev.imgs, ['image-min']);
+  gulp.watch(src.dev.icons, ['icons-min']);
+  gulp.watch(src.dev.stylus + '**/*.styl', ['stylus', 'css-make']);
+  gulp.watch(src.dev.jsdir + '*/*.js', ['js', 'js-libs', 'prog-js']);
 });
 
 // Сборка проекта

@@ -1,0 +1,180 @@
+include bemto/bemto.pug
+include mixins/mixins.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+    
+
+    +b.MAIN.content._catalog
+      +e.bg(style="background-image: url('img/products-bg.jpg')")
+        .container
+
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim /
+
+          h1.common__title Каталог
+
+          +b('section').catalog
+            +e('ul').filter
+              +e('li').filter-item
+                +e('a')(href="#").filter-href Все
+              +e('li').filter-item
+                +e('a')(href="#").filter-href._active Пиво
+              +e('li').filter-item
+                +e('a')(href="#").filter-href Квас
+              +e('li').filter-item
+                +e('a')(href="#").filter-href Закуска к пенному
+            
+            +e.products
+              +catalog-product([
+                {
+                  img: 'img/prod-img.png',
+                  imgBack: 'img/prod-img-back.jpg',
+                  title: 'Изумруд',
+                  marker: [
+                    {
+                      markerText: '5.4%',
+                      markerDopCLass: '_yellow'
+                    },
+                    {
+                      markerText: 'Лагер'
+                    }
+                  ],
+                  descr: 'Пиво насыщенного рыжевато-янтарного цвета. Обладает ароматом солода, слегка маслянистое имеет чистый, без примесей вкус.'
+                },
+                {
+                  img: 'img/prod-img.png',
+                  imgBack: 'img/prod-img-back.jpg',
+                  title: 'Златич',
+                  marker:[ 
+                    {
+                      markerText: '5.4%',
+                      markerDopCLass: '_yellow'
+                    },
+                    {
+                      markerText: 'Стаут'
+                    }
+                  ],
+                  descr: 'Пиво насыщенного рыжевато-янтарного цвета. Обладает ароматом солода, слегка маслянистое имеет чистый, без примесей вкус.'
+                },
+                {
+                  img: 'img/prod-img.png',
+                  imgBack: 'img/prod-img-back.jpg',
+                  title: 'Московское',
+                  marker: [
+                    {
+                      markerText: '5.4%',
+                      markerDopCLass: '_yellow'
+                    },
+                    {
+                      markerText: 'APA'
+                    }
+                  ],
+                  descr: 'Пиво насыщенного рыжевато-янтарного цвета. Обладает ароматом солода, слегка маслянистое имеет чистый, без примесей вкус. '
+                },
+                {
+                  img: 'img/prod-img.png',
+                  imgBack: 'img/prod-img-back.jpg',
+                  title: 'Ячменное поле',
+                  marker: [
+                    {
+                      markerText: '5.4%',
+                      markerDopCLass: '_yellow'
+                    },
+                    {
+                      markerText: 'Лагер'
+                    }
+                  ],
+                  descr: 'Пиво насыщенного рыжевато-янтарного цвета. Обладает ароматом солода, слегка маслянистое имеет чистый, без примесей вкус.'
+                }
+              ])
+
+              +publ([
+                {
+                  title: 'Со вторника по четверг 20% скидка на все живое!',
+                  text: 'С 1 октября по 25 октября каждые вторник, среду и четверг скидка на живое 20% по адресам: г. Златоуст, ул. Горная, 74А г. Златоуст, ул. Оружейная, 15',
+                  imgBack: 'img/publ-img-back.jpg'
+                }
+              ])
+
+              +catalog-product([
+                {
+                  img: 'img/prod-img.png',
+                  imgBack: 'img/prod-img-back.jpg',
+                  title: 'Московское',
+                  marker: [
+                    {
+                      markerText: '5.4%',
+                      markerDopCLass: '_yellow'
+                    },
+                    {
+                      markerText: 'Пшеничное'
+                    }
+                  ],
+                  descr: 'Пиво насыщенного рыжевато-янтарного цвета. Обладает ароматом солода, слегка маслянистое имеет чистый, без примесей вкус.'
+                },
+                {
+                  img: 'img/prod-img.png',
+                  imgBack: 'img/prod-img-back.jpg',
+                  title: 'Ячменное поле',
+                  marker: [
+                    {
+                      markerText: '5.4%',
+                      markerDopCLass: '_yellow'
+                    },
+                    {
+                      markerText: 'Лагер'
+                    }
+                  ],
+                  descr: 'Пиво насыщенного рыжевато-янтарного цвета. Обладает ароматом солода, слегка маслянистое имеет чистый, без примесей вкус.'
+                },
+                {
+                  img: 'img/prod-img.png',
+                  imgBack: 'img/prod-img-back.jpg',
+                  title: 'Московское',
+                  marker: [
+                    {
+                      markerText: '5.4%',
+                      markerDopCLass: '_yellow'
+                    },
+                    {
+                      markerText: 'APA'
+                    }
+                  ],
+                  descr: 'Пиво насыщенного рыжевато-янтарного цвета. Обладает ароматом солода, слегка маслянистое имеет чистый, без примесей вкус. '
+                },
+                {
+                  img: 'img/prod-img2.png',
+                  imgBack: 'img/prod-img-back.jpg',
+                  title: 'Ячменное поле',
+                  marker: [
+                    {
+                      markerText: '5.4%',
+                      markerDopCLass: '_yellow'
+                    },
+                    {
+                      markerText: 'Лагер'
+                    }
+                  ],
+                  descr: 'Пиво насыщенного рыжевато-янтарного цвета. Обладает ароматом солода, слегка маслянистое имеет чистый, без примесей вкус.'
+                }
+              ])
+
+              +publ([
+                {
+                  title: 'Дегустация нового сорта пива',
+                  text: 'С 1 октября по 25 октября каждые вторник, среду и четверг скидка на живое 20% по адресам: г. Златоуст, ул. Горная, 74А г. Златоуст, ул. Оружейная, 15',
+                  imgBack: 'img/publ-img-back2.jpg'
+                }
+              ])
+
+            +e.more-over
+              +e('a').more-href(href="#") Показать еще
+        
+    include layout/__footer
+    include layout/__scripts

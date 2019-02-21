@@ -25,7 +25,7 @@ body
       opacity 1
     .content
       z-index 1
-      
+
 .container
   w 100%
   max-width 1440px
@@ -52,6 +52,9 @@ body.index
 
 .content
   bgc $cream
+  &_catalog
+    .common__title
+      max-width 50%
   &__bg
     pb 96px
     pt 217px
@@ -81,7 +84,7 @@ body.index
     transform translate(-50%, -50%)
     opacity .7
   h1:not([class])
-    fontify 50px 700 55px
+    fontify 50px 600 55px
     margin 63px 0 26px
     @media $LandscapeMedium
       fontify 30px 600 32px
@@ -125,7 +128,7 @@ body.index
     mt 13px
   ol:not([class]) li:before
     counter-increment myCounter
-    content counter(myCounter)"."	
+    content counter(myCounter)"."
     pos absolute
     l 0
     t 0
@@ -144,7 +147,7 @@ body.index
     transition .5s border
     &:hover
       border-color transparent
- 
+
   *:not([class]):not(span):first-child
     mt 0 !important
   *:not([class]):not(span):last-child
@@ -249,7 +252,7 @@ input::-moz-placeholder
   color alpha(white, .5)
 input:-ms-input-placeholder
   color alpha(white, .5)
-  
+
 div[class\^="table-scroller"]
   overflow auto
   pos relative
@@ -272,10 +275,11 @@ div[class\^="table-scroller"]
   &:hover
     bgc $blue
     color white
-    
+
 .common
   &__title
     fontify 50px 600 52px
+    color #3c3c3c
     mb 52px
     ml -3px
     &_wfilter
@@ -366,7 +370,7 @@ div[class\^="table-scroller"]
   &__placeholder
     pos absolute
     z-index -1
-    l 0 
+    l 0
     t 0
     color alpha(white, .5)
     fontify 14px 400 36px
@@ -422,7 +426,7 @@ div[class\^="table-scroller"]
       t 6px
       size 13px 8px
       background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAMAAAAV+IX9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAP1BMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///8AU9tkAAAAE3RSTlMAV+cHcPVOAYvtOaCwiHV3OvTqgGJyUgAAAAFiS0dEFJLfyTUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARINIh+5Fq2uAAAANElEQVQI12NgYGBgZGJmgAMWVjY4m52Dkwshwy3MwwsDfCg8fpBKAQYkwCLIhsxlFILZAABokQHsQ7L58gAAAABJRU5ErkJggg==') no-repeat center
-      
+
 .fakecheckbox
   ib()
   pos relative
@@ -433,7 +437,7 @@ div[class\^="table-scroller"]
     pos relative
     pl 29px
     pt 7px
-    &:before 
+    &:before
       content ""
       pos absolute
       l 0px
@@ -462,9 +466,9 @@ div[class\^="table-scroller"]
     opacity 0
     &:checked + ^[0]__label:after
       opacity 1
-    &.warning + ^[0]__label:before 
+    &.warning + ^[0]__label:before
       border-color #e93232
-    
+
 .text
   c $dark
   max-width 80%
@@ -500,7 +504,7 @@ div[class\^="table-scroller"]
   &.visible
     visibility visible
     opacity 1
-      
+
 .breadcrumbs
   color #4f4f4f
   mb 18px
@@ -523,14 +527,14 @@ div[class\^="table-scroller"]
   background-position center
   background-attachment fixed
   background-size cover
-      
+
 input.warning,
 textarea.warning
   border-color #e93232
 
 .hidden-block
   display none
-  
+
 .decor
   pos absolute
   opacity .2
