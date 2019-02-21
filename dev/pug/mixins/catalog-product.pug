@@ -1,0 +1,15 @@
+mixin catalog-product(data)
+  each item in data
+    +e.product
+      +e('a').product-overimg(href="#")
+        +e('span').product-hover(style="background-image: url('"+item.imgBack+"');")
+        +e('img')(src=item.img alt="").product-img
+      +e.product-info
+        +e.product-info-top
+          +e('a')(href="#").product-title
+            span #{item.title}
+          if (item.marker)
+            +b('ul').markers
+              each item2 in item.marker
+                +e('li').item(class=item2.markerDopCLass ? item2.markerDopCLass : '') #{item2.markerText}
+        +e('p').product-descr #{item.descr}

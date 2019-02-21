@@ -1,0 +1,7 @@
+mixin publ(data)
+  +b.publ
+    each item in data
+      +e.item(style="background-image: url('"+item.imgBack+"');")
+        +e('h2').item-title !{item.title}
+        +e('p').item-text #{item.text}
+        +e('a')(href="#").item-btn-href.btn Перейти к новости
