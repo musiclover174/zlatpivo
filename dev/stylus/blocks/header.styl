@@ -190,6 +190,7 @@ html.burgeropen
       z-index 15
       filter: brightness(0)
     &__button
+      filter: none!important
       &:before
         background-color $blue
       &:after
@@ -200,6 +201,7 @@ html.burgeropen
   .socials
     position relative
     z-index 15
+    filter: none!important
     &__href
       &[data-type="vk"]
         background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA4VBMVEU8Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn/////gtT9CAAAASXRSTlMAJna85vk/wgiY/hLGCsibwy+BY1WOqAYHg+9nZmK+TxCSTb/AdB1p9RzcRLrPBA38fGr7TDWkA/2TKxGdCwwogkCZEwnFd+f6XOZVNQAAAAFiS0dESh4MtcYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAhYKHjZF2rc/AAAA+klEQVQoz4WSeXvBQBCHf9gQIUHQ0GrQKnX0UHrRNm7m+38htYemEbz/zGTf59nMzA4giURjTNNYLBrBf+IJ2pOI+4SeNMiHkdSVSaUpQDoljGnRAZbJVYZCyPAKjDBl7GrJUihZIEdHyMHmMV8o0oVTKtPlVeVaKBsuj1U4jGqoUB24EeoWjMcGcEdNtO7bMDtCMWgi6ULvOajmgbr8l6bUw6MczdPzXjGZ9dXYXkhd6MpsMPw9fn17B4qqDFv18fE5Gvfp6/vHE9+TUy2fGNSx8U53Jc3C1OzcU2J+4Ky56nIRXBvTv2zLP7OcBjbRW7nrzWbtrjx1sgWlin86BR5DgwAAAABJRU5ErkJggg==')
@@ -234,8 +236,6 @@ body:not(.index)
   .header__logo-img
     filter brightness(0%)
     transition .7s filter
-  .header__button.open
-    filter none
   .socials__href:hover
     opacity .4
 
