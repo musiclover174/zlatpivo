@@ -1,4 +1,5 @@
 include bemto/bemto.pug
+include mixins/mixins.pug
 
 doctype html
 html
@@ -7,23 +8,46 @@ html
   body
     include layout/__header
 
-    +b.MAIN.content
-      +e.bg._partners(style="background-image: url('img/products-bg.jpg')")
-
-        +e.SPAN.dec6.decor_type12
-
+    +b.MAIN.content._contacts
+      +e.bg(style="background-image: url('img/contacts-bg.png')")
         .container
+
+          +e.SPAN.dec1.decor_type4
+          +e.SPAN.dec2.decor_type6
+          +e.SPAN.dec3.decor_type5
 
           +b('section').breadcrumbs
             +e.href(href="#") Главная
             +e('span').delim /
 
+          h1.common__title Контакты
+
+          +b('section').contacts
+            +e.filials
+              +e.filial(data-coords="55.178100, 59.671033")
+                +e.filial-info
+                  +e.filial-row
+                    +e('p').filial-row-title Адрес офиса:
+                    +e.filial-row-data
+                      address г. Златоуст, ул. Карла Маркса, 5
+                  +e.filial-row
+                    +e('p').filial-row-title Телефон:
+                    +e.filial-row-data
+                      a(href="tel:89352792794") +7(935)279-27-94
+                  +e.filial-row
+                    +e('p').filial-row-title Почта:
+                    +e.filial-row-data
+                      a(href="mailto:office@zlatpivo.ru") office@zlatpivo.ru
+
+                +e('button')(type="button").filial-position.btn.js-filial-position Расположение на карте
+
+            +e.map.js-map#yaMap
+
           section.text
-            h1 Партнёрам
             p «Пивоварня Златоуста» - это два, юридически, самостоятельных предприятия объединенные в единое производство.
             p В состав объединения входят ООО «Пегас» и ООО «Пивоиндустрия». Исторически, предприятие основано в 1994г., как образцовое подразделение знаменитого производственного объединения «Златоустовский Машиностроительный завод» – участвовавшего в разработке и изготовлении морских баллистических ракетных комплексов и в связи с решением советского правительства, приступившего к изготовлению современного высококачественного оборудования – мини пивоварни.
 
       include blocks/feedback
-      
+
     include layout/__footer
     include layout/__scripts

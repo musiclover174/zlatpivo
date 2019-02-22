@@ -1,0 +1,34 @@
++b.SECTION.feedback
+  .container
+    +e.SPAN.dec1.decor_type2
+    +e.SPAN.dec2.decor_type7
+    +e.SPAN.dec3.decor_type8
+    +e.ASIDE.side
+      +e.P.title Обратная связь
+      +e.text 
+        p Мы всегда рады ответить на любые вопросы, касающиеся нашей продукции.
+        p Обратите внимание, все поля обязательны для заполнения.
+    +e.FORM.form
+      .common__row
+        .common__col
+          .common__row
+            input(type="text", data-req="req").common__input
+            label.common__placeholder Ваше имя
+          .common__row
+            input(type="text", data-req="req").common__input
+            label.common__placeholder Электронная почта
+          .common__row
+            input(type="text", data-req="req").common__input.js-phone
+            label.common__placeholder Номер телефона
+        .common__col
+          textarea(data-req="req").common__textarea
+          label.common__placeholder Текст сообщения
+      .common__row
+        .fakecheckbox
+          input(type="checkbox", value="", name="agreement", checked)#agreement.fakecheckbox__truecheck
+          label(for="agreement").fakecheckbox__label Принимаю 
+            a(href="#") политику конфиденциальности
+            |  и даю согласие на 
+            a(href="#") обработку персональных данных
+        +e.sbm(type="submit") Отправить
+          span Некоторые обязательные поля не заполнены или заполнены с ошибкой.
