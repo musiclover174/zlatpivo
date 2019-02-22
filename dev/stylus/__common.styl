@@ -1,6 +1,8 @@
 html,
 body
   font-family $os
+  min-height 100vh
+
 body
   overflow-x hidden
   &:not(.pace-done)
@@ -52,12 +54,32 @@ body.index
 
 .content
   bgc $cream
+  &_confirm-age
+    height calc(100vh - 131px)
+    min-height 600px
+    @media (max-width: 785px)
+      height calc(100vh - 130px)
+      min-height 400px
+    @media $PortraitMedium
+      height calc(100vh - 175px)
+      min-height 400px
   &_catalog
     .common__title
       max-width 50%
   &_contacts
     .content__bg
-      background-position bottom -630px center
+      background-position left 945px
+      background-size cover
+      background-repeat no-repeat
+      @media $LandscapeMedium
+        background-position center 1110px
+    .decor_type10
+      width 216px
+      height 246px
+      transform rotate(-31deg)
+      background-size contain
+      left calc(50% + 183px)
+      top 6%
   &__bg
     pb 96px
     pt 217px

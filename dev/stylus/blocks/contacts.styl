@@ -20,9 +20,17 @@
       max-width calc(100% - 205px)
       margin-right 19px
 
+      @media $LandscapeMax
+        max-width 100%
+        width 100%
+        margin-right 0
+
     &-row
       display flex
       margin-bottom 8px
+
+      @media $LandscapeMin
+        flex-wrap wrap
 
       &:last-child
         margin-bottom 0
@@ -38,8 +46,15 @@
         min-width 120px
         margin-right 15px
 
+        @media $LandscapeMin
+          width 100%
+          margin-right 0
+
       &-data
         font-weight 400
+
+        @media $LandscapeMin
+          width 100%
 
         address
           display block
@@ -55,6 +70,9 @@
       flex-shrink 0
       align-items flex-start
       margin-top -6px
+
+      @media $LandscapeMax
+        margin-top 20px
 
   &__map
     width 100%
