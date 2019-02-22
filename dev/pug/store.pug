@@ -1,0 +1,75 @@
+include bemto/bemto.pug
+include mixins/mixins.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+
+    +b.MAIN.content._store
+      +e.bg(style="background-image: url('img/contacts-bg.png')")
+        .container
+
+          +e.SPAN.dec1.decor_type10
+
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim /
+
+          h1.common__title Фирменные магазины
+
+          +b('section').store
+            +e.row
+              +e.col
+                +e.scroll-wrap.js-vert-scrollbar
+                  +e.item
+                    +e.item-top
+                      +e('h2').item-title Кабачок «У Шефа»
+                      +e('a')(href="#").item-read-review Читать отзывы
+
+                    +e.item-text
+                      .text
+                        p Это первый магазин сети, в котором мы начали разливать пиво еще в 1994 году и продолжаем это делать специально для вас.
+
+                    +e.item-info
+                      +b.contacts._store
+                        +e.filials
+                          +e.filial(data-coords="55.178100, 59.671033")
+                            +e.filial-info
+                              +e.filial-row
+                                +e('p').filial-row-title Адрес офиса:
+                                +e.filial-row-data
+                                  address г. Златоуст, ул. Карла Маркса, 5
+                              +e.filial-row
+                                +e('p').filial-row-title Телефон:
+                                +e.filial-row-data
+                                  a(href="tel:89352792794") +7(935)279-27-94
+                              +e.filial-row
+                                +e('p').filial-row-title Почта:
+                                +e.filial-row-data
+                                  a(href="mailto:office@zlatpivo.ru") office@zlatpivo.ru
+
+                            +e('button')(type="button").filial-position.btn.js-filial-position Расположение на карте
+
+                    +e.item-gallery
+                      +e('a')(href="img/store-img.jpg").item-gallery-overimg
+                        +e('img')(src="img/store-img.jpg" alt="").item-gallery-img
+                      +e('a')(href="img/store-img2.jpg").item-gallery-overimg
+                        +e('img')(src="img/store-img2.jpg" alt="").item-gallery-img
+
+                      +e.item-gallery-more
+                        +e.item-gallery-hidden
+                          +e('a')(href="img/store-img.jpg").item-gallery-overimg
+                            +e('img')(src="img/store-img.jpg" alt="").item-gallery-img
+                          +e('a')(href="img/store-img2.jpg").item-gallery-overimg
+                            +e('img')(src="img/store-img2.jpg" alt="").item-gallery-img
+
+                        +e('a')(href="").item-gallery-more Показать еще фото
+
+              +e.col
+                +e.map.js-map#yaMap
+
+    include layout/__footer
+    include layout/__scripts

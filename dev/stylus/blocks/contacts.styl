@@ -59,12 +59,13 @@
         address
           display block
 
-      a:not([href*=tel])
-        border-bottom 2px solid #FFC100
-        transition border .4s
+      a
+        &:not([href^='tel'])
+          border-bottom 2px solid #FFC100
+          transition border .7s
 
-        &:hover
-          border-bottom-color transparent
+          &:hover
+            border-bottom-color transparent
 
     &-position
       flex-shrink 0

@@ -405,7 +405,7 @@
         coords = document.querySelector(".contacts__filial").dataset.coords.split(",");
 
       ymaps.ready(function () {
-        let myMap = new ymaps.Map("yaMap", {
+        let myMap = new ymaps.Map('yaMap', {
           center: [coords[0], coords[1]],
           zoom: $map.dataset.zoom || 14,
           controls: []
@@ -415,7 +415,7 @@
         });
         myMap.behaviors.disable('scrollZoom');
 
-        document.querySelectorAll(".contacts__filial").forEach(function (i, item) {
+        document.querySelectorAll('.contacts__filial').forEach(function (i, item) {
           try {
             var data = i.dataset.coords.split(",");
             var coords = [data[0], data[1]];
