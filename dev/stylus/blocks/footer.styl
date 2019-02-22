@@ -22,6 +22,9 @@
     &-elem
       color #c0bfca
       fontify 14px 400 16px
+      transition .7s opacity
+      &:hover
+        opacity .7
       &[data-type="inst"]
         background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAP1BMVEX27+X27+X27+X27+X27+X27+WJhKRJRX327+VGQnxJRX3TzNBwa5VKRn7Ry89LR3/Rys9JRX727+VDP3r///8DIBtNAAAAE3RSTlMEZqazp2Xb+1/9/L7n+7/6v/tg9r9/dwAAAAFiS0dEFJLfyTUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAQoOLBwpdxCzAAAAYUlEQVQY03WP3Q6AIAhGP8W0Ev/y/d81pxvqWucKDqAAKE2CUcAxU7LOnljqdFWnQWvHbWkIzyGw72EXMdVGiiK4dlhEGML9i89IHo9mERS5FI7z25Vt9Ybejms8gDLb+S9hOAZO7y0q7AAAAABJRU5ErkJggg==') no-repeat left center
         &:after
@@ -77,7 +80,7 @@
       padding 0 6px
       transition 0.7s background
     &:hover span
-      bgc $blue
+      bgc $cream
   &__warning
     bgc #232041
     padding 12px 47px

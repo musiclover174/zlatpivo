@@ -2,7 +2,7 @@
   color white
   bgc $blue
   padding 58px 0 92px
-  overflow hidden
+  // overflow hidden
   @media $LandscapeMedium
     pb 62px
   .container
@@ -50,12 +50,11 @@
     fontify 15px 600 24px
     mt 8px
     border-bottom 2px solid $orange
-    transition .7s color, .7s border
+    transition .7s border-color
     @media $PortraitMax
       mt 30px
     &:hover
-      color $orange
-      border-bottom transparent
+      border-color transparent
     &:after
       content ""
       pos absolute
@@ -85,12 +84,14 @@
         size 13px
         background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANAgMAAAAPhQzvAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAADFBMVEX1wBf1wBf1wBf////omFKUAAAAAnRSTlMAf7YpoZUAAAABYktHRAMRDEzyAAAACXBIWXMAAAsSAAALEgHS3X78AAAALUlEQVQI1xXEQQEAMAgDsfJBRNVMDyqmB5VcH4kkPdSnTk5DtdTJaaiWOjkNHWXqD9qQOyxQAAAAAElFTkSuQmCC') no-repeat center
   &__dec1
-    l -2px
+    l 0
     b -64px
     transform scaleX(-1)
   &__dec2
     l 328px
-    t -115px
+    t -58px
+    h 187px
+    background-position bottom center
   &__dec3
     r 27px
     t -16px

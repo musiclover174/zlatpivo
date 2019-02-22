@@ -9,7 +9,7 @@
   &__href
     size 26px
     border-radius 50%
-    transition .7s background, .7s opacity
+    transition .7s background, .7s opacity, filter .7s
     & + &
       ml 10px
     &[data-type="vk"]
@@ -24,7 +24,7 @@
       background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAflBMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///+/v8VLAAAAKHRSTlMAJna85vk/wgiY/hLGCsibwy+qEYEzvru/RFWIzGaCQJkTCcUod+f6g3QTBQAAAAFiS0dEKcq3hSQAAAAJb0ZGcwAAByoAAAA8AMpJ1+8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAB4AAABZBAD8MNtkAAAC7SURBVCjPhZLZFoIgGIRHBfd9K8tSc+P9n7C0RFybK4bvHJgfBvhJkhVCKVFkCUupGuPSVAHohskEmYY+EctmK9nWlzgu28h1RuSxHXljAnMPmUMWn+3KBwLBhhHATYBYQAkQcRMjFRBwmc0VZD4uA5IbtwSUr+9D3oxbKqD8wx6hgMjRXeQsRnyEnouRI+SzCc4e6uh5i2GUcg+V/74S1Ya51VSO17o2jli2eiZ1sWpi06Zd33dp20w7b6c0S1gCRRHgAAAAAElFTkSuQmCC') no-repeat center
       &:hover
         background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAe1BMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////QYBnOAAAAKHRSTlMAJna85vk/wgiY/hLGCsibwy+qEYEzvru/RFWIzGaCQJkTCcUod+f6g3QTBQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAC7SURBVCjPhZLZFoIgGIRHBfd9K8tSc+P9n7C0RFybK4bvHJgfBvhJkhVCKVFkCUupGuPSVAHohskEmYY+EctmK9nWlzgu28h1RuSxHXljAnMPmUMWn+3KBwLBhhHATYBYQAkQcRMjFRBwmc0VZD4uA5IbtwSUr+9D3oxbKqD8wx6hgMjRXeQsRnyEnouRI+SzCc4e6uh5i2GUcg+V/74S1Ya51VSO17o2jli2eiZ1sWpi06Zd33dp20w7b6c0S1gCRRHgAAAAAElFTkSuQmCC')
-    
+
 .header
   pos absolute
   z-index 2
@@ -46,6 +46,7 @@
     max-width 120px
     &-img
       max-width 100%
+      transition: .7s filter
   &__shadow
     pos fixed
     z-index 12
@@ -53,7 +54,7 @@
     h 0
     w 100%
     l 0
-    bgc #3c2c24
+    bgc $cream
     transition .7s height
   &__button
     pos relative
@@ -69,7 +70,7 @@
       w 100%
       h 2px
       bgc $orange
-      transition .5s width, .5s background, .5s transform, .5s top
+      transition .5s width, .7s background, .5s transform, .5s top
     &:after
       content ""
       pos absolute
@@ -78,7 +79,7 @@
       w 100%
       h 2px
       bgc $orange
-      transition .5s width, .5s background, .5s transform, .5s top  
+      transition .5s width, .7s background, .5s transform, .5s top
     &-meat
       content ""
       pos absolute
@@ -88,7 +89,7 @@
       h 2px
       mt -1px
       bgc $orange
-      transition .5s width, .5s background, .5s transform, .5s top  
+      transition .5s width, .7s background, .5s transform, .5s top
     &:not(.open):hover
       &:before
         animation burger-hover 1s infinite ease-in-out alternate
@@ -111,8 +112,8 @@
       & ^[-1]-meat
         opacity 1
         transition .4s opacity .6s
-        
-        
+
+
 @keyframes burger-hover
   0%
     w 100%
@@ -120,7 +121,7 @@
     w 50%
   100%
     w 100%
-      
+
 @keyframes burger-top
   0%
     t 0
@@ -132,7 +133,7 @@
   100%
     t 11px
     transform rotate(45deg)
-    
+
 @keyframes burger-bottom
   0%
     b 0
@@ -156,7 +157,7 @@
     t 12px
   100%
     t 0
-    
+
 @keyframes burger-bottom-invert
   0%
     b 12px
@@ -168,10 +169,13 @@
     b 12px
   100%
     b 0
-    
-    
+
+
 html.burgeropen
   overflow hidden
+  position: fixed
+  width 100%
+
   body
     overflow hidden
   .header
@@ -181,7 +185,39 @@ html.burgeropen
       l 0
       opacity 1
       transition-delay .7s
-    
+    &__logo-img
+      position relative
+      z-index 15
+      filter: brightness(0)
+    &__button
+      filter: none!important
+      &:before
+        background-color $blue
+      &:after
+        background-color $blue
+      &-meat
+        background-color $blue
+
+  .socials
+    position relative
+    z-index 15
+    filter: none!important
+    &__href
+      &[data-type="vk"]
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA4VBMVEU8Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn/////gtT9CAAAASXRSTlMAJna85vk/wgiY/hLGCsibwy+BY1WOqAYHg+9nZmK+TxCSTb/AdB1p9RzcRLrPBA38fGr7TDWkA/2TKxGdCwwogkCZEwnFd+f6XOZVNQAAAAFiS0dESh4MtcYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAhYKHjZF2rc/AAAA+klEQVQoz4WSeXvBQBCHf9gQIUHQ0GrQKnX0UHrRNm7m+38htYemEbz/zGTf59nMzA4giURjTNNYLBrBf+IJ2pOI+4SeNMiHkdSVSaUpQDoljGnRAZbJVYZCyPAKjDBl7GrJUihZIEdHyMHmMV8o0oVTKtPlVeVaKBsuj1U4jGqoUB24EeoWjMcGcEdNtO7bMDtCMWgi6ULvOajmgbr8l6bUw6MczdPzXjGZ9dXYXkhd6MpsMPw9fn17B4qqDFv18fE5Gvfp6/vHE9+TUy2fGNSx8U53Jc3C1OzcU2J+4Ky56nIRXBvTv2zLP7OcBjbRW7nrzWbtrjx1sgWlin86BR5DgwAAAABJRU5ErkJggg==')
+        &:hover
+          filter: brightness(0)
+
+      &[data-type="inst"]
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAq1BMVEU8Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn////9KZyljAAAAN3RSTlMAJna85vk/wgiY/hLGCsibwy/lRwVIgUKKZr4CD2tlroS/3d8UbBAGTFOC6QlU60CZE8Uod+f6Gn3OtgAAAAFiS0dEOKAHpdYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAhYKIiWyl48eAAAA4klEQVQoz4WS6RKCMAyEA3IoAqIiKuItniiHSt//zaSSFgTU/dPMfjPpNg0AShBbkixLLVGATykq4VKVEmh3NFKS1mkz0tVJRXo3J4ZJajKNN+qRBvXeCbQmpNEsFmmUBdDHcjC0aQ97NECjDw5W4zzTZDpEwwEXqxmAN194y5WNxhokrDKyIWS7A0BDApkjnx4+R/IvVDTcVxuyGIfsMn/qZXPjMVj4Ixv2CY0zf/LleKAguN74k38M6tt4Q9ojakLRv6+EuMbMmOUNqmtjlJctKUgSVjbx/nCfafp0H3fmvAABlV94UFfO8wAAAABJRU5ErkJggg==')
+        &:hover
+          filter: brightness(0)
+
+      &[data-type="fb"]
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAflBMVEU8Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn88Pn////9b3eK7AAAAKHRSTlMAJna85vk/wgiY/hLGCsibwy+qEYEzvru/RFWIzGaCQJkTCcUod+f6g3QTBQAAAAFiS0dEKcq3hSQAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAhYKIjTYJ6/sAAAAu0lEQVQoz4WS2RaCIBiERwX3fSvLUnPj/Z+wtERcmyuG7xyYHwb4SZIVQilRZAlLqRrj0lQB6IbJBJmGPhHLZivZ1pc4LtvIdUbksR15YwJzD5lDFp/tygcCwYYRwE2AWEAJEHETIxUQcJnNFWQ+LgOSG7cElK/vQ96MWyqg/MMeoYDI0V3kLEZ8hJ6LkSPkswnOHuroeYthlHIPlf++EtWGudVUjte6No5YtnomdbFqYtOmXd93adtMO2+nNEtYAkUR4AAAAABJRU5ErkJggg==')
+        &:hover
+          filter: brightness(0)
+
 html.touchevents
   .header__button
     &:not(.open):hover
@@ -200,8 +236,6 @@ body:not(.index)
   .header__logo-img
     filter brightness(0%)
     transition .7s filter
-  .header__button.open
-    filter none
   .socials__href:hover
     opacity .4
 

@@ -1,0 +1,111 @@
+.nav
+  height 100%
+  padding 161px 87px
+  df(center, flex-start)
+  @media (max-height: 650px) 
+    pb 40px
+  
+  &__list
+    df()
+    flex-wrap wrap
+    width calc(100% + 78px)
+    margin-right -78px
+
+  &__item
+    visibility hidden
+    opacity 0
+    width calc(100% / 4 - 78px)
+    margin-right 78px
+    transition .5s opacity, .5s visibility
+    transition-delay 0
+    display flex
+    flex-direction row
+    justify-content center
+    height 240px
+    position relative
+    @media (max-height: 750px) 
+      h 200px
+
+  &__link
+    font-size 40px
+    color $blue
+    font-weight 600
+    align-self center
+
+    &:hover
+      .nav__bg
+        opacity .2
+
+  &__bg
+    position absolute
+    top 50%
+    left 50%
+    opacity 0
+    transform translate(-50%, -50%)
+    transition .7s opacity
+    max-height 90%
+
+.burgeropen
+  .nav
+    &__item
+      opacity 1
+      visibility visible
+      transition-delay .4s
+
+@media (max-height 700px)
+  .nav
+    &__item
+      height 200px
+
+@media (max-height 600px)
+  .nav
+    &__list
+      overflow-x visible
+      overflow-y auto
+
+@media (max-width 1300px)
+  .nav
+    padding-left 47px
+    padding-right 47px
+
+@media (max-width 1130px)
+  .nav
+    &__item
+      height 190px
+    &__link
+      font-size 34px
+
+@media (max-width 1000px)
+  .nav
+    &__link
+      font-size 25px
+    &__list
+      width calc(100% + 48px)
+      margin-right -48px
+    &__item
+      height 150px
+      margin-right 48px
+      width calc(100% / 4 - 48px)
+
+@media (max-width 800px)
+  .nav
+    padding-left 20px
+    padding-right 20px
+    padding-bottom 50px
+    align-items flex-start
+    &__list
+      overflow-y auto
+
+    &__item
+      width calc(100% / 2 - 48px)
+      h 110px
+
+@media (max-width 450px)
+  .nav
+    &__list
+      width 100%
+      margin-right 0
+    &__item
+      width 100%
+      margin-right 0
+      height 90px
