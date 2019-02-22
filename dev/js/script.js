@@ -222,9 +222,9 @@
       window.addEventListener('scroll', () => {
         featElems.forEach(item => {
           const rect = item.getBoundingClientRect(),
-                diff = rect.bottom - item.offsetHeight - (window.innerHeight || document.documentElement.clientHeight),
-                dataKoef = item.getAttribute('data-koef'),
-                dataTop = item.getAttribute('data-top')
+            diff = rect.bottom - item.offsetHeight - (window.innerHeight || document.documentElement.clientHeight),
+            dataKoef = item.getAttribute('data-koef'),
+            dataTop = item.getAttribute('data-top')
 
           if (diff <= 0 && (rect.top + item.offsetHeight >= 0)) {
             item.style.top = dataTop - diff * dataKoef + 'px'
@@ -268,8 +268,8 @@
             newVal = tab.getAttribute('data-tab')
 
             let curElem = document.querySelector(`.js-products-block[data-tab="${curVal}"]`),
-                newElem = document.querySelector(`.js-products-block[data-tab="${newVal}"]`),
-                newElemCar = document.querySelector(`.js-products-block[data-tab="${newVal}"] .js-products`)
+              newElem = document.querySelector(`.js-products-block[data-tab="${newVal}"]`),
+              newElemCar = document.querySelector(`.js-products-block[data-tab="${newVal}"] .js-products`)
 
             window.animation.fadeOut(curElem, 400, () => {
               curElem.classList.remove('active')
@@ -373,7 +373,7 @@
       return;
     },
 
-    reviewsEventsBindings: function() {
+    reviewsEventsBindings: function () {
       const that = this;
 
       document.addEventListener('click', function (e) {
@@ -389,8 +389,8 @@
       const raiteEl = document.querySelectorAll('.js-raiting');
       const raiteInpEl = document.querySelector('.js-raiting-inp');
       if (raiteEl) {
-        raiteEl.forEach(function(item) {
-          item.addEventListener('click', function() {
+        raiteEl.forEach(function (item) {
+          item.addEventListener('click', function () {
             raiteInpEl.value = item.getAttribute('data-val');
             $(this).nextAll('.js-raiting').removeClass('choosed');
             $(this).prevAll('.js-raiting').addClass('choosed');
@@ -421,32 +421,32 @@
             var coords = [data[0], data[1]];
             var filialPositionBtn = document.querySelectorAll('.js-filial-position');
             var myPlacemark = new ymaps.Placemark(coords, {}, {
-                iconLayout: 'default#image',
-                iconImageHref: 'img/pin.png',
-                iconImageSize: [24, 36]
+              iconLayout: 'default#image',
+              iconImageHref: 'img/pin.png',
+              iconImageSize: [24, 36]
             });
 
             myMap.geoObjects.add(myPlacemark);
 
             for (var i = 0; i < filialPositionBtn.length; i++) {
-              filialPositionBtn[i].addEventListener('click', function(event) {
+              filialPositionBtn[i].addEventListener('click', function (event) {
                 let coordsItemBtn = this.parentNode.dataset.coords.split(",");
                 myMap
                   .setCenter([coordsItemBtn[0], coordsItemBtn[1]], data.zoom || 14, {
-                      checkZoomRange: true,
-                      duration: 500,
-                      timingFunction: 'ease-in-out'
+                    checkZoomRange: true,
+                    duration: 500,
+                    timingFunction: 'ease-in-out'
                   })
                   .catch(function (err) {
-                      console.log(err);
+                    console.log(err);
                   });
                 event.preventDefault();
               });
             }
 
           } catch (e) {
-              // падаем но не сдаемся
-              console.error(e);
+            // падаем но не сдаемся
+            console.error(e);
           }
         });
       });
@@ -532,11 +532,10 @@
       let eventResize
       try {
         eventResize = new Event('resize')
-      }
-      catch (e) {
+      } catch (e) {
         eventResize = document.createEvent('Event')
         let doesnt_bubble = false,
-            isnt_cancelable = false
+          isnt_cancelable = false
         eventResize.initEvent('resize', doesnt_bubble, isnt_cancelable);
       }
       window.dispatchEvent(eventResize)
@@ -544,11 +543,10 @@
       let eventScroll
       try {
         eventScroll = new Event('scroll')
-      }
-      catch (e) {
+      } catch (e) {
         eventScroll = document.createEvent('Event');
         let doesnt_bubble = false,
-            isnt_cancelable = false
+          isnt_cancelable = false
         eventScroll.initEvent('scroll', doesnt_bubble, isnt_cancelable);
       }
       window.dispatchEvent(eventScroll)
