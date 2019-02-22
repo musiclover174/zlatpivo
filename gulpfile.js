@@ -34,12 +34,11 @@ var src = {
   }
 };
 
-// server started 
+// server started
 gulp.task('browser-sync', function () {
   browserSync({
     server: {
-      //baseDir: "./prod/"
-      baseDir: "./",
+      baseDir: "./prod",
       directory: true
     }
   });

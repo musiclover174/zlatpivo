@@ -212,6 +212,7 @@ button {
 html,
 body {
   font-family: "Montserrat";
+  min-height: 100vh;
 }
 body {
   overflow-x: hidden;
@@ -281,11 +282,43 @@ body.pace-done .content {
 .content {
   background-color: #fff9f0;
 }
+.content_confirm-age {
+  height: calc(100vh - 131px);
+  min-height: 600px;
+}
+@media (max-width: 785px) {
+  .content_confirm-age {
+    height: calc(100vh - 130px);
+    min-height: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .content_confirm-age {
+    height: calc(100vh - 175px);
+    min-height: 400px;
+  }
+}
 .content_catalog .common__title {
   max-width: 50%;
 }
 .content_contacts .content__bg {
-  background-position: bottom -630px center;
+  background-position: left 945px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 700px) {
+  .content_contacts .content__bg {
+    background-position: center 1110px;
+  }
+}
+.content_contacts .decor_type10 {
+  width: 216px;
+  height: 246px;
+  -webkit-transform: rotate(-31deg);
+  transform: rotate(-31deg);
+  background-size: contain;
+  left: calc(50% + 183px);
+  top: 6%;
 }
 .content__bg {
   padding-bottom: 96px;
@@ -6297,11 +6330,24 @@ body.index .news {
   max-width: calc(100% - 205px);
   margin-right: 19px;
 }
+@media (max-width: 1000px) {
+  .contacts__filial-info {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0;
+  }
+}
 .contacts__filial-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 8px;
+}
+@media (max-width: 550px) {
+  .contacts__filial-row {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 }
 .contacts__filial-row:last-child {
   margin-bottom: 0;
@@ -6319,8 +6365,19 @@ body.index .news {
   min-width: 120px;
   margin-right: 15px;
 }
+@media (max-width: 550px) {
+  .contacts__filial-row-title {
+    width: 100%;
+    margin-right: 0;
+  }
+}
 .contacts__filial-row-data {
   font-weight: 400;
+}
+@media (max-width: 550px) {
+  .contacts__filial-row-data {
+    width: 100%;
+  }
 }
 .contacts__filial-row-data address {
   display: block;
@@ -6341,10 +6398,98 @@ body.index .news {
   align-items: flex-start;
   margin-top: -6px;
 }
+@media (max-width: 1000px) {
+  .contacts__filial-position {
+    margin-top: 20px;
+  }
+}
 .contacts__map {
   width: 100%;
   height: 489px;
 }
 .ymaps-2-1-72-copyrights-pane {
   display: none !important;
+}
+.confirm-age {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 60px 20px;
+  z-index: 1;
+}
+.confirm-age:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43,40,76,0.65);
+  z-index: -1;
+}
+.confirm-age__title {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 60px;
+}
+@media (max-width: 700px) {
+  .confirm-age__title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+@media (max-width: 400px) {
+  .confirm-age__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+.confirm-age__btn {
+  font-size: 19px;
+  line-height: 24px;
+  padding: 15px 47px;
+  border-radius: 27px;
+  margin-top: 37px;
+}
+.confirm-age__warning {
+  width: 100%;
+  position: relative;
+  padding-top: 37px;
+  margin-top: 39px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.confirm-age__warning:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 0;
+  width: 100%;
+  max-width: 462px;
+  height: 1px;
+  background-color: rgba(255,255,255,0.5);
+  z-index: 1;
 }
