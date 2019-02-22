@@ -100,7 +100,7 @@
           event.target.classList.remove('notempty') :
           event.target.classList.add('notempty')
       }
-      
+
       for (let item of inputs) {
         item.addEventListener('keyup', emptyCheck)
         item.addEventListener('blur', emptyCheck)
@@ -174,7 +174,7 @@
           }
         }
       }
-      
+
       for (let item of form.querySelectorAll('input[name^=agreement]')) {
         if (!item.checked) {
           item.classList.add('warning')
@@ -216,26 +216,26 @@
 
     asyncScroll: () => {
       const featElems = document.querySelectorAll('.js-async-scroll')
-      
+
       featElems.forEach(item => item.setAttribute('data-top', parseInt(getComputedStyle(item)['top'])))
-      
+
       window.addEventListener('scroll', () => {
         featElems.forEach(item => {
           const rect = item.getBoundingClientRect(),
                 diff = rect.bottom - item.offsetHeight - (window.innerHeight || document.documentElement.clientHeight),
                 dataKoef = item.getAttribute('data-koef'),
                 dataTop = item.getAttribute('data-top')
-          
+
           if (diff <= 0 && (rect.top + item.offsetHeight >= 0)) {
             item.style.top = dataTop - diff * dataKoef + 'px'
           }
         })
       })
     },
-    
+
     products: () => {
       let tabs = document.querySelectorAll('.js-products-tab')
-      
+
       function productInit(productCar) {
         new Swiper(productCar, {
           speed: 700,
@@ -256,17 +256,17 @@
           }
         })
       }
-      
+
       if (tabs.length) {
         let curVal, newVal
         for (let tab of tabs) {
           tab.addEventListener('click', () => {
             if (tab.classList.contains('active'))
               return
-              
+
             curVal = document.querySelector('.js-products-tab.active').getAttribute('data-tab')
             newVal = tab.getAttribute('data-tab')
-            
+
             let curElem = document.querySelector(`.js-products-block[data-tab="${curVal}"]`),
                 newElem = document.querySelector(`.js-products-block[data-tab="${newVal}"]`),
                 newElemCar = document.querySelector(`.js-products-block[data-tab="${newVal}"] .js-products`)
@@ -279,19 +279,19 @@
               if (!newElemCar.classList.contains('swiper-container-horizontal'))
                 productInit(newElemCar)
             })
-            
+
             document.querySelector('.js-products-tab.active').classList.remove('active')
             tab.classList.add('active')
           })
         }
       }
-      
+
       for (let productCar of document.querySelectorAll('.js-products')) {
         if (productCar.offsetParent !== null)
           productInit(productCar)
       }
     },
-    
+
     news: () => {
       const newsOverEl = document.querySelector('.js-news');
 
@@ -399,7 +399,61 @@
         });
       }
     },
-    
+
+    map: () => {
+      let $map = document.querySelector('.js-map'),
+        coords = document.querySelector(".contacts__filial").dataset.coords.split(",");
+
+      ymaps.ready(function () {
+        let myMap = new ymaps.Map("yaMap", {
+          center: [coords[0], coords[1]],
+          zoom: $map.dataset.zoom || 14,
+          controls: []
+        });
+        myMap.controls.add('zoomControl', {
+          size: 'small'
+        });
+        myMap.behaviors.disable('scrollZoom');
+
+        document.querySelectorAll(".contacts__filial").forEach(function (i, item) {
+          try {
+            var data = i.dataset.coords.split(",");
+            var coords = [data[0], data[1]];
+            var filialPositionBtn = document.querySelectorAll('.js-filial-position');
+            var myPlacemark = new ymaps.Placemark(coords, {}, {
+                iconLayout: 'default#image',
+                iconImageHref: 'img/pin.png',
+                iconImageSize: [24, 36]
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+
+            for (var i = 0; i < filialPositionBtn.length; i++) {
+              filialPositionBtn[i].addEventListener('click', function(event) {
+                let coordsItemBtn = this.parentNode.dataset.coords.split(",");
+                myMap
+                  .setCenter([coordsItemBtn[0], coordsItemBtn[1]], data.zoom || 14, {
+                      checkZoomRange: true,
+                      duration: 500,
+                      timingFunction: 'ease-in-out'
+                  })
+                  .catch(function (err) {
+                      console.log(err);
+                  });
+                event.preventDefault();
+              });
+            }
+
+          } catch (e) {
+              // падаем но не сдаемся
+              console.error(e);
+          }
+        });
+      });
+
+      return;
+    },
+
     init: function () {
 
       const burgerEl = document.querySelector('.js-burger'),
@@ -428,12 +482,13 @@
       if (document.querySelector('.js-news')) this.news()
       if (document.querySelector('.js-about-car')) this.about()
       if (document.querySelector('.js-reviews')) {
-        this.reviewsShave(); 
+        this.reviewsShave();
         this.reviewsEventsBindings();
       }
-         
+      if (document.querySelector('.js-map')) this.map()
+
       objectFitImages('img.fit')
-      
+
       window.addEventListener('scroll', () => {
         for (let item of elemsToCheck) {
           for (let elem of document.querySelectorAll(item)) {
@@ -442,7 +497,7 @@
             }
           }
         }
-        
+
         if (toTop) {
           if (window.scrollY >= 350) {
             toTop.classList.add('visible')
@@ -463,7 +518,7 @@
           window.animation.scrollTo(document.querySelector('.banner').nextElementSibling.offsetTop, 600);
         })
       }
-      
+
       $('[data-fancybox]').fancybox({
         i18n: {
           en: {
@@ -473,7 +528,7 @@
       });
 
       this.resizeWatcher()
-      
+
       let eventResize
       try {
         eventResize = new Event('resize')
@@ -485,7 +540,7 @@
         eventResize.initEvent('resize', doesnt_bubble, isnt_cancelable);
       }
       window.dispatchEvent(eventResize)
-      
+
       let eventScroll
       try {
         eventScroll = new Event('scroll')
@@ -507,5 +562,5 @@
       window.site.obj.init()
     }, 200)
   })
-  
+
 })();

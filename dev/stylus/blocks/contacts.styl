@@ -1,0 +1,64 @@
+.contacts
+  & + .text
+    margin-top 35px
+
+  &__filials
+    & + .contacts__map
+      margin-top 33px
+
+  &__filial
+    display flex
+    flex-wrap wrap
+    align-items flex-start
+    width 100%
+    margin-bottom 30px
+
+    &:last-child
+      margin-bottom 0
+
+    &-info
+      max-width calc(100% - 205px)
+      margin-right 19px
+
+    &-row
+      display flex
+      margin-bottom 8px
+
+      &:last-child
+        margin-bottom 0
+
+      &-title, &-data
+        color #3b3b3b
+        font-size 16px
+        line-height 24px
+
+      &-title
+        flex-shrink 0
+        font-weight 600
+        min-width 120px
+        margin-right 15px
+
+      &-data
+        font-weight 400
+
+        address
+          display block
+
+      a:not([href*=tel])
+        border-bottom 2px solid #FFC100
+        transition border .4s
+
+        &:hover
+          border-bottom-color transparent
+
+    &-position
+      flex-shrink 0
+      align-items flex-start
+      margin-top -6px
+
+  &__map
+    width 100%
+    height 489px
+
+.ymaps-2-1-72-copyrights-pane
+  display none !important
