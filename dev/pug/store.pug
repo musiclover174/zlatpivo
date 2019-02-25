@@ -18,7 +18,17 @@ html
             +e.href(href="#") Главная
             +e('span').delim /
 
-          h1.common__title Фирменные магазины
+          section.common__titleover
+            h1.common__title.common__title_wfilter Фирменные магазины
+            .reviews__filter
+              span.reviews__filter-spacer /
+              select.reviews__filter-select.js-select(multiple data-plhdr="Все магазины" data-textallsel="Все магазины")
+                option(value="1") Златоуст, Карла Маркса 5, Кабачок «У Шефа»
+                option(value="2") Киров, Каширская 114В, «Beer’n’Fish»
+                option(value="3") Златоуст, Карла Маркса 5, Кабачок «У Шефа»
+                option(value="4") Киров, Каширская 114В, «Beer’n’Fish»
+                option(value="5") Златоуст, Карла Маркса 5, Кабачок «У Шефа»
+                option(value="6") Киров, Каширская 114В, «Beer’n’Fish»
 
           +b('section').store
             +e.row
@@ -39,7 +49,7 @@ html
                           +e.filial(data-coords="55.178100, 59.671033")
                             +e.filial-info
                               +e.filial-row
-                                +e('p').filial-row-title Адрес офиса:
+                                +e('p').filial-row-title Адрес:
                                 +e.filial-row-data
                                   address г. Златоуст, ул. Карла Маркса, 5
                               +e.filial-row
@@ -66,10 +76,11 @@ html
                           +e('a')(href="img/store-img2.jpg").item-gallery-overimg
                             +e('img')(src="img/store-img2.jpg" alt="").item-gallery-img
 
-                        +e('a')(href="").item-gallery-more Показать еще фото
+                        +e('a')(href="").item-gallery-more-btn.js-more-photo Показать еще фото
 
               +e.col
                 +e.map.js-map#yaMap
 
     include layout/__footer
     include layout/__scripts
+    

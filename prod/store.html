@@ -18,7 +18,19 @@
         <nav class="socials"><a class="socials__href" href="https://vk.com/varniyapegas" target="_blank" data-type="vk"></a><a class="socials__href" href="https://www.instagram.com/varniyapegas_zlat/" target="_blank" data-type="inst"></a><a class="socials__href" href="#" target="_blank" data-type="fb"></a>
         </nav>
         <button class="header__button js-burger" type="button" aria-label="открыть мобильное меню"><span class="header__button-meat"></span>
-        </button><span class="header__shadow"></span>
+        </button><span class="header__shadow">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="#">Пивоварня<img class="nav__bg" src="./img/nav/nav-1.png" alt=""></a></li>
+            <li class="nav__item"><a class="nav__link" href="#">История<img class="nav__bg" src="./img/nav/nav-2.png" alt=""></a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Каталог<img class="nav__bg" src="./img/nav/nav-3.png" alt=""></a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Партнерам<img class="nav__bg" src="./img/nav/nav-4.png" alt=""></a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Отзывы<img class="nav__bg" src="./img/nav/nav-5.png" alt=""></a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Новости<img class="nav__bg" src="./img/nav/nav-6.png" alt=""></a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Контакты<img class="nav__bg" src="./img/nav/nav-7.png" alt=""></a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Магазины<img class="nav__bg" src="./img/nav/nav-8.png" alt=""></a></li>
+          </ul>
+        </nav></span>
       </aside>
     </header>
     <main class="content content_store" role="main">
@@ -26,7 +38,19 @@
         <div class="container"><span class="content__dec1 decor decor_type10"></span>
           <section class="breadcrumbs"><a class="breadcrumbs__href" href="#">Главная</a><span class="breadcrumbs__delim">/</span>
           </section>
-          <h1 class="common__title">Фирменные магазины</h1>
+          <section class="common__titleover">
+            <h1 class="common__title common__title_wfilter">Фирменные магазины</h1>
+            <div class="reviews__filter"><span class="reviews__filter-spacer">/</span>
+              <select class="reviews__filter-select js-select" multiple data-plhdr="Все магазины" data-textallsel="Все магазины">
+                <option value="1">Златоуст, Карла Маркса 5, Кабачок «У Шефа»</option>
+                <option value="2">Киров, Каширская 114В, «Beer’n’Fish»</option>
+                <option value="3">Златоуст, Карла Маркса 5, Кабачок «У Шефа»</option>
+                <option value="4">Киров, Каширская 114В, «Beer’n’Fish»</option>
+                <option value="5">Златоуст, Карла Маркса 5, Кабачок «У Шефа»</option>
+                <option value="6">Киров, Каширская 114В, «Beer’n’Fish»</option>
+              </select>
+            </div>
+          </section>
           <section class="store">
             <div class="store__row">
               <div class="store__col">
@@ -47,7 +71,7 @@
                           <div class="contacts__filial" data-coords="55.178100, 59.671033">
                             <div class="contacts__filial-info">
                               <div class="contacts__filial-row">
-                                <p class="contacts__filial-row-title">Адрес офиса:
+                                <p class="contacts__filial-row-title">Адрес:
                                 </p>
                                 <div class="contacts__filial-row-data">
                                   <address>г. Златоуст, ул. Карла Маркса, 5</address>
@@ -75,7 +99,7 @@
                     <div class="store__item-gallery"><a class="store__item-gallery-overimg" href="img/store-img.jpg"><img class="store__item-gallery-img" src="img/store-img.jpg" alt="" role="presentation"/></a><a class="store__item-gallery-overimg" href="img/store-img2.jpg"><img class="store__item-gallery-img" src="img/store-img2.jpg" alt="" role="presentation"/></a>
                       <div class="store__item-gallery-more">
                         <div class="store__item-gallery-hidden"><a class="store__item-gallery-overimg" href="img/store-img.jpg"><img class="store__item-gallery-img" src="img/store-img.jpg" alt="" role="presentation"/></a><a class="store__item-gallery-overimg" href="img/store-img2.jpg"><img class="store__item-gallery-img" src="img/store-img2.jpg" alt="" role="presentation"/></a>
-                        </div><a class="store__item-gallery-more" href="">Показать еще фото</a>
+                        </div><a class="store__item-gallery-more-btn js-more-photo" href="">Показать еще фото</a>
                       </div>
                     </div>
                   </div>

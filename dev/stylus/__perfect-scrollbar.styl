@@ -110,3 +110,26 @@
     overflow: auto !important;
   }
 }
+
+.ps--active-y
+  .ps__rail-x
+    display none
+
+  .ps__rail-y
+    right 9px !important
+    opacity 1
+    width 2px
+    background-color rgba(#3c3c3c, .15)
+
+    &:hover, &:focus
+      & > .ps__thumb-y
+        width 20px
+        background-color #2b284c
+
+  .ps__thumb-y
+    right -9px
+    width 20px
+    height 20px !important
+    border-radius 50%
+    background-color #2b284c
+    border 5px solid #f5c017
