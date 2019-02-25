@@ -6,13 +6,15 @@
   &__scroll-wrap
     position relative
     max-height 900px
-    padding-right 113px
+    padding-right 86px
+    margin-top -4px
 
     @media $desktopMedium
       padding-right 60px
 
     @media $LandscapeMax
       padding-right 0
+      margin-top 0
       max-height none
 
       .ps__rail-y
@@ -25,7 +27,7 @@
 
   &__col
     &:first-child
-      width calc(50% + 92px)
+      width calc(50% + 71px)
 
       @media $LandscapeMax
         width 100%
@@ -48,14 +50,14 @@
       display flex
       flex-wrap wrap
       align-items flex-start
-      margin-bottom 20px
+      margin-bottom 16px
 
     &-title
       color #3c3c3c
       font-size 36px
       font-weight 600
       line-height 42px
-      margin-right 35px
+      margin-right 27px
       max-width calc(100% - 150px)
 
       @media $LandscapeMedium
@@ -66,9 +68,9 @@
 
     &-read-review
       color #3c3c3c
-      font-size 15px
+      font-size 14px
       font-weight 400
-      line-height 19px
+      line-height 17px
       border-bottom 2px dotted #FFC100
       transition border .7s
       margin-top 20px
@@ -77,10 +79,14 @@
         border-bottom-color transparent
 
     &-text
-      margin-bottom 25px
+      margin-bottom 18px
+      max-width 510px
+
+      @media $LandscapeMax
+        max-width 100%
 
     &-info
-      margin-bottom 35px
+      margin-bottom 21px
 
     &-gallery
       &-overimg
