@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <defs style="">
+        <clipPath id="cut-off-bottom">
+            <polygon xmlns="http://www.w3.org/2000/svg" clip-path="url(#cut-off-bottom)" points="31.5 41.5 31.5 75.5 29.5 81.5 26.5 84.5 24.5 84.5 21.5 81.5 17.5 84.5 14.5 84.5 10.5 81.5 7.5 84.5 5.5 84.5 2.5 81.5 0.5 75.5 0.5 41.5 8.5 34.5 11.5 7.5 11.5 0.5 20.5 0.5 20.5 7.5 23.5 34.5 31.5 41.5"/>
+        </clipPath>
+    </defs>
+    <rect xmlns="http://www.w3.org/2000/svg" clip-path="url(#cut-off-bottom)" x="0" y="85" width="32" height="85"/>
+</svg>

@@ -1,0 +1,129 @@
+include bemto/bemto.pug
+include mixins/mixins.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+    
+
+    +b.MAIN.content._catalog
+      +e.bg(style="background-image: url('img/products-bg.jpg')")
+        .container
+
+          +b('section').breadcrumbs
+            +e.href(href="#") Главная
+            +e('span').delim /
+
+          h1.common__title Пиво «Изумруд»
+
+          +b('section').catalog._card
+            +e('ul').filter
+              +e('li').filter-item
+                +e('a')(href="#").filter-href Все
+              +e('li').filter-item
+                +e('a')(href="#").filter-href._active Пиво
+              +e('li').filter-item
+                +e('a')(href="#").filter-href Квас
+              +e('li').filter-item
+                +e('a')(href="#").filter-href Закуска к пенному
+            
+            +e.card
+              +e.card-overimg
+                span(style="background-image: url('img/prod-card.jpg');")
+              +e.card-info
+                +e('p').card-descr Светлое фильтрованное пастеризованное пиво произведенное по оригинальному советскому рецепту из венского солодаи чешского хмеля.
+
+                +b('ul').char
+                  +e('li').item
+                    +e('p').item-title Крепость:
+                    +e('p').item-data 5,4%
+                  +e('li').item
+                    +e('p').item-title Плотность:
+                    +e('p').item-data 12%
+                  +e('li').item
+                    +e('p').item-title Объем:
+                    +e('p').item-data 1 л.
+                  +e('li').item
+                    +e('p').item-title Пищевая ценность:
+                    +e('p').item-data Углеводы  —  3,1 г / 100г
+                  +e('li').item
+                    +e('p').item-title Энергетическая ценность:
+                    +e('p').item-data 512 ккал 
+                  +e('li').item
+                    +e('p').item-title Условия хранения:
+                    +e('p').item-data +7, в прохладном и удаленномот света месте
+                  
+                +e.card-read
+                  +e('a')(href="#").card-href-file.btn Читать подробное описание
+                  +e('p').card-type-file PDF-файл, 2.3 Mb
+
+                +e.card-bottom
+                  +b('ul').markers._card
+                    +e('li').item._yellow 5.4%
+                    +e('li').item Лагер
+
+                  +b.pet
+                    +e.item._v1(data-height="20")
+                      +e('p').item-title ПЭТ 1 л
+                      +e.item-img
+                        svg
+                          defs
+                            clipPath(id="cut-off-bottom")
+                              polygon(points="31.5 41.5 31.5 75.5 29.5 81.5 26.5 84.5 24.5 84.5 21.5 81.5 17.5 84.5 14.5 84.5 10.5 81.5 7.5 84.5 5.5 84.5 2.5 81.5 0.5 75.5 0.5 41.5 8.5 34.5 11.5 7.5 11.5 0.5 20.5 0.5 20.5 7.5 23.5 34.5 31.5 41.5")
+                          rect.pet__item-rect(clip-path="url(#cut-off-bottom)" x="0" y="85" width="32" height="85")
+                    
+                    +e.item._v2(data-height="35")
+                      +e('p').item-title ПЭТ 1.5 л
+                      +e.item-img
+                        svg(viewBox="0 0 35 119.44" width="34" height="111")
+                          defs
+                            clipPath(id="cut-off-bottom2")
+                              path(d="M33.48,106.41c-1.19,6-3.61,11.55-6.78,11.55a4.72,4.72,0,0,1-3.81-2.15.69.69,0,0,0-1.12.09c-.7,1.18-2.37,3-4.27,3s-3.58-1.86-4.27-3a.69.69,0,0,0-1.12-.09A4.74,4.74,0,0,1,8.3,118c-3.17,0-5.6-5.52-6.78-11.55C0,98.63.64,82.5.64,53.31c0-22,12.12-40.73,12.12-40.73V8.82H12V1.94A1.45,1.45,0,0,1,13.39.5h8.22a1.45,1.45,0,0,1,1.44,1.44V8.82h-.81v3.76S34.36,31.3,34.36,53.31C34.36,82.5,35,98.63,33.48,106.41Z" style="fill:none;stroke:#000;stroke-miterlimit:10")
+                          rect.pet__item-rect(clip-path="url(#cut-off-bottom2)" x="0" y="117" width="34" height="117")
+                          
+            +publ([
+              {
+                title: 'Со вторника по четверг 20% скидка на все живое!',
+                text: 'С 1 октября по 25 октября каждые вторник, среду и четверг скидка на живое 20% по адресам: г. Златоуст, ул. Горная, 74А г. Златоуст, ул. Оружейная, 15',
+                imgBack: 'img/publ-img-back.jpg'
+              }
+            ])
+
+          +b('section').products._combine
+            +e.top
+              +e.P.title Сочетайте с пивом
+            +e.car.swiper-container.js-products
+              .swiper-wrapper
+                .swiper-slide
+                  +e.content
+                    +e.name(href="#") Окунь
+                    +e.P.dsc Сушенная рыба, подойдет к светлым лагерам и пшеничному
+                    +b('ul').markers._combine
+                      +e('li').item._yellow Рыба
+                      +e('li').item Закуска
+                  +e.ASIDE.imgover
+                    +e.img(src="img/product4.png")
+                .swiper-slide
+                  +e.content
+                    +e.name(href="#") Карась
+                    +e.P.dsc Сушенная рыба, подойдет к светлым лагерам и пшеничному
+                    +b('ul').markers._combine
+                      +e('li').item._yellow Рыба
+                      +e('li').item Закуска
+                  +e.ASIDE.imgover
+                    +e.img(src="img/product4.png")
+                .swiper-slide
+                  +e.content
+                    +e.name(href="#") Зубатка
+                    +e.P.dsc Сушенная рыба, подойдет к светлым лагерам и пшеничному
+                    +b('ul').markers._combine
+                      +e('li').item._yellow Рыба
+                      +e('li').item Закуска
+                  +e.ASIDE.imgover
+                    +e.img(src="img/product4.png")
+        
+    include layout/__footer
+    include layout/__scripts

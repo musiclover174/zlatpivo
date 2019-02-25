@@ -524,7 +524,24 @@
       if (document.querySelector('.js-vert-scrollbar')) this.vertScroll('.js-vert-scrollbar')
       if (document.querySelectorAll('.js-more-photo')) this.store()
 
-      objectFitImages('img.fit')
+      objectFitImages('img.fit');
+
+      function animateHeight(item, height, currentHeight, timeout) {
+        if (height < currentHeight) {
+          item.setAttribute('y', currentHeight--);
+          setTimeout(() => {
+            animateHeight(item, height, currentHeight, timeout)
+          }, timeout);
+        }
+      }
+
+      document.querySelectorAll('.pet__item').forEach((item) => {
+        item.addEventListener('mouseover', ()=> {
+          let height = item.dataset.height;
+          let currentHeight = item.querySelector('.pet__item-rect').attributes.y.value;
+          animateHeight(item.querySelector('.pet__item-rect'), +height, +currentHeight, 10);
+        });
+      });
 
       window.addEventListener('scroll', () => {
         for (let item of elemsToCheck) {

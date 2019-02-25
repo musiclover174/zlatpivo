@@ -1,10 +1,46 @@
 .markers
   display inline-flex
-  margin-top 10px
+  margin-top 7px
 
   @media $desktopMedium
     width 100%
     margin-top 20px
+
+  &_card
+    display inline-flex
+    flex-direction column
+    align-items flex-start
+    margin-right 60px
+    margin-top 0
+
+    @media $desktopMedium
+      width auto
+
+    @media $PortraitMax
+      flex-direction row
+
+    .markers
+      &__item
+        min-width 100px
+        font-size 16px
+        line-height 20px
+        margin 0 0 10px 0
+        font-weight 400
+        text-align center
+        padding 10px 8px
+        background-color #232041
+        height auto
+
+        &:last-child
+          margin 0
+
+        @media $PortraitMax
+          margin 0 10px 10px 0
+
+        &_yellow
+          background-color #f5c017
+          font-size 19px
+          line-height 20px
 
   &__item
     color #fff
@@ -14,7 +50,7 @@
     height 24px
     background-color #1e1e1c
     margin-right 10px
-    padding 2px 8px
+    padding 2px 12px
     transition color .4s, background .4s
 
     &:last-child

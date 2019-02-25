@@ -70,7 +70,7 @@
     w calc(100% + 1px)
   &__car
     .swiper-button-prev.swiper-button-disabled,
-    .swiper-button-next.swiper-button-disabled 
+    .swiper-button-next.swiper-button-disabled
       opacity 0
       transition 0s opacity
       @media $LandscapeMax
@@ -166,3 +166,62 @@
       dn()
   .decor
     filter brightness(0%)
+
+  &_combine
+    padding 0
+    background-color #2b284c
+    .products
+      &__top
+        padding 22px 29px 24px
+        border-bottom 1px solid rgba(#fff, .05)
+
+      &__title
+        color #fff
+        margin 0
+        font-size 34px
+        line-height 36px
+
+        @media $LandscapeMedium
+          font-size 30px
+          font-weight 600
+          line-height 32px
+
+      &__car
+        .swiper-slide
+          flex-direction column
+          padding 24px 31px 58px
+          border-right 1px solid rgba(#fff, .05)
+
+      &__imgover
+        margin -5px 0 0 calc(100% - 260px)
+        width 239px
+        height 193px
+
+        @media $PortraitMax
+          margin-left 0
+          margin-top 25px
+
+      &__name
+        color white
+        font-size 17px
+        line-height 22px
+
+      &__dsc
+        color white
+        font-size 14px
+        line-height 22px
+        margin-top 11px
+
+    .markers__item
+      height auto
+      color white
+      font-size 14px
+      line-height 14px
+      font-weight 400
+      padding 4px 8px
+
+      &_yellow
+        font-weight 600
+        color #171717
+
+

@@ -1,0 +1,16 @@
+File from: [dev/img/pattern.png]
+
+File to: [prod/img/pattern.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: D:\server\OSPanel\domains\zlatpivo\node_modules\pngquant-bin\vendor\pngquant.exe --quality=30-60 -o prod/img/pattern.png dev/img/pattern.png
+  error: failed writing image to prod/img/pattern.png (16)
+File from: [dev/img/pattern.png]
+
+File to: [prod/img/pattern.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: D:\server\OSPanel\domains\zlatpivo\node_modules\pngquant-bin\vendor\pngquant.exe --quality=30-60 -o prod/img/pattern.png dev/img/pattern.png
+  error: failed writing image to prod/img/pattern.png (16)
