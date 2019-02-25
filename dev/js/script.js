@@ -82,17 +82,23 @@
       const _th = this,
         inputs = document.querySelectorAll('.common__input, .common__textarea'),
         forms = document.querySelectorAll('form'),
-        digitsInput = document.querySelectorAll('.js-digits')
+        digitsInput = document.querySelectorAll('.js-digits'),
+        select = document.querySelectorAll('.js-select');
 
       $('.js-phone').mask('+7(999) 999-9999')
 
-      if ($('.js-select')) {
-        $('.js-select').SumoSelect({
-          placeholder: 'Все отзывы',
-          captionFormatAllSelected: 'Все отзывы',
-          captionFormat: 'Выбрано пунктов: {0}',
-          csvDispCount: 1,
-        });
+      if (select) {
+        for (var i = 0; i < select.length ;i++) {
+          var _t = select[i],
+            optPlhdr = _t.dataset.plhdr ? _t.dataset.plhdr : 'Выберите',
+            optAllSel = _t.dataset.textallsel ? _t.dataset.textallsel : 'Все выбраны';
+          $(_t).SumoSelect({
+            placeholder: optPlhdr,
+            captionFormatAllSelected: optAllSel,
+            captionFormat: 'Выбрано пунктов: {0}',
+            csvDispCount: 1,
+          });
+        }
       }
 
       function emptyCheck(event) {
@@ -188,6 +194,13 @@
 
   window.site.obj = ({
 
+    vertScroll: (selector) => {
+      const ps = new PerfectScrollbar(selector, {
+        wheelPropagation: true,
+        maxScrollbarLength: 20
+      });
+    },
+
     resizeWatcher: () => {
       const tableSel = document.querySelectorAll('table'),
         scrollArray = [];
@@ -231,6 +244,26 @@
           }
         })
       })
+    },
+
+    store: () => {
+      let btnMorePhoto = document.querySelectorAll('.js-more-photo');
+      for(let i = 0; i < btnMorePhoto.length ;i++){
+        btnMorePhoto[i].addEventListener('click', function(event) {
+          var _t = this,
+            hiddenPhoto = _t.previousElementSibling;
+          if (_t.classList.contains('active')) {
+            _t.classList.remove('active');
+            _t.innerHTML = 'Показать еще фото';
+            window.animation.fadeOut(hiddenPhoto, 400);
+          } else {
+            _t.classList.add('active');
+            _t.innerHTML = 'Свернуть';
+            window.animation.fadeIn(hiddenPhoto, 400);
+          }
+          event.preventDefault();
+        });
+      }
     },
 
     products: () => {
@@ -405,7 +438,7 @@
         coords = document.querySelector(".contacts__filial").dataset.coords.split(",");
 
       ymaps.ready(function () {
-        let myMap = new ymaps.Map("yaMap", {
+        let myMap = new ymaps.Map('yaMap', {
           center: [coords[0], coords[1]],
           zoom: $map.dataset.zoom || 14,
           controls: []
@@ -415,7 +448,7 @@
         });
         myMap.behaviors.disable('scrollZoom');
 
-        document.querySelectorAll(".contacts__filial").forEach(function (i, item) {
+        document.querySelectorAll('.contacts__filial').forEach(function (i, item) {
           try {
             var data = i.dataset.coords.split(",");
             var coords = [data[0], data[1]];
@@ -461,7 +494,9 @@
         headerEl = document.querySelector('.header'),
         toTop = document.querySelector('.js-totop'),
         toNext = document.querySelector('.js-tonext'),
-        elemsToCheck = ['.news__elem-imgover', '.js-scroll-imgover', '.about__steps-elem']
+        elemsToCheck = ['.news__elem-imgover', '.js-scroll-imgover', '.about__steps-elem'];
+
+
 
       burgerEl.addEventListener('click', (e) => {
         html.classList.toggle('burgeropen')
@@ -486,6 +521,8 @@
         this.reviewsEventsBindings();
       }
       if (document.querySelector('.js-map')) this.map()
+      if (document.querySelector('.js-vert-scrollbar')) this.vertScroll('.js-vert-scrollbar')
+      if (document.querySelectorAll('.js-more-photo')) this.store()
 
       objectFitImages('img.fit')
 
