@@ -1,0 +1,22 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+    +b.MAIN.content.not-found
+      +e.bg(style="background-image: url('img/products-bg.jpg')")
+        .container
+          h1.not-found__title 404
+          p.not-found__subtitle Похоже, мы не можем найти нужную вам страницу.
+          .not-found__text
+            p Зато у нас много пива в 
+                a(href="#") каталоге.
+            p А на 
+                a(href="#") главной
+                | полно информации о нас.
+
+    include layout/__footer
+    include layout/__scripts

@@ -12,21 +12,22 @@ body
     .content,
     .footer
       opacity 0
-      transition .7s opacity
     .content
       z-index -5
       pos relative
       transition-delay 0.3s
-    // .header,
-    // .footer
-    //   transition-delay 0.8s
+    .header,
+    .footer
+      transition-delay 0.8s
   &.pace-done
     .header,
     .content,
     .footer
       opacity 1
+      transition .7s opacity
     .content
       z-index 1
+      transition .7s opacity
 
 .container
   w 100%

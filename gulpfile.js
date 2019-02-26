@@ -11,7 +11,9 @@ var gulp = require('gulp'),
   imagemin = require('compress-images'),
   browserSync = require('browser-sync'),
   pump = require('pump'),
-  reload = browserSync.reload;
+  reload = browserSync.reload,
+  notify = require('gulp-notify'),
+  plumber = require('gulp-plumber');
 
 var src = {
   'dev': {
@@ -107,6 +109,15 @@ gulp.task('pug', function (cb) {
 // stylus task and minify
 gulp.task('stylus', function () {
   return gulp.src(src.dev.stylus + 'style.styl')
+    .pipe(plumber({
+      errorHandler: function (err) {
+        notify.onError({
+          title: 'Styles compilation error',
+          message: err.messagegulp
+        })(err);
+        this.emit('end');
+      }
+    }))
     .pipe(stylus())
     .pipe(gulp.dest(src.prod.css));
 });
