@@ -35,6 +35,8 @@ body
   margin 0 auto
   pos relative
   z-index 1
+  &--center
+    text-align: center
   @media $lDesktopSmall
     max-width 100%
   @media $desktopMedium
@@ -271,6 +273,11 @@ body.index
     l -96px
     t 49%
     transform rotate(100deg)
+    z-index -1
+  &__dec14
+    filter brightness(0%)
+    l -70px
+    t 35%
     z-index -1
 
 input::-webkit-input-placeholder
@@ -606,4 +613,6 @@ textarea.warning
   &_type12
     size 364px 258px
     background-image url('../i/dec12.png')
-
+  &_type13
+    size 409px 183px
+    background-image url('../i/dec13.png')

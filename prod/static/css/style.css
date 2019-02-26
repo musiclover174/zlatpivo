@@ -257,6 +257,9 @@ body.pace-done .content {
   position: relative;
   z-index: 1;
 }
+.container--center {
+  text-align: center;
+}
 @media (max-width: 1540px) {
   .container {
     max-width: 100%;
@@ -624,6 +627,13 @@ body.pace-done .content {
   top: 49%;
   -webkit-transform: rotate(100deg);
   transform: rotate(100deg);
+  z-index: -1;
+}
+.content__dec14 {
+  -webkit-filter: brightness(0%);
+  filter: brightness(0%);
+  left: -70px;
+  top: 35%;
   z-index: -1;
 }
 input::-webkit-input-placeholder {
@@ -1126,6 +1136,11 @@ textarea.warning {
   width: 364px;
   height: 258px;
   background-image: url("../i/dec12.png");
+}
+.decor_type13 {
+  width: 409px;
+  height: 183px;
+  background-image: url("../i/dec13.png");
 }
 body.compensate-for-scrollbar {
   overflow: hidden;
