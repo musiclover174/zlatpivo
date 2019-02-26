@@ -58,6 +58,7 @@ body.index
 
 .content
   bgc $cream
+  overflow-x hidden
   &_confirm-age
     height calc(100vh - 131px)
     min-height 600px
@@ -70,6 +71,24 @@ body.index
   &_catalog
     .common__title
       max-width 50%
+      @media $LandscapeMax
+        max-width 100%
+  &_store
+    .decor
+      background-size contain
+      &_type5
+        width 108px
+        height 157px
+        right auto
+        left calc(50% - 115px)
+        transform rotate(-41deg)
+        top 140px
+      &_type6
+        width 199px
+        height 223px
+        transform scaleX(-1) rotate(-30deg)
+        right -70px
+        top -90px
   &_contacts
     .content__bg
       background-position left 945px

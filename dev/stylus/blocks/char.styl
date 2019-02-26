@@ -1,0 +1,29 @@
+.char
+  margin-bottom 47px
+  max-width 412px
+
+  @media $PortraitMax
+    margin-bottom 30px
+
+  &__item
+    display flex
+    margin-bottom 10px
+    align-items flex-start
+
+    &:last-child
+      margin-bottom 0
+
+    &-title, &-data
+      font-size 13px
+      font-weight 400
+      line-height 19px
+
+    &-title
+      width 50%
+      padding-right 20px
+      color rgba(#fff, .5)
+
+    &-data
+      width 50%
+      color #fff
+
