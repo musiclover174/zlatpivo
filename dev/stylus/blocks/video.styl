@@ -28,6 +28,10 @@
     background-position center
     background-size cover
     background-attachment fixed
+
+    @supports (-webkit-overflow-scrolling: touch)
+      background-attachment unset
+
   &__title
     font-family $cyr
     color white
@@ -52,7 +56,7 @@
     @media $LandscapeMax
       pos relative
       r auto
-      b auto 
+      b auto
       mt 80px
       ib()
     @media $LandscapeMin
