@@ -7,27 +7,28 @@ body
   overflow-x hidden
   &:not(.pace-done)
     overflow hidden
-  &
-    .header,
-    .content,
-    .footer
-      opacity 0
-    .content
-      z-index -5
-      pos relative
-      transition-delay 0.3s
-    .header,
-    .footer
-      transition-delay 0.8s
-  &.pace-done
-    .header,
-    .content,
-    .footer
-      opacity 1
-      transition .7s opacity
-    .content
-      z-index 1
-      transition .7s opacity
+
+  @supports not (-webkit-overflow-scrolling: touch)
+    &
+      .header,
+      .content,
+      .footer
+        opacity 0
+      .content
+        z-index -5
+        transition-delay 0.3s
+      .header,
+      .footer
+        transition-delay 0.8s
+    &.pace-done
+      .header,
+      .content,
+      .footer
+        opacity 1
+        transition .7s opacity
+      .content
+        z-index 1
+        transition .7s opacity
 
 .container
   w 100%
@@ -58,8 +59,9 @@ body.index
   bgc $blue
 
 .content
+  pos relative
+  z-index 1
   bgc $cream
-  overflow-x hidden
   &_confirm-age
     height calc(100vh - 131px)
     min-height 600px
@@ -506,7 +508,7 @@ div[class\^="table-scroller"]
     &:before
       content ""
       pos absolute
-      l -33px
+      l -21px
       t 6px
       size 13px 8px
       background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAMAAAAV+IX9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAP1BMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///8AU9tkAAAAE3RSTlMAV+cHcPVOAYvtOaCwiHV3OvTqgGJyUgAAAAFiS0dEFJLfyTUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARINIh+5Fq2uAAAANElEQVQI12NgYGBgZGJmgAMWVjY4m52Dkwshwy3MwwsDfCg8fpBKAQYkwCLIhsxlFILZAABokQHsQ7L58gAAAABJRU5ErkJggg==') no-repeat center
@@ -681,3 +683,7 @@ textarea.warning
   &_type20
     size 198px 223px
     background-image url('../i/dec20.png')
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .decor
+    display none

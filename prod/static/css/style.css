@@ -223,33 +223,34 @@ body {
 body:not(.pace-done) {
   overflow: hidden;
 }
-body .header,
-body .content,
-body .footer {
-  opacity: 0;
-}
-body .content {
-  z-index: -5;
-  position: relative;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-}
-body .header,
-body .footer {
-  -webkit-transition-delay: 0.8s;
-  transition-delay: 0.8s;
-}
-body.pace-done .header,
-body.pace-done .content,
-body.pace-done .footer {
-  opacity: 1;
-  -webkit-transition: 0.7s opacity;
-  transition: 0.7s opacity;
-}
-body.pace-done .content {
-  z-index: 1;
-  -webkit-transition: 0.7s opacity;
-  transition: 0.7s opacity;
+@supports not (-webkit-overflow-scrolling: touch) {
+  body .header,
+  body .content,
+  body .footer {
+    opacity: 0;
+  }
+  body .content {
+    z-index: -5;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  body .header,
+  body .footer {
+    -webkit-transition-delay: 0.8s;
+    transition-delay: 0.8s;
+  }
+  body.pace-done .header,
+  body.pace-done .content,
+  body.pace-done .footer {
+    opacity: 1;
+    -webkit-transition: 0.7s opacity;
+    transition: 0.7s opacity;
+  }
+  body.pace-done .content {
+    z-index: 1;
+    -webkit-transition: 0.7s opacity;
+    transition: 0.7s opacity;
+  }
 }
 .container {
   width: 100%;
@@ -293,8 +294,9 @@ body.pace-done .content {
   background-color: #2b284c;
 }
 .content {
+  position: relative;
+  z-index: 1;
   background-color: #fff9f0;
-  overflow-x: hidden;
 }
 .content_confirm-age {
   height: calc(100vh - 131px);
@@ -986,7 +988,7 @@ div[class^="table-scroller"] {
 .common__back:before {
   content: "";
   position: absolute;
-  left: -33px;
+  left: -21px;
   top: 6px;
   width: 13px;
   height: 8px;
@@ -1236,6 +1238,11 @@ textarea.warning {
   width: 198px;
   height: 223px;
   background-image: url("../i/dec20.png");
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .decor {
+    display: none;
+  }
 }
 body.compensate-for-scrollbar {
   overflow: hidden;
@@ -5452,6 +5459,11 @@ body:not(.index) .socials__href:hover {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+@supports (-webkit-overflow-scrolling: touch) {
+  .video__bg {
+    background-attachment: unset;
+  }
 }
 .video__title {
   font-family: "Jikharev";
