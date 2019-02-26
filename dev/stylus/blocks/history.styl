@@ -1,0 +1,141 @@
+.history
+  padding-top 139px
+  text-align left
+
+  &__custom-title
+    font-family "Jikharev"
+    color #f5c017
+    -webkit-transform rotate(-4deg)
+    transform rotate(-4deg)
+    font-size 45px
+    font-weight 400
+    line-height 55px
+    margin-bottom 43px
+
+  &__container
+    display flex
+    flex-direction row
+    position relative
+    margin-bottom 105px
+  &__w470
+    max-width 470px
+  &__left
+    width 50%
+    padding-right 15px
+    position relative
+
+  &__right
+    width 50%
+    display flex
+    flex-direction column
+    padding-left 15px
+    position relative
+
+  &__big-img
+    align-self flex-end
+    max-width 100%
+
+  &__small-img
+    align-self flex-start
+    max-width 100%
+
+  &__ussr
+    padding-left 108px
+    position relative
+    margin-bottom 27px
+
+    &:before
+      content ''
+      position absolute
+      left 0
+      top 50%
+      transform translate(-50%,-50%)
+      width 103px
+      height 104px
+      background-image url('../i/ussr.png')
+
+  &__border-top
+    position relative
+    padding-top 30px
+    margin-left 108px
+
+    &:before
+      content ''
+      position absolute
+      top 0
+      left 0
+      width 63%
+      height 2px
+      background-color #f5c017
+
+  &__ural
+    text-align center
+    position relative
+    top -16px
+    flex-shrink 0
+
+@media only screen and (max-width 1130px)
+  .history
+    &__small-img
+      margin-left 0!important
+
+@media only screen and (max-width 1000px)
+  .history
+    padding-top 0
+    &__container
+      flex-direction column
+      margin-bottom 18px!important
+    &__left
+      width 100%
+      padding-right 0
+      margin-bottom 18px
+      padding-top 0!important
+      width: 100%!important
+      p
+        margin-top 0!important
+        padding-left 0!important
+      img
+        margin-left 0!important
+      h2
+        margin-top 0!important
+    &__right
+      width 100%
+      padding-left 0
+      margin-bottom 0
+    h2
+      margin-bottom 26px!important
+    &__big-img
+      margin 0!important
+      align-self: flex-start
+    &__small-img
+      display: none
+      margin 0!important
+    &__border-top
+      margin-left 0
+      padding-top 10px
+    &__ural
+      top: 0
+@media only screen and (max-width 700px)
+  .history
+    &__custom-title
+      font-size 30px
+      line-height 38px
+      margin-left 0!important
+      text-align: center
+    &__ussr
+      padding-left 0
+      &:before
+        content: none
+    &__w470
+      max-width: 100%
+    &__big-img
+      max-width: inherit
+      width: 100%
+    .awards--inner
+      margin-bottom 18px
+      .container
+        padding-top 0
+    &__left
+      display: flex
+      flex-direction: column
+      align-items: center
