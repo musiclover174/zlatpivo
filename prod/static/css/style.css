@@ -236,11 +236,6 @@ body .content {
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
-body .header,
-body .footer {
-  -webkit-transition-delay: 0.8s;
-  transition-delay: 0.8s;
-}
 body.pace-done .header,
 body.pace-done .content,
 body.pace-done .footer {
