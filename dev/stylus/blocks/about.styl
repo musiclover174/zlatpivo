@@ -60,7 +60,7 @@
       fontify 14px 400 24px
     @media $LandscapeMin
       max-width none
-    
+
 .about
   &_side
     c white
@@ -202,9 +202,33 @@
     ml -2px
     @media $LandscapeMedium
       fontify 30px 600 32px
+  &--inner
+    margin-bottom 69px
+    @media $LandscapeMax
+      margin-bottom 18px
+    .container
+      padding 0
+      padding-top 73px
+      @media $LandscapeMax
+        padding-top 0
+    .awards__title
+      font-size 36px
+      line-height 46px
+      margin-bottom 25px
+      @media $LandscapeMedium
+        font-size: 26px
+        font-weight: 600
+        line-height: 28px
+  &__text
+    max-width 618px
+    font-size 16px
+    line-height 24px
+    font-weight 600
+    color #3c3c3c
+    margin-bottom 33px
   &__car
     .swiper-button-prev.swiper-button-disabled,
-    .swiper-button-next.swiper-button-disabled 
+    .swiper-button-next.swiper-button-disabled
       opacity 0
       transition 0s opacity
     .swiper-slide
@@ -212,7 +236,12 @@
       h auto
       padding 50px 44px 72px
       border-top 1px solid rgba(77, 77, 77, 0.06)
-      border-right 1px solid rgba(77, 77, 77, 0.06)
+      border-bottom 1px solid rgba(77, 77, 77, 0.06)
+      &.swiper-slide-active
+        border-right 1px solid rgba(77, 77, 77, 0.06)
+      &.swiper-slide-next
+        border-right 1px solid rgba(77, 77, 77, 0.06)
+
       @media $desktopMax
         pl 49px
         pr 49px
