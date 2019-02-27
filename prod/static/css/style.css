@@ -220,37 +220,35 @@ body {
 body {
   overflow-x: hidden;
 }
-body:not(.pace-done) {
+html:not(.touchevents) body:not(.pace-done) {
   overflow: hidden;
 }
-@supports not (-webkit-overflow-scrolling: touch) {
-  body .header,
-  body .content,
-  body .footer {
-    opacity: 0;
-  }
-  body .content {
-    z-index: -5;
-    -webkit-transition-delay: 0.3s;
-    transition-delay: 0.3s;
-  }
-  body .header,
-  body .footer {
-    -webkit-transition-delay: 0.8s;
-    transition-delay: 0.8s;
-  }
-  body.pace-done .header,
-  body.pace-done .content,
-  body.pace-done .footer {
-    opacity: 1;
-    -webkit-transition: 0.7s opacity;
-    transition: 0.7s opacity;
-  }
-  body.pace-done .content {
-    z-index: 1;
-    -webkit-transition: 0.7s opacity;
-    transition: 0.7s opacity;
-  }
+html:not(.touchevents) body .header,
+html:not(.touchevents) body .content,
+html:not(.touchevents) body .footer {
+  opacity: 0;
+}
+html:not(.touchevents) body .content {
+  z-index: -5;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+html:not(.touchevents) body .header,
+html:not(.touchevents) body .footer {
+  -webkit-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+html:not(.touchevents) body.pace-done .header,
+html:not(.touchevents) body.pace-done .content,
+html:not(.touchevents) body.pace-done .footer {
+  opacity: 1;
+  -webkit-transition: 0.7s opacity;
+  transition: 0.7s opacity;
+}
+html:not(.touchevents) body.pace-done .content {
+  z-index: 1;
+  -webkit-transition: 0.7s opacity;
+  transition: 0.7s opacity;
 }
 .container {
   width: 100%;
@@ -1238,6 +1236,9 @@ textarea.warning {
   width: 198px;
   height: 223px;
   background-image: url("../i/dec20.png");
+}
+video::-webkit-media-controls {
+  display: none !important;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .decor {
