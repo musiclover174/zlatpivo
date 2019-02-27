@@ -609,10 +609,16 @@
     }
   });
 
-  Pace.on('hide', () => {
-    setTimeout(() => {
-      window.site.obj.init()
-    }, 200)
-  })
+  if (document.querySelector('html').classList.contains('touchevents')) {
+    window.site.obj.init();
+    document.querySelector('body').classList.add('pace-done')
+    Pace.stop();
+  } else {
+    Pace.on('hide', () => {
+      setTimeout(() => {
+        window.site.obj.init()
+      }, 200)
+    })
+  }
 
 })();

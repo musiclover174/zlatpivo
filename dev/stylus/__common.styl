@@ -5,10 +5,10 @@ body
 
 body
   overflow-x hidden
-  &:not(.pace-done)
-    overflow hidden
-
-  @supports not (-webkit-overflow-scrolling: touch)
+html:not(.touchevents)
+  body
+    &:not(.pace-done)
+      overflow hidden
     &
       .header,
       .content,
@@ -683,6 +683,10 @@ textarea.warning
   &_type20
     size 198px 223px
     background-image url('../i/dec20.png')
+
+// @supports (-webkit-overflow-scrolling: touch)
+video::-webkit-media-controls
+  display:none !important
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
   .decor
