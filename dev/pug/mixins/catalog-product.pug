@@ -2,9 +2,10 @@ mixin catalog-product(data)
   each item in data
     +e.product
       +e('a').product-overimg(href="#")
-        +e('span').product-hover(style="background-image: url('"+item.imgBack+"');")
+        if (item.imgBack)
+          +e('span').product-hover(style="background-image: url('"+item.imgBack+"');")
         +e('img')(src=item.img alt="").product-img
-      +e.product-info
+      +e.product-info(style="background-image: url("+item.pattern+");")
         +e.product-info-top
           +e('a')(href="#").product-title
             span #{item.title}
