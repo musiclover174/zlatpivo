@@ -94,8 +94,10 @@
         pr 35px
       @media $LandscapeMax
         w 45vw
+        pb 0
       @media $LandscapeMedium
         w 70vw
+        pb 56px
         border-bottom 1px solid rgba(77, 77, 77, 0.06)
       @media $PortraitMax
         w 75vw
@@ -118,6 +120,8 @@
     @media $desktopMax
       w calc(100% - 170px)
       mt -70px
+    @media $LandscapeMax
+      mt -45px
     @media $PortraitMax
       mt -20px
   &__img

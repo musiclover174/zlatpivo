@@ -2,12 +2,11 @@
   bgc $blue
   pos relative
   z-index 1
-  border-top 1px solid alpha(white, .1)
   .container
     df(center, space-between)
     h 87px
     @media $PortraitMedium
-      dfv()
+      dfv(center, center)
       h auto
       padding 25px 20px
   &__side
@@ -65,7 +64,7 @@
     letter-spacing 0.18em
     @media $PortraitMedium
       mt 20px
-      l 84px
+      l 44px
     span
       pos absolute
       t 3px

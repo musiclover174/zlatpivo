@@ -1,8 +1,0 @@
-File from: [dev/img/product4.png]
-
-File to: [prod/img/product4.png]
-
-Compression algorithm: [pngquant]
-
-Description: Error: Command failed: D:\server\OSPanel\domains\zlatpivo\node_modules\pngquant-bin\vendor\pngquant.exe --quality=30-60 -o prod/img/product4.png dev/img/product4.png
-  error: failed writing image to prod/img/product4.png (16)

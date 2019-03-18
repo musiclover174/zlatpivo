@@ -1,7 +1,6 @@
 .banner
   h 100vh
-  dfv(flex-start, flex-end)
-  pb 8%
+  dfv(flex-start, center)
   pos relative
   @media $LandscapeMax
     h auto
@@ -63,7 +62,7 @@
     @media $LandscapeMedium
       ml 0
     @media $LandscapeMin
-      fontify 30px 400 32px
+      fontify 42px 400 46px
       transform none
   &__subtitle
     color white
@@ -75,6 +74,8 @@
       fontify 14px 400 24px
       mt 85px
       max-width 690px
+    @media $LandscapeMax
+      max-width 530px
     @media $LandscapeMedium
       max-width 80%
     @media $LandscapeMin

@@ -110,6 +110,7 @@
     right: 0;
     bottom: 0;
     width: 30px;
+    cursor: pointer;
 }
 
 .SumoSelect>.CaptionCont>label>i {
@@ -124,6 +125,11 @@
     margin: auto;
     background-repeat: no-repeat;
     opacity: 0.8;
+    transition: .7s filter;
+}
+
+.SumoSelect>.CaptionCont>label:hover > i{
+    filter: brightness(0) invert(1);
 }
 
 .SumoSelect>.optWrapper {

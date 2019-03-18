@@ -8,7 +8,6 @@
     dn()
   &__href
     size 26px
-    border-radius 50%
     transition .7s background, .7s opacity, filter .7s
     & + &
       ml 10px
@@ -24,7 +23,7 @@
 .index
   .header
     &__button
-      filter: none!important
+      filter none!important
       &:before
         background-color $orange
       &:after
@@ -81,7 +80,7 @@
   &__button
     pos relative
     w 33px
-    h 25px
+    h 26px
     cursor pointer
     z-index 15
     &:before
@@ -120,12 +119,16 @@
     &:not(.open):hover &-meat
       animation burger-hover 1s infinite ease-in-out alternate forwards 200ms
     &.open
+      transition .7s transform
+      will-change transform
       &:before
         animation burger-top 1s ease-in-out forwards
       &:after
         animation burger-bottom 1s ease-in-out forwards
       & ^[-1]-meat
         opacity 0
+      &:hover
+        transform rotate(180deg)
     &.open.remove
       &:before
         animation burger-top-invert 1s ease-in-out forwards
@@ -194,7 +197,7 @@
 
 
 html.burgeropen
-  overflow hidden
+  overflow-y scroll
   position: fixed
   width 100%
 

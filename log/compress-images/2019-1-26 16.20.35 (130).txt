@@ -1,8 +1,0 @@
-File from: [dev/i/404.png]
-
-File to: [prod/static/i/404.png]
-
-Compression algorithm: [pngquant]
-
-Description: Error: Command failed: D:\GitHub\zlatpivo\node_modules\pngquant-bin\vendor\pngquant.exe --quality=30-60 -o prod/static/i/404.png dev/i/404.png
-  error: 'prod\static\i\404.png' exists; not overwriting

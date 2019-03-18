@@ -574,6 +574,7 @@
       }
 
       $('[data-fancybox]').fancybox({
+        touch: false,
         i18n: {
           en: {
             CLOSE: "Закрыть"

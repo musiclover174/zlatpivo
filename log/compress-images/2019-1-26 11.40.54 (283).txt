@@ -1,8 +1,0 @@
-File from: [dev/i/dec16.png]
-
-File to: [prod/static/i/dec16.png]
-
-Compression algorithm: [pngquant]
-
-Description: Error: Command failed: D:\GitHub\zlatpivo\node_modules\pngquant-bin\vendor\pngquant.exe --quality=30-60 -o prod/static/i/dec16.png dev/i/dec16.png
-  error: failed writing image to prod/static/i/dec16.png (16)
