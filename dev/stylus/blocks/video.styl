@@ -25,9 +25,15 @@
     z-index -1
     opacity .65
     background-repeat no-repeat
-    background-position center
+    background-position left center
     background-size cover
     background-attachment fixed
+
+    @media $desktopMedium
+      background-position left -500px center
+
+    @media $LandscapeMedium
+      background-position center
 
     @supports (-webkit-overflow-scrolling: touch)
       background-attachment unset

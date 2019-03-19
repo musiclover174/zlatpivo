@@ -13,6 +13,7 @@
     df(flex-start, center)
   &__socials
     ml 42px
+    mt -6px
     df(center, flex-start)
     @media $LandscapeMax
       ml 20px
@@ -20,34 +21,37 @@
       dn()
     &-elem
       color #c0bfca
-      fontify 14px 400 16px
-      transition .7s opacity
-      &:hover
-        opacity .7
+      fontify 14px 400 26px
+      transition .7s background
+      &:after
+        pl 34px
       &[data-type="inst"]
-        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAP1BMVEX27+X27+X27+X27+X27+X27+WJhKRJRX327+VGQnxJRX3TzNBwa5VKRn7Ry89LR3/Rys9JRX727+VDP3r///8DIBtNAAAAE3RSTlMEZqazp2Xb+1/9/L7n+7/6v/tg9r9/dwAAAAFiS0dEFJLfyTUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAQoOLBwpdxCzAAAAYUlEQVQY03WP3Q6AIAhGP8W0Ev/y/d81pxvqWucKDqAAKE2CUcAxU7LOnljqdFWnQWvHbWkIzyGw72EXMdVGiiK4dlhEGML9i89IHo9mERS5FI7z25Vt9Ybejms8gDLb+S9hOAZO7y0q7AAAAABJRU5ErkJggg==') no-repeat left center
+        background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAq1BMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf////kh9ZAAAAAN3RSTlMAJna85vk/wgiY/hLGCsibwy/lRwVIgUKKZr4CD2tlroS/3d8UbBAGTFOC6QlU60CZE8Uod+f6Gn3OtgAAAAFiS0dEOKAHpdYAAAAJb0ZGcwAABwYAAAA8ALonEqIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAB4AAABZBAD8MNtkAAADiSURBVCjPhZLpEoIwDIQDcigCoiIq4i2eKIdK3//NpJIWBNT908x+M+k2DQBKEFuSLEstUYBPKSrhUpUSaHc0UpLWaTPS1UlFejcnhklqMo036pEG9d4JtCak0SwWaZQF0MdyMLRpD3s0QKMPDlbjPNNkOkTDARerGYA3X3jLlY3GGiSsMrIhZLsDQEMCmSOfHj5H8i9UNNxXG7IYh+wyf+plc+MxWPgjG/YJjTN/8uV4oCC43viTfwzq23hD2iNqQtG/r4S4xsyY5Q2qa2OUly0pSBJWNvH+cJ9p+nQfd+a8AAGVX3hQV87zAAAAAElFTkSuQmCC") no-repeat left center
+        &:hover
+          background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAqFBMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VRVRbAAAAN3RSTlMAJna85vk/wgiY/hLGCsibwy/lRwVIgUKKZr4CD2tlroS/3d8UbBAGTFOC6QlU60CZE8Uod+f6Gn3OtgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADiSURBVCjPhZLpEoIwDIQDcigCoiIq4i2eKIdK3//NpJIWBNT908x+M+k2DQBKEFuSLEstUYBPKSrhUpUSaHc0UpLWaTPS1UlFejcnhklqMo036pEG9d4JtCak0SwWaZQF0MdyMLRpD3s0QKMPDlbjPNNkOkTDARerGYA3X3jLlY3GGiSsMrIhZLsDQEMCmSOfHj5H8i9UNNxXG7IYh+wyf+plc+MxWPgjG/YJjTN/8uV4oCC43viTfwzq23hD2iNqQtG/r4S4xsyY5Q2qa2OUly0pSBJWNvH+cJ9p+nQfd+a8AAGVX3hQV87zAAAAAElFTkSuQmCC")
         &:after
           content "Instagram"
-          pl 24px
           @media $LandscapeMax
             content ""
-            pl 16px
+            pl 26px
       &[data-type="vk"]
+        background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA4VBMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///+CItTVAAAASXRSTlMAJna85vk/wgiY/hLGCsibwy+BY1WOqAYHg+9nZmK+TxCSTb/AdB1p9RzcRLrPBA38fGr7TDWkA/2TKxGdCwwogkCZEwnFd+f6XOZVNQAAAAFiS0dESh4MtcYAAAAJb0ZGcwAABuIAAAA8AJGFQIIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAB4AAABZBAD8MNtkAAAD6SURBVCjPhZJ5e8FAEId/2BAhQdDQatAqdfRQetE2bub7fyG1h6YRvP/MZN/n2czMDiCJRGNM01gsGsF/4gnak4j7hJ40yIeR1JVJpSlAOiWMadEBlslVhkLI8AqMMGXsaslSKFkgR0fIweYxXyjShVMq0+VV5VooGy6PVTiMaqhQHbgR6haMxwZwR0207tswO0IxaCLpQu85qOaBuvyXptTDoxzN0/NeMZn11dheSF3oymww/D1+fXsHiqoMW/Xx8Tka9+nr+8cT35NTLZ8Y1LHxTnclzcLU7NxTYn7grLnqchFcG9O/bMs/s5wGNtFbuevNZu2uPHWyBaWKfzoFHkODAAAAAElFTkSuQmCC") no-repeat left center
+        &:hover
+          background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA3lBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////82KaFZAAAASXRSTlMAJna85vk/wgiY/hLGCsibwy+BY1WOqAYHg+9nZmK+TxCSTb/AdB1p9RzcRLrPBA38fGr7TDWkA/2TKxGdCwwogkCZEwnFd+f6XOZVNQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAD6SURBVCjPhZJ5e8FAEId/2BAhQdDQatAqdfRQetE2bub7fyG1h6YRvP/MZN/n2czMDiCJRGNM01gsGsF/4gnak4j7hJ40yIeR1JVJpSlAOiWMadEBlslVhkLI8AqMMGXsaslSKFkgR0fIweYxXyjShVMq0+VV5VooGy6PVTiMaqhQHbgR6haMxwZwR0207tswO0IxaCLpQu85qOaBuvyXptTDoxzN0/NeMZn11dheSF3oymww/D1+fXsHiqoMW/Xx8Tka9+nr+8cT35NTLZ8Y1LHxTnclzcLU7NxTYn7grLnqchFcG9O/bMs/s5wGNtFbuevNZu2uPHWyBaWKfzoFHkODAAAAAElFTkSuQmCC")
         &:after
           content "Vkontakte"
-          pl 24px
           @media $LandscapeMax
             content ""
-            pl 16px
-        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAQoOLSgR2NVHAAAAsUlEQVQY023OoWpCcQBG8d/977aJjIHiIziwDFlamdiHwSYs7Q0sCwq3LBhcWtjAVzDsBfYCFuuFy5rBokFsV++CCsJ24vlO+KKiI8a3lTvPgq13Ge5VBfvYowoaEpmSMm5kyl7ANhiBpmtrM7BB14FBkPoBT9iBOTrgSxbwAdoe1EBLX4TUhKiARNNfhuYEMFb8E/TEp2Dj9WxIj2frPl1eJAe5sFRHLvdm6lZJ7kr8Cz5VKRgl3+15AAAAAElFTkSuQmCC') no-repeat left center
+            pl 26px
       &[data-type="fb"]
+        background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAflBMVEX1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf1wBf///+/v8VLAAAAKHRSTlMAJna85vk/wgiY/hLGCsibwy+qEYEzvru/RFWIzGaCQJkTCcUod+f6g3QTBQAAAAFiS0dEKcq3hSQAAAAJb0ZGcwAAByoAAAA8AMpJ1+8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAB4AAABZBAD8MNtkAAAC7SURBVCjPhZLZFoIgGIRHBfd9K8tSc+P9n7C0RFybK4bvHJgfBvhJkhVCKVFkCUupGuPSVAHohskEmYY+EctmK9nWlzgu28h1RuSxHXljAnMPmUMWn+3KBwLBhhHATYBYQAkQcRMjFRBwmc0VZD4uA5IbtwSUr+9D3oxbKqD8wx6hgMjRXeQsRnyEnouRI+SzCc4e6uh5i2GUcg+V/74S1Ya51VSO17o2jli2eiZ1sWpi06Zd33dp20w7b6c0S1gCRRHgAAAAAElFTkSuQmCC") no-repeat left center
+        &:hover
+          background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAe1BMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////QYBnOAAAAKHRSTlMAJna85vk/wgiY/hLGCsibwy+qEYEzvru/RFWIzGaCQJkTCcUod+f6g3QTBQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAC7SURBVCjPhZLZFoIgGIRHBfd9K8tSc+P9n7C0RFybK4bvHJgfBvhJkhVCKVFkCUupGuPSVAHohskEmYY+EctmK9nWlzgu28h1RuSxHXljAnMPmUMWn+3KBwLBhhHATYBYQAkQcRMjFRBwmc0VZD4uA5IbtwSUr+9D3oxbKqD8wx6hgMjRXeQsRnyEnouRI+SzCc4e6uh5i2GUcg+V/74S1Ya51VSO17o2jli2eiZ1sWpi06Zd33dp20w7b6c0S1gCRRHgAAAAAElFTkSuQmCC")
         &:after
           content "Facebook"
-          pl 24px
           @media $LandscapeMax
             content ""
-            pl 16px
-        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjAQoOLgeRJLvdAAABH0lEQVQoz3XOvU8UURQF8N97O4vjhsBuxITKRgore6qNCf8Dha0hdMTOjs6CWo2lLf0mJNgYQgLEwsaOhsIYIgmBJfvBzjDPgmHBwtPcm3POPeeGBC91tRUSoiiJBg4cEhKr1pSGqDzVNFa50JLb9jmkFz76bSiqLPhp1x/PrOnLLHmXWVEaiug4sQkuPBIVrnSjTi2XnjsGb31xphKM5JlCQPDEB1/Bd+dWTFSCMkpu0bLnF9jXk4u3dD0kp7a8ARs+uVT+a+DGvDmwoK26o6Mw3UbGYGIwZR8k/AdRNn3zvuzuPmlEA3ltaSjqiqyWZ5TRN4/rlGuzFi1quUYSdByFxLrX+saShgylG8GMth3vQ4JXluWK2lCoNBV+6PEXWuFcYun7vakAAAAASUVORK5CYII=') no-repeat left center
+            pl 26px
       & + &
         ml 20px
         @media $LandscapeMax
@@ -62,6 +66,7 @@
     fontify 9px 400 14px
     text-transform uppercase
     letter-spacing 0.18em
+    mt -1px
     @media $PortraitMedium
       mt 20px
       l 44px

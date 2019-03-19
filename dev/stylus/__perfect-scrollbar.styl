@@ -42,21 +42,12 @@
   background-color: transparent;
 }
 
-.ps:hover > .ps__rail-x,
-.ps:hover > .ps__rail-y,
-.ps--focus > .ps__rail-x,
-.ps--focus > .ps__rail-y,
-.ps--scrolling-x > .ps__rail-x,
-.ps--scrolling-y > .ps__rail-y {
-  opacity: 0.6;
-}
-
-.ps__rail-x:hover,
-.ps__rail-y:hover,
-.ps__rail-x:focus,
-.ps__rail-y:focus {
-  background-color: #eee;
-  opacity: 0.9;
+.ps__rail-x:hover .ps__thumb-x,
+.ps__rail-y:hover .ps__thumb-y,
+.ps__rail-x:focus .ps__thumb-x,
+.ps__rail-y:focus .ps__thumb-y {
+  bgc $orange;
+  opacity: 1;
 }
 
 /*
@@ -124,7 +115,7 @@
     &:hover, &:focus
       & > .ps__thumb-y
         width 20px
-        background-color #2b284c
+        background-color #f5c017
 
   .ps__thumb-y
     right -9px
@@ -133,3 +124,5 @@
     border-radius 50%
     background-color #2b284c
     border 5px solid #f5c017
+    cursor pointer
+    transition .7s background-color

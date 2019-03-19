@@ -2,6 +2,7 @@
   min-height 700px
   pt 130px
   pb 62px
+  transition .7s opacity
   @media $desktopMedium
     pt 107px
     min-height 640px
@@ -9,6 +10,14 @@
     pt 77px
   @media $LandscapeMin
     pt 57px
+  @media $Landscape600From
+    opacity 0
+  &.visible
+    opacity 1
+    & ^[0]__list,
+    & .about_side
+      t 0
+      opacity 1
   &__title
     font-family $cyr
     color white
@@ -36,6 +45,11 @@
       mt 0
       w calc(100% + 30px)
       ml -30px
+    @media $Landscape600From
+      pos relative
+      t 20px
+      opacity 0
+      transition .7s .55s opacity, .7s .55s top
   &__item
     pos relative
     w calc(50% - 30px)
@@ -74,6 +88,11 @@
     @media $LandscapeMax
       w 100%
       mt 30px
+    @media $Landscape600From
+      pos relative
+      t 20px
+      opacity 0
+      transition .7s .35s opacity, .7s .35s top
     ^[0]__text
       mb 35px
   &:not(&_side)

@@ -4,7 +4,7 @@
       min-width 85px
       margin-right 10px
 
-    @media $desktopMedium
+    @media $desktopMax
       .contacts__filial
         &-info
           width 100%
@@ -42,6 +42,9 @@
     &-row
       display flex
       margin-bottom 8px
+
+      @media $LandscapeMax
+        mb 18px
 
       @media $LandscapeMin
         flex-wrap wrap
@@ -85,6 +88,7 @@
       flex-shrink 0
       align-items flex-start
       margin-top -6px
+      cursor pointer
 
       @media $LandscapeMax
         margin-top 20px

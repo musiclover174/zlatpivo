@@ -494,9 +494,7 @@
         headerEl = document.querySelector('.header'),
         toTop = document.querySelector('.js-totop'),
         toNext = document.querySelector('.js-tonext'),
-        elemsToCheck = ['.news__elem-imgover', '.js-scroll-imgover', '.about__steps-elem'];
-
-
+        elemsToCheck = ['.feats, .news__elem-imgover', '.js-scroll-imgover', '.about__steps-elem'];
 
       burgerEl.addEventListener('click', (e) => {
         html.classList.toggle('burgeropen')

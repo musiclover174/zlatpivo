@@ -1,6 +1,13 @@
 .history
   padding-top 139px
   text-align left
+  c #3c3c3c
+  pb 4px
+  @media $LandscapeMax
+    pb 0
+    mb -10px
+    .awards--inner
+      mb 40px
 
   &__custom-title
     font-family "Jikharev"
@@ -9,8 +16,11 @@
     transform rotate(-4deg)
     font-size 45px
     font-weight 400
-    line-height 55px
+    line-height 50px
     margin-bottom 43px
+
+    @media $LandscapeMax
+      dn()
 
   &__container
     display flex
@@ -31,6 +41,9 @@
     padding-left 15px
     position relative
 
+  &__img
+    max-width 100%
+
   &__big-img
     align-self flex-end
     max-width 100%
@@ -44,6 +57,9 @@
     position relative
     margin-bottom 27px
 
+    @media $LandscapeMax
+      pl 0
+
     &:before
       content ''
       position absolute
@@ -54,9 +70,12 @@
       height 104px
       background-image url('../i/ussr.png')
 
+      @media $LandscapeMax
+        dn()
+
   &__border-top
     position relative
-    padding-top 30px
+    padding-top 18px
     margin-left 108px
 
     &:before
@@ -107,6 +126,9 @@
     &__big-img
       margin 0!important
       align-self flex-start
+    &__img
+      &_tablet
+        dn()
     &__small-img
       display none
       margin 0!important

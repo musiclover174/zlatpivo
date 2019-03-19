@@ -20,6 +20,22 @@ html:not(.touchevents)
       .header,
       .footer
         transition-delay 0.8s
+      .banner__title
+        span
+          db()
+          h 110px
+          @media $desktopMax
+            h 90px
+          @media $LandscapeMax
+            h 70px
+          overflow hidden
+          i
+            pos relative
+            font-style normal
+            t -120px
+            transition .7s top
+          + span > i
+            transition-delay .1s
     &.pace-done
       .header,
       .content,
@@ -29,6 +45,8 @@ html:not(.touchevents)
       .content
         z-index 1
         transition .7s opacity
+      .banner__title span i
+        t 0
 
 .container
   w 100%
@@ -94,13 +112,24 @@ body.index
         transform scaleX(-1) rotate(-30deg)
         right -70px
         top -90px
+        @media $desktopMax
+          dn()
+    .reviews__filter
+      @media $LandscapeMax
+        ml 0
+        mb 30px
+        mt -10px
+    .common__title_wfilter
+      @media $LandscapeMax
+        w 100%
   &_contacts
     .content__bg
       background-position left 945px
       background-size cover
       background-repeat no-repeat
-      @media $LandscapeMedium
-        background-position center 1110px
+      @media $LandscapeMax
+        background-image none !important
+        pb 53px
     .decor_type10
       width 216px
       height 246px
@@ -310,6 +339,8 @@ body.index
     r -60px
     t -48%
     z-index -1
+    @media $desktopMax
+      r -46px
   &__dec16
     filter brightness(0%)
     l -123px
